@@ -134,5 +134,5 @@ Where
     Default not set.
 
 *Note that*, this script is not complete, as it only analysis the base
-IP of the block in the route table. But the some IPs in it could be routed
-to other gateway.
+IP of the block of each APNIC/nonAPNIC delegation. But some IPs in a
+block could be routed to other gateway than its base IP's.
