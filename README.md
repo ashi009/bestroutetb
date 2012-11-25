@@ -139,5 +139,5 @@ block could be routed to other gateway than its base IP's.
 
 **Update delegated IP files**
 
-    rm *.txt
+    rm *.dat
     ./generate.sh
