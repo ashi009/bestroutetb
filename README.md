@@ -87,7 +87,7 @@ The synatx for this script is:
 
 Where
 
-  * `output` Save route table to `output`.
+  * `output` is the path of output route table.
   * `options` will be redirected to `./minifier.js`.
 
 
