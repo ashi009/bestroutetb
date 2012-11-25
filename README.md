@@ -98,9 +98,9 @@ Where
 Where
 
   * **`--local`** is used to specify a list of country abbreviations and
-    IP subnets to be routed to default gateway. Default to CN.
+    IP subnets to be routed to default gateway. Default to `CN`.
   * **`--vpn`** is used to specify a list of country abbreviations and IP
-    subnets to be routed to VPN gateway. Default to US,GB,JP,HK.
+    subnets to be routed to VPN gateway. Default to `US,GB,JP,HK`.
   * **`--onlyAPNIC`** is used ignore non-APNIC administered IPs. When not
     set, non-APNIC IPs will be routed by VPN gateway. Default not set.
 
