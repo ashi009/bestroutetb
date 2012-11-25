@@ -87,8 +87,8 @@ The synatx for this script is:
 
 Where
 
-  * **`output`** Save route table to `output`.
-  * **`options`** will be redirected to `./minifier.js`.
+  * `output` Save route table to `output`.
+  * `options` will be redirected to `./minifier.js`.
 
 
 **Have some fun**
@@ -97,11 +97,11 @@ Where
 
 Where
 
-  * **`--local`** is used to specify a list of country abbreviations and
+  * `--local` is used to specify a list of country abbreviations and
     IP subnets to be routed to default gateway. Default to `CN`.
-  * **`--vpn`** is used to specify a list of country abbreviations and IP
+  * `--vpn` is used to specify a list of country abbreviations and IP
     subnets to be routed to VPN gateway. Default to `US,GB,JP,HK`.
-  * **`--onlyAPNIC`** is used ignore non-APNIC administered IPs. When not
+  * `--onlyAPNIC` is used ignore non-APNIC administered IPs. When not
     set, non-APNIC IPs will be routed by VPN gateway. Default not set.
 
 Example:
@@ -129,8 +129,8 @@ Outputs:
 
 Where
 
-  * **`input`** is the path to route table.
-  * **`--verbose`** when set will output the route result for every block.
+  * `input` is the path to route table.
+  * `--verbose` when set will output the route result for every block.
     Default not set.
 
 *Note that*, this script is not complete, as it only analysis the base
