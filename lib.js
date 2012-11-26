@@ -34,10 +34,7 @@ function $inherit(type, parent, proto) {
 $define(global, {
   $define: $define,
   $declare: $declare,
-  $inherit: $inherit,
-  kBlank: -1,
-  kRed: 0,
-  kBlue: 1
+  $inherit: $inherit
 });
 
 function toIPv4(v) {
@@ -80,7 +77,7 @@ function Prefix(prefix, mask) {
 $declare(Prefix, {
   toString: function() {
     if (this.length < 31) {
-      var padded = this.prefix >>> (32 - this.length) | (1 << this.length);
+      var padded = (this.prefix >>> (32 - this.length)) | (1 << this.length);
       return padded.toString(2).substr(1);
     }
     var paddedHi = (this.prefix >>> 16) | (1 << 16);
@@ -170,6 +167,11 @@ $declare(TreeNode, {
     }
     node.color = prefix.color;
   }
+});
+$define(global, {
+  kBlank: -1,
+  kRed: 0,
+  kBlue: 1
 });
 
 var opts = {};
