@@ -74,7 +74,7 @@ latest IP delegation file (I will put it in JavaScript.)
 How to use
 ----------
 
-**Quick start**
+### Quick start
 
     ./generate.sh route_table > analysis_result
 
@@ -91,7 +91,7 @@ Where
   * `options` will be redirected to `./minifier.js`.
 
 
-**Have some fun**
+### Have some fun
 
     node ./minifier.js [--local=specs] [--vpn=specs] [--onlyAPNIC=1]
 
@@ -123,7 +123,7 @@ Outputs:
     Total: 10 rules
 
 
-**Analysis route table**
+### Analysis a route table
 
     node ./evaluator.js input [--verbose=1]
 
@@ -138,7 +138,7 @@ IP of the block of each APNIC/nonAPNIC delegation. But some IPs in a
 block could be routed to other gateway than its base IP's (this only
 affects some nonAPNIC IP blocks, as it overlaps some APNIC IP blocks.)
 
-**Update IP delegation files**
+### Update IP delegation files
 
     rm *.dat
     ./generate.sh
