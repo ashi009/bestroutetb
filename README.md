@@ -26,9 +26,6 @@ So I decided to minimize the route table.
 How optimize it is?
 -------------------
 
-We can prove that, the generated route table is the smallest
-one based on the restrictions.
-
 For a example, a route table that route all IPs in China to
 default gateway, and US, GB, Japan, Hongkong and non-APNIC
 administered IPs to VPN gateway (based on 11/26/2012 data,)
@@ -52,6 +49,9 @@ the smallest route table.
 
 To achieve the goal, this project using dynamic programming
 algorithm to find out the most optimized route table.
+
+We can prove that, the generated route table is the smallest
+one based on the given restrictions.
 
 For further detail: http://ashi009.tumblr.com/post/36581070478/vpn
 
