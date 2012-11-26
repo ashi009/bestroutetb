@@ -135,9 +135,10 @@ Where
 
 *Note that*, this script is not complete, as it only analysis the base
 IP of the block of each APNIC/nonAPNIC delegation. But some IPs in a
-block could be routed to other gateway than its base IP's.
+block could be routed to other gateway than its base IP's (this only
+affects some nonAPNIC IP blocks, as it overlaps some APNIC IP blocks.)
 
-**Update delegated IP files**
+**Update IP delegation files**
 
     rm *.dat
     ./generate.sh
