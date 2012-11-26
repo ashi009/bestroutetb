@@ -53,7 +53,7 @@ the smallest route table.
 To achieve the goal, this project using dynamic programming
 algorithm to find out the most optimized route table.
 
-For further detail: http://ashi009.tumblr.com/
+For further detail: http://ashi009.tumblr.com/post/36581070478/vpn
 
 
 Dependencies
