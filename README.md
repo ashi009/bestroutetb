@@ -1,6 +1,7 @@
 Best Route Table
 ================
 
+
 Inspired by https://github.com/fivesheep/chnroutes.
 
 This project aimed to generate the smallest route table,
@@ -8,6 +9,7 @@ while preserves the minimalist requirements that IPs of
 specified countries or subnets will be routed to a
 specified gateway (default or VPN).
 
+查看[使用说明](https://github.com/ashi009/bestroutetb/wiki/使用说明)
 
 Objective
 ---------
@@ -81,7 +83,7 @@ How to use
 Which will output the routing directives (OpenVPN syntax) to
 `route_table` and a summarized evaluation report to `analysis_result`.
 
-The synatx for this script is:
+The syntax for this script is:
 
     ./generate.sh output [options]
 
