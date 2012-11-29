@@ -9,6 +9,9 @@ while preserves the minimalist requirements that IPs of
 specified countries or subnets will be routed to a
 specified gateway (default or VPN).
 
+Generally speaking, the generated route table is at least
+70% smaller than chnroutes's.
+
 查看[使用说明](https://github.com/ashi009/bestroutetb/wiki/使用说明)
 
 Objective
@@ -34,7 +37,8 @@ administered IPs to VPN gateway (based on 11/26/2012 data,)
 only need 1093 routing directives, while *chnroutes* needs
 3563 routing directives.
 
-Which is almost **70% smaller**.
+Which is **70% smaller**. And if route US address to VPN only,
+the route table has only **50 directives**.
 
 
 How it works
@@ -95,7 +99,7 @@ Where
 
 ### Have some fun
 
-    node ./minifier.js [--local=specs] [--vpn=specs] [--onlyAPNIC=1]
+    node minifier.js [--local=specs] [--vpn=specs] [--onlyAPNIC=1]
 
 Where
 
@@ -105,10 +109,17 @@ Where
     subnets to be routed to VPN gateway. Default to `US,GB,JP,HK`.
   * `--onlyAPNIC` is used ignore non-APNIC administered IPs. When not
     set, non-APNIC IPs will be routed by VPN gateway. Default not set.
+  * `specs` is a list of country abbreviation names or IP subnet,
+    seperated with comma(,). The abbreviation names can be found in
+    `countries.res`.
+
+This script will output directives to `stdout`, and statistic info to
+`stderr`, so please redirect `stdout` to a file.  Recommend use `generate.sh`
+instead.
 
 Example:
 
-    node ./minifier.js --local=CN --vpn=US,114.134.80.162/31 --onlyAPNIC=1
+    node minifier.js --local=CN --vpn=US,114.134.80.162/31 --onlyAPNIC=1
 
 Outputs:
 
@@ -127,7 +138,7 @@ Outputs:
 
 ### Analysis a route table
 
-    node ./evaluator.js input [--verbose=1]
+    node evaluator.js input [--verbose=1] [--default=default]
 
 Where
 

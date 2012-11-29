@@ -1,17 +1,15 @@
 #!/bin/sh
 
-if [ ! -e delegated-apnic-latest.dat ]; then
+[ -e delegated-apnic-latest.dat ] || \
   wget -O delegated-apnic-latest.dat http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest
-fi
 
-if [ ! -e ipv4-address-space.dat ]; then
+[ -e ipv4-address-space.dat ] || \
   wget -O ipv4-address-space.dat http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.txt
-fi
 
-filename=$1
+routes=$1
 shift
 
-if [ $filename ]; then
-  node minifier.js "$@" > $filename
-  node evaluator.js $filename
-fi
+[ $routes ] && {
+  node minifier.js "$@" > $routes
+  node evaluator.js $routes
+}
