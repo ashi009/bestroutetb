@@ -68,7 +68,7 @@ Dependencies
 This project is mainly written in JavaScript, and some in Bash.
 So you will need *node.js* to run the scripts.
 
-  * [node.js](nodejs.org)
+  * [node.js](http://nodejs.org)
 
 Bash code is relatively simple, and could be re-writen in Batch
 (in furture.) But either way it needs *wget* to download the
@@ -145,6 +145,7 @@ Where
   * `input` is the path to route table.
   * `--verbose` when set will output the route result for every block.
     Default not set.
+  * `--default` is the default gateway for 0.0.0.0/0.
 
 *Note that*, this script is not complete, as it only analysis the base
 IP of the block of each APNIC/nonAPNIC delegation. But some IPs in a
