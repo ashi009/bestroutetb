@@ -120,11 +120,4 @@ function getRoutes(path) {
     res[args[1]] = [args[2], args[4]];
   });
   return res;
-
-  return content.split(/[\r\n]+/g).filter(function(line) {
-        return /^route/.test(line);
-      }).map(function(line) {
-        var args = line.split(' ');
-        return [args[1], args[2], args[4]];
-      });
 }
