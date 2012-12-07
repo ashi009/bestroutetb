@@ -48,8 +48,8 @@ var newRoutes = getRoutes(routeFile);
 if (action == 'up') {
   var defaultRoutes = getDefaultRoutes();
   var gateways = {
-    net: process.argv.netgw || defaultRoutes.net.nextHop,
-    vpn: process.argv.vpngw || defaultRoutes.vpn.nextHop
+    net: process.argv.netgw || defaultRoutes.net && defaultRoutes.net.nextHop,
+    vpn: process.argv.vpngw || defaultRoutes.vpn && defaultRoutes.vpn.nextHop
   };
   if (!gateways.net || !gateways.vpn) {
     console.log('FAILED to find net_gateway (%s) or vpn_gateway (%s).',
@@ -117,7 +117,7 @@ function getRoutes(path) {
     if (!/^route/.test(line))
       return;
     var args = line.split(' ');
-    res[args[1]] = [args[2], args[4]];
+    res[args[1]] = [args[2], args[3]];
   });
   return res;
 }

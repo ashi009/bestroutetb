@@ -12,7 +12,7 @@ specified gateway (default or VPN).
 Generally speaking, the generated route table is at least
 70% smaller than chnroutes's.
 
-查看[使用说明](https://github.com/ashi009/bestroutetb/wiki/使用说明)
+查看[使用说明](wiki)
 
 Objective
 ---------
@@ -28,7 +28,7 @@ OpenVPN before route table being loaded up.
 So I decided to minimize the route table.
 
 
-How optimize it is?
+How effecient it is?
 -------------------
 
 For a example, a route table that route all IPs in China to
@@ -39,6 +39,11 @@ only need 1093 routing directives, while *chnroutes* needs
 
 Which is **70% smaller**. And if route US address to VPN only,
 the route table has only **50 directives**.
+
+On Linux system, which usese [TRASH][trash] structure to store
+routing table, a route lookup operation expected to access
+memory O(loglog*n*) times. Using *bestroutetb* over *chnroutes*,
+will reduce at least 1 access expectly.
 
 
 How it works
@@ -59,7 +64,7 @@ algorithm to find out the most optimized route table.
 We can prove that, the generated route table is the smallest
 one based on the given restrictions.
 
-For further detail: http://ashi009.tumblr.com/post/36581070478/vpn
+[For further detail][blog].
 
 
 Dependencies
@@ -68,13 +73,13 @@ Dependencies
 This project is mainly written in JavaScript, and some in Bash.
 So you will need *node.js* to run the scripts.
 
-  * [node.js](http://nodejs.org)
+  * [node.js][nodejs]
 
 Bash code is relatively simple, and could be re-writen in Batch
 (in furture.) But either way it needs *wget* to download the
 latest IP delegation file (I will put it in JavaScript.)
 
-  * [wget](http://www.gnu.org/software/wget/)
+  * [wget][wget]
 
 
 How to use
@@ -156,3 +161,10 @@ affects some nonAPNIC IP blocks, as it overlaps some APNIC IP blocks.)
 
     rm *.dat
     ./generate.sh
+
+
+[wiki]: https://github.com/ashi009/bestroutetb/wiki/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E
+[trash]: http://www.nada.kth.se/~snilsson/publications/TRASH/trash.pdf
+[blog]: http://ashi009.tumblr.com/post/36581070478/vpn
+[nodejs]: http://nodejs.org
+[wget]: http://www.gnu.org/software/wget/
