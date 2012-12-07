@@ -25,10 +25,10 @@
 #
 ######################################################################
 #
-2|apnic|20121207|28749|19850701|20121206|+1000
-apnic|*|asn|*|4963|summary
-apnic|*|ipv4|*|21056|summary
-apnic|*|ipv6|*|2730|summary
+2|apnic|20121208|28755|19850701|20121207|+1000
+apnic|*|asn|*|4964|summary
+apnic|*|ipv4|*|21060|summary
+apnic|*|ipv6|*|2731|summary
 apnic|JP|asn|173|1|20020801|allocated
 apnic|NZ|asn|681|1|20020801|allocated
 apnic|AU|asn|1221|1|20000131|allocated
@@ -4370,6 +4370,7 @@ apnic|SG|asn|58753|1|20121206|allocated
 apnic|BD|asn|58754|1|20121206|allocated
 apnic|SG|asn|58755|1|20121206|allocated
 apnic|PH|asn|58756|1|20121206|allocated
+apnic|PH|asn|58757|1|20121207|allocated
 apnic|AU|asn|131072|1|20070117|allocated
 apnic|JP|asn|131073|1|20070110|allocated
 apnic|JP|asn|131074|1|20070115|allocated
@@ -8409,6 +8410,10 @@ apnic|SG|ipv4|103.244.8.0|1024|20121205|allocated
 apnic|BD|ipv4|103.244.12.0|1024|20121206|allocated
 apnic|CN|ipv4|103.244.16.0|1024|20121206|allocated
 apnic|BD|ipv4|103.244.20.0|1024|20121206|allocated
+apnic|HK|ipv4|103.244.24.0|1024|20121207|assigned
+apnic|PH|ipv4|103.244.28.0|1024|20121207|assigned
+apnic|MN|ipv4|103.244.32.0|1024|20121207|allocated
+apnic|ID|ipv4|103.244.36.0|1024|20121207|allocated
 apnic|ID|ipv4|103.246.0.0|1024|20110628|allocated
 apnic|AU|ipv4|103.246.4.0|1024|20110628|allocated
 apnic|CN|ipv4|103.246.8.0|1024|20110629|allocated
@@ -12211,7 +12216,7 @@ apnic|JP|ipv4|157.112.128.0|4096|19920208|allocated
 apnic|JP|ipv4|157.112.144.0|4096|19920208|allocated
 apnic|JP|ipv4|157.112.160.0|4096|19920208|allocated
 apnic|JP|ipv4|157.112.176.0|4096|19920208|allocated
-apnic|JP|ipv4|157.112.192.0|16384|19920208|allocated
+apnic|JP|ipv4|157.112.192.0|16384|20121207|allocated
 apnic|JP|ipv4|157.113.0.0|65536|19920208|allocated
 apnic|JP|ipv4|157.114.0.0|65536|19920208|allocated
 apnic|JP|ipv4|157.115.0.0|65536|19920208|allocated
@@ -26892,6 +26897,7 @@ apnic|NZ|ipv6|2001:df0:430::|44|20121123|assigned
 apnic|JP|ipv6|2001:df0:440::|48|20121130|assigned
 apnic|AU|ipv6|2001:df0:441::|48|20121204|assigned
 apnic|HK|ipv6|2001:df0:442::|47|20121205|assigned
+apnic|IN|ipv6|2001:df0:444::|48|20121207|assigned
 apnic|AU|ipv6|2001:df0:500::|40|20120813|assigned
 apnic|AU|ipv6|2001:df8::|32|20070223|assigned
 apnic|AU|ipv6|2001:df9::|32|20070117|assigned
