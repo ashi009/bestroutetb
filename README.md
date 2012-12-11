@@ -12,7 +12,7 @@ specified gateway (default or VPN).
 Generally speaking, the generated route table is at least
 70% smaller than chnroutes's.
 
-查看[使用说明](wiki)
+查看[使用说明][wiki]
 
 Objective
 ---------
