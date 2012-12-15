@@ -99,12 +99,12 @@ The syntax for this script is:
 Where
 
   * `output` is the path of output route table.
-  * `options` will be redirected to `./minifier.js`.
+  * `options` will be redirected to `./minifier.js` and `./formatter.js`.
 
 
-### Have some fun
+### Generating Rules
 
-    node minifier.js [--local=specs] [--vpn=specs] [--onlyAPNIC=1]
+    node minifier.js [--local=SPECS] [--vpn=SPECS] [--onlyAPNIC=1]
 
 Where
 
@@ -114,13 +114,29 @@ Where
     subnets to be routed to VPN gateway. Default to `US,GB,JP,HK`.
   * `--onlyAPNIC` is used ignore non-APNIC administered IPs. When not
     set, non-APNIC IPs will be routed by VPN gateway. Default not set.
-  * `specs` is a list of country abbreviation names or IP subnet,
+  * `SPECS` is a list of country abbreviation names or IP subnet,
     seperated with comma(,). The abbreviation names can be found in
     `countries.res`.
 
-This script will output directives to `stdout`, and statistic info to
+This script will output rules in *JSON* to `stdout`, and statistic info to
 `stderr`, so please redirect `stdout` to a file.  Recommend use `generate.sh`
 instead.
+
+JSON structure:
+
+    [
+      Rule,
+      ...
+    ]
+
+`Rule` structure:
+
+    {
+      "prefix": "dest",
+      "mask": "netmask",
+      "length", netmaskLength,
+      "gw": "net|vpn"'"
+    }
 
 Example:
 
@@ -128,6 +144,47 @@ Example:
 
 Outputs:
 
+    [
+      {
+        "prefix": "0.0.0.0",
+        "mask": "0.0.0.0",
+        "length": 0,
+        "gw": "net"
+      },
+      {
+        "prefix": "60.254.0.0",
+        "mask": "255.255.0.0",
+        "length": 16,
+        "gw": "vpn"
+      },
+      ...
+    ]
+    Total: 10 rules
+
+### Formatting a rules file (*new*)
+
+    node formatter.js [input] [--profile=PROFILE] [--format=FORMAT] [--netgw=NETGW] [--vpngw=VPNGW] [arguments]
+
+Where
+
+  * `input` is the path to JSON format rule file, if omit, `stdin` will be used.
+  * `--profile` chosen between `openvpn`, `route_up`, `route_down`, `iproute_up`,
+    `iproute_down`, `win_up`, `win_down`, `custom`.
+  * `--format` string used to format a rule when `--profile=custom`. You can use
+    `%prefix`, `%mask`, `%length`, and `%gw` to correspond fields in a rule.
+    You may also use other variables (`%[a-zA-Z]\w*`) which are passed in in
+    `arguments` (`%var` for `value` in `--var="value"`.)
+  * `--netgw` net gateway, when *not* using `--profile=openvpn`.
+  * `--netgw` vpn gateway, when *not* using `--profile=openvpn`.
+
+Example:
+
+    node formatter.js rules.json
+    # or node minifier.js --local=CN --vpn=us,114.134.80.162/31 --onlyAPNIC=1 | node formatter.js
+
+Outputs:
+
+    Total: 10 rules
     route 0.0.0.0 0.0.0.0 net_gateway
     route 60.254.0.0 255.255.0.0 vpn_gateway
     route 103.246.192.0 255.255.192.0 vpn_gateway
@@ -138,16 +195,14 @@ Outputs:
     route 202.72.96.0 255.255.224.0 vpn_gateway
     route 203.144.0.0 255.255.192.0 vpn_gateway
     route 203.187.128.0 255.255.224.0 vpn_gateway
-    Total: 10 rules
 
+### Analysing a rules file
 
-### Analysis a route table
-
-    node evaluator.js input [--verbose=1] [--default=default]
+    node evaluator.js [input] [--verbose=1] [--default=default]
 
 Where
 
-  * `input` is the path to route table.
+  * `input` is the path to JSON format rule file, if omit, `stdin` will be used.
   * `--verbose` when set will output the route result for every block.
     Default not set.
   * `--default` is the default gateway for 0.0.0.0/0.
