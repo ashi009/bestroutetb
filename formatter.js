@@ -92,9 +92,9 @@ lib.getRulesFromInput(function(rules) {
     if (kProfile.groupgw && prevGateway != rule.gw) {
       if (prevGateway && groupFooter)
         console.log(groupFooter.format(rule, opts));
-      prevGateway = rule.gw;
-      if (prevGateway && groupHeader)
+      if (rule.gw && groupHeader)
         console.log(groupHeader.format(rule, opts));
+      prevGateway = rule.gw;
     }
     if (rule.gw) {
       rule.gw = kProfile.gw[rule.gw];

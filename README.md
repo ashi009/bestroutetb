@@ -104,7 +104,7 @@ Where
 
 ### Generating Rules
 
-    node minifier.js [--local=SPECS] [--vpn=SPECS] [--onlyAPNIC=1]
+    node minifier.js [--local=SPECS] [--vpn=SPECS] [--nonap=NONAP]
 
 Where
 
@@ -112,8 +112,8 @@ Where
     IP subnets to be routed to default gateway. Default to `CN`.
   * `--vpn` is used to specify a list of country abbreviations and IP
     subnets to be routed to VPN gateway. Default to `US,GB,JP,HK`.
-  * `--onlyAPNIC` is used ignore non-APNIC administered IPs. When not
-    set, non-APNIC IPs will be routed by VPN gateway. Default not set.
+  * `--nonap` when set will route non-APNIC administered IPs to VPN
+    gateway. Default to `1`.
   * `SPECS` is a list of country abbreviation names or IP subnet,
     seperated with comma(,). The abbreviation names can be found in
     `countries.res`.
@@ -140,7 +140,7 @@ JSON structure:
 
 Example:
 
-    node minifier.js --local=CN --vpn=US,114.134.80.162/31 --onlyAPNIC=1
+    node minifier.js --local=CN --vpn=US,114.134.80.162/31 --nonap=0
 
 Outputs:
 
@@ -163,24 +163,39 @@ Outputs:
 
 ### Formatting a rules file (*new*)
 
-    node formatter.js [input] [--profile=PROFILE] [--format=FORMAT] [--netgw=NETGW] [--vpngw=VPNGW] [arguments]
+    node formatter.js [input] [--profile=PROFILE]
+        [--header=HEADER] [--footer=FOOTER]
+        [--format=FORMAT] [--netgw=NETGW] [--vpngw=VPNGW]
+        [--groupgw=GROUPGW] [--groupheader=GROUPHEADER] [--groupfooter=GROUPFOOTER]
+        [arguments]
 
 Where
 
   * `input` is the path to JSON format rule file, if omit, `stdin` will be used.
   * `--profile` chosen between `openvpn`, `route_up`, `route_down`, `iproute_up`,
-    `iproute_down`, `win_up`, `win_down`, `custom`. Default to `openvpn`.
+    `iproute_down`, `win_up`, `win_down`, `ppp_ip_up`, `custom`. Default to `openvpn`.
+  * `--header` header of the output file.
+  * `--footer` footer of the output file.
   * `--format` string used to format a rule when `--profile=custom`. You can use
     `%prefix`, `%mask`, `%length`, and `%gw` to correspond fields in a rule.
     You may also use other variables (`%[a-zA-Z]\w*`) which are passed in in
-    `arguments` (`%var` for `value` in `--var="value"`.)
-  * `--netgw` net gateway, when *not* using `--profile=openvpn`.
-  * `--netgw` vpn gateway, when *not* using `--profile=openvpn`.
+    `arguments`.
+  * `--netgw` `%gw` for `"gw": "net"` rules, when *not* using `--profile=openvpn`.
+  * `--vpngw` `%gw` for `"gw": "vpn"` rules, when *not* using `--profile=openvpn`.
+  * `--groupgw` group rules by gateway. Useful when you want rules to be outputed
+    in two parts, say two functions for each interface. Default to `1` when
+    `--profile=ppp_ip_up`, otherwise `0`.
+  * `--groupheader` header of each group. Note that, which could include `%gw` to
+    identify group, except `%gw` won't be substituted with `--netgw` nor `--vpngw`.
+  * `--groupfooter` footer of each group. Note that, which could include `%gw` to
+    identify group, except `%gw` won't be substituted with `--netgw` nor `--vpngw`.
+  * `arguments` a group of arguments to be used in `format` (eg. add `--var="value"` to
+    `arugments`, then use `%var` for `value` in `--format`.)
 
 Example:
 
     node formatter.js rules.json
-    # or node minifier.js --local=CN --vpn=us,114.134.80.162/31 --onlyAPNIC=1 | node formatter.js
+    # or node minifier.js --local=CN --vpn=us,114.134.80.162/31 --nonap=0 | node formatter.js
 
 Outputs:
 

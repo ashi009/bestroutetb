@@ -303,7 +303,7 @@ function initiateTree(TreeNodeType) {
       prefix.color = kBlue;
     root.append(prefix);
   });
-  if (!opts.onlyAPNIC)
+  if (opts.nonap === undefined || opts.nonap)
     getNonAPNICDelegation().forEach(function(prefix) {
       prefix.color = kBlue;
       root.append(prefix);
