@@ -169,7 +169,7 @@ Where
 
   * `input` is the path to JSON format rule file, if omit, `stdin` will be used.
   * `--profile` chosen between `openvpn`, `route_up`, `route_down`, `iproute_up`,
-    `iproute_down`, `win_up`, `win_down`, `custom`.
+    `iproute_down`, `win_up`, `win_down`, `custom`. Default to `openvpn`.
   * `--format` string used to format a rule when `--profile=custom`. You can use
     `%prefix`, `%mask`, `%length`, and `%gw` to correspond fields in a rule.
     You may also use other variables (`%[a-zA-Z]\w*`) which are passed in in
