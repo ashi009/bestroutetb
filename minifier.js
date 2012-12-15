@@ -74,7 +74,7 @@ function dfs(root) {
   }
 }
 
-function dfsOutput(root, lastColor, revertColor) {
+function dfsOutput(rules, root, lastColor, revertColor) {
   var color = kBlank;
   if (lastColor === undefined) {
     if (root.count[kRed] < root.count[kBlue])
@@ -84,24 +84,29 @@ function dfsOutput(root, lastColor, revertColor) {
   } else if (revertColor) {
     color = lastColor ^ 1;
   }
-  if (color === kRed)
-    console.log('route %s %s net_gateway', root.prefix.toIPv4(),
-        root.prefix.toMask());
-  else if (color === kBlue)
-    console.log('route %s %s vpn_gateway', root.prefix.toIPv4(),
-        root.prefix.toMask());
-  else
+  if (color === kBlank) {
     color = lastColor;
+  } else {
+    rules.push({
+      prefix: root.prefix.toIPv4(),
+      mask: root.prefix.toMask(),
+      length: root.prefix.length,
+      gw: color == kRed ? 'net' : 'vpn'
+    });
+  }
   var left = root.children[0];
   var right = root.children[1];
   if (left)
-    dfsOutput(left, color, (root.operation[color] & kPullLeft) == 0);
+    dfsOutput(rules, left, color, (root.operation[color] & kPullLeft) == 0);
   if (right)
-    dfsOutput(right, color, (root.operation[color] & kPullRight) == 0);
-
+    dfsOutput(rules, right, color, (root.operation[color] & kPullRight) == 0);
 }
 
 var root = lib.initiateTree(TreeNode);
+var rules = [];
+
 dfs(root);
-dfsOutput(root);
+dfsOutput(rules, root);
+
+console.log('%j', rules);
 console.error('Total: %d rules', Math.min.apply(null, root.count));

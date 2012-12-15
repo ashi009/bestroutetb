@@ -37,6 +37,33 @@ $define(global, {
   $inherit: $inherit
 });
 
+$define(String.prototype, {
+  format: function() {
+    var args = arguments;
+    return this.replace(/%(([a-zA-Z]\w*)|(\d+))\b/g, function(all, key, name, index) {
+      if (index !== undefined)
+        return args[parseInt(index, 10)];
+      for (var i = 0; i < args.length; i++)
+        if (args[i].hasOwnProperty(name))
+          return args[i][name];
+      return '';
+    });
+  }
+});
+
+var opts = {};
+for (var i = 0, argv = process.argv.slice(2); i < argv.length; i++) {
+  if (argv[i].substr(0, 2) === '--') {
+    var parts = argv[i].substr(2).split('=');
+    if (parts.length > 1)
+      opts[parts[0]] = parts[1][0] === '"' ? parts[1].slice(1, -1) : parts[1];
+    else
+      opts[parts[0]] = argv[++i];
+  } else {
+    opts._ = argv[i];
+  }
+}
+
 function toIPv4(v) {
   var parts = [];
   for (var i = 24; i >= 0; i -= 8)
@@ -129,10 +156,9 @@ function RouteTable() {
     this.table.push({});
 }
 $declare(RouteTable, {
-  add: function(ip, netmask, gateway) {
-    var maskLength = getMaskLength(parseIPv4(netmask));
-    console.assert(maskLength >= 0);
-    this.table[maskLength][parseIPv4(ip)] = gateway;
+  add: function(prefix, length, gateway) {
+    console.assert(length >= 0 && length <= 32);
+    this.table[length][parseIPv4(prefix)] = gateway;
   },
   route: function(ip) {
     ip = parseIPv4(ip);
@@ -174,16 +200,19 @@ $define(global, {
   kBlue: 1
 });
 
-var opts = {};
-for (var i = 0, argv = process.argv.slice(2); i < argv.length; i++) {
-  if (argv[i].substr(0, 2) === '--') {
-    var parts = argv[i].substr(2).split('=');
-    if (parts.length > 1)
-      opts[parts[0]] = parts[1]
-    else
-      opts[parts[0]] = argv[++i];
+function getRulesFromInput(callback) {
+  if (opts._) {
+    callback(JSON.parse(fs.readFileSync(opts._)));
   } else {
-    opts._ = argv[i];
+    process.stdin.resume();
+    process.stdin.setEncoding('utf8');
+    var data = '';
+    process.stdin.on('data', function(chunk) {
+      data += chunk;
+    });
+    process.stdin.on('end', function() {
+      callback(JSON.parse(data));
+    });
   }
 }
 
@@ -288,13 +317,14 @@ function initiateTree(TreeNodeType) {
 }
 
 $define(exports, {
+  options: opts,
   Prefix: Prefix,
   RouteTable: RouteTable,
   TreeNode: TreeNode,
   toIPv4: toIPv4,
   parseIPv4: parseIPv4,
   getMaskLength: getMaskLength,
-  options: opts,
+  getRulesFromInput: getRulesFromInput,
   getAPNICDelegation: getAPNICDelegation,
   getNonAPNICDelegation: getNonAPNICDelegation,
   getCountryNames: getCountryNames,
