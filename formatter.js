@@ -3,8 +3,8 @@ var lib = require('./lib.js');
 var opts = lib.options;
 
 var kDefaultGateway = {
-  netgw: opts.netgw,
-  vpngw: opts.vpngw
+  net: opts.netgw,
+  vpn: opts.vpngw
 };
 var kProfiles = {
   openvpn: {
@@ -44,8 +44,17 @@ var kProfiles = {
     format: 'route delete %prefix',
     gw: kDefaultGateway
   },
+  ppp_ip_up: {
+    header: '#!/bin/sh',
+    groupHeader: '%gw() {',
+    groupFooter: '}',
+    format: 'ip r a %prefix/%length via %gw',
+    groupgw: true,
+    gw: kDefaultGateway
+  },
   custom: {
     format: opts.format,
+    groupgw: !!opts.groupgw,
     gw: kDefaultGateway
   }
 };
@@ -53,14 +62,47 @@ var kProfile = kProfiles.hasOwnProperty(opts.profile) ?
     kProfiles[opts.profile] : kProfiles.openvpn;
 
 lib.getRulesFromInput(function(rules) {
+
+  var prevGateway = null;
+
   var header = opts.header || kProfile.header;
+  var footer = opts.footer || kProfile.footer;
+  var groupHeader = opts.groupHeader || kProfile.groupHeader;
+  var groupFooter = opts.groupFooter || kProfile.groupFooter;
+
+  if (kProfile.groupgw) {
+    rules = rules.map(function(rule, index) {
+      rule.index = index;
+      return rule;
+    }).sort(function(lhv, rhv) {
+      if (lhv.gw === rhv.gw)
+        return lhv.index - rhv.index;
+      return lhv.gw < rhv.gw ? -1 : 1;
+    }).map(function(rule, index) {
+      delete rule.index;
+      return rule;
+    });
+    rules.push({});
+  }
+
   if (header)
     console.log(header);
+
   rules.forEach(function(rule) {
-    rule.gw = kProfile.gw[rule.gw];
-    console.log(kProfile.format.format(rule, opts));
+    if (kProfile.groupgw && prevGateway != rule.gw) {
+      if (prevGateway && groupFooter)
+        console.log(groupFooter.format(rule, opts));
+      prevGateway = rule.gw;
+      if (prevGateway && groupHeader)
+        console.log(groupHeader.format(rule, opts));
+    }
+    if (rule.gw) {
+      rule.gw = kProfile.gw[rule.gw];
+      console.log(kProfile.format.format(rule, opts));
+    }
   });
-  var footer = opts.footer || kProfile.footer;
+
   if (footer)
     console.log(footer);
+
 });
