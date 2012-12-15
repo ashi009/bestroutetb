@@ -161,7 +161,7 @@ Outputs:
     ]
     Total: 10 rules
 
-### Formatting a rules file (*new*)
+### Formatting a rules file
 
     node formatter.js [input] [--profile=PROFILE]
         [--header=HEADER] [--footer=FOOTER]
@@ -171,7 +171,7 @@ Outputs:
 
 Where
 
-  * `input` is the path to JSON format rule file, if omit, `stdin` will be used.
+  * `input` is the path to JSON format rule file, if omitted, `stdin` will be used.
   * `--profile` chosen between `openvpn`, `route_up`, `route_down`, `iproute_up`,
     `iproute_down`, `win_up`, `win_down`, `ppp_ip_up`, `custom`. Default to `openvpn`.
   * `--header` header of the output file.
@@ -217,7 +217,7 @@ Outputs:
 
 Where
 
-  * `input` is the path to JSON format rule file, if omit, `stdin` will be used.
+  * `input` is the path to JSON format rule file, if omitted, `stdin` will be used.
   * `--verbose` when set will output the route result for every block.
     Default not set.
   * `--default` is the default gateway for 0.0.0.0/0.
@@ -227,9 +227,9 @@ IP of the block of each APNIC/nonAPNIC delegation. But some IPs in a
 block could be routed to other gateway than its base IP's (this only
 affects some nonAPNIC IP blocks, as it overlaps some APNIC IP blocks.)
 
-### Update IP delegation files
+### Updating IP delegation files
 
-    rm *.dat
+    rm -f *.dat
     ./generate.sh
 
 

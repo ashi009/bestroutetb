@@ -14,5 +14,5 @@ shift
 [ $routes ] && {
   node ${root}minifier.js "$@" | tee rules.json | node formatter.js "$@" > $routes
   node ${root}evaluator.js rules.json
-  rm -rf rules.json
+  rm -f rules.json
 }
