@@ -198,7 +198,7 @@ Outputs:
 
 ### Analysing a rules file
 
-    node evaluator.js [input] [--verbose=1] [--default=default]
+    node evaluator.js [input] [--verbose=1] [--default=DEFAULT]
 
 Where
 
