@@ -1,18 +1,21 @@
 #!/bin/sh
 
-root=$(dirname $0)/
-
-[ -e ${root}delegated-apnic-latest.dat ] || \
-  wget -O ${root}delegated-apnic-latest.dat http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest
-
-[ -e ${root}ipv4-address-space.dat ] || \
-  wget -O ${root}ipv4-address-space.dat http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.txt
+workingpath=$(pwd)
+root=$(dirname $0)
 
 routes=$1
 shift
 
+cd $root
+
+[ -e data/delegated-apnic-latest ] || \
+  wget -O data/delegated-apnic-latest http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest
+
+[ -e data/ipv4-address-space ] || \
+  wget -O data/ipv4-address-space http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.txt
+
 [ $routes ] && {
-  node ${root}minifier.js "$@" | tee rules.json | node formatter.js "$@" > $routes
-  node ${root}evaluator.js rules.json
+  node minifier.js "$@" | tee rules.json | node formatter.js "$@" > $workingpath/$routes
+  node evaluator.js rules.json
   rm -f rules.json
 }

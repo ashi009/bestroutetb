@@ -1,6 +1,8 @@
 var path = require('path');
 var fs = require('fs');
 
+var kRootPath = path.dirname(module.filename);
+
 function $define(object, prototype) {
   var setterGetterPattern = /^(set|get)([A-Z])(.*)/;
   var setterGetters = {};
@@ -217,7 +219,7 @@ function getRulesFromInput(callback) {
 }
 
 function getAPNICDelegation() {
-  return fs.readFileSync(path.dirname(module.filename) + '/delegated-apnic-latest.dat')
+  return fs.readFileSync(kRootPath + '/data/delegated-apnic-latest')
       .toString()
       .split('\n')
       .filter(function(v) {
@@ -232,7 +234,7 @@ function getAPNICDelegation() {
 }
 
 function getNonAPNICDelegation() {
-  return fs.readFileSync(path.dirname(module.filename) + '/ipv4-address-space.dat')
+  return fs.readFileSync(kRootPath + '/data/ipv4-address-space')
       .toString()
       .split('\n')
       .filter(function(line) {
@@ -263,7 +265,7 @@ $define(I18nStrings.prototype, {
 
 function getCountryNames() {
   var names = {};
-  fs.readFileSync(path.dirname(module.filename) + '/countries.res')
+  fs.readFileSync(kRootPath + '/res/countrynames')
       .toString()
       .split('\n')
       .forEach(function(line) {
@@ -279,21 +281,31 @@ function initiateTree(TreeNodeType) {
   var countryColls = [{}, {}];
   var prefixColl = [];
 
-  [
-    opts.local || 'CN',
-    opts.vpn || 'US,GB,JP,HK'
-  ].forEach(function(specs, color) {
-    specs.split(',').forEach(function(spec) {
-      if (/^[A-Z]{2}$/i.test(spec)) {
+  function parseSpecs(specs, color, followFile) {
+    specs.trim().split(/[\s,]+/).forEach(function(spec) {
+      if (!spec)
+        return;
+      if (/^[a-zA-Z]{2}$/.test(spec)) {
         countryColls[color][spec.toUpperCase()] = true;
-      } else if (/^\d{1,3}(\.\d{1,3}){3}\/\d{1,2}$/.test(spec)) {
+      } else if (/^\d{1,3}(\.\d{1,3}){3}(\/\d{1,2})?$/.test(spec)) {
         var block = spec.split('/');
-        var prefix = new Prefix(block[0], parseInt(block[1], 10));
+        var length = block.length > 1 ? parseInt(block[1], 10) : 32;
+        var prefix = new Prefix(block[0], length);
         prefix.color = color;
         prefixColl.push(prefix);
+      } else if (followFile) {
+        fs.readFileSync(spec)
+            .toString()
+            .split(/(?:#.*)?[\n\r]+/)
+            .forEach(function(spec) {
+              parseSpecs(spec, color);
+            });
       }
     });
-  });
+  }
+
+  parseSpecs(opts.net || 'CN', kRed, true);
+  parseSpecs(opts.vpn || 'US,GB,JP,HK', kBlue, true);
 
   var root = new TreeNodeType();
   getAPNICDelegation().forEach(function(prefix) {
@@ -303,7 +315,7 @@ function initiateTree(TreeNodeType) {
       prefix.color = kBlue;
     root.append(prefix);
   });
-  if (opts.nonap === undefined || opts.nonap)
+  if (opts.nonap === undefined || !/^(false|no|0)$/i.test(opts.nonap))
     getNonAPNICDelegation().forEach(function(prefix) {
       prefix.color = kBlue;
       root.append(prefix);
