@@ -25,13 +25,15 @@ var kProfiles = {
     gw: kDefaultGateway
   },
   iproute_up: {
-    header: '#!/bin/sh',
-    format: 'ip r a %prefix/%length via %gw',
+    header: '#!/bin/sh\nip -b - <<FILE',
+    footer: 'FILE',
+    format: 'r a %prefix/%length via %gw',
     gw: kDefaultGateway
   },
   iproute_down: {
-    header: '#!/bin/sh',
-    format: 'ip r d %prefix',
+    header: '#!/bin/sh\nip -b - <<FILE',
+    footer: 'FILE',
+    format: 'r d %prefix',
     gw: kDefaultGateway
   },
   win_up: {
@@ -46,9 +48,9 @@ var kProfiles = {
   },
   ppp_ip_up: {
     header: '#!/bin/sh',
-    groupHeader: '%gw() {',
-    groupFooter: '}',
-    format: 'ip r a %prefix/%length via %gw',
+    groupHeader: '%gw() {\nip -b - <<FILE',
+    groupFooter: 'FILE\n}',
+    format: 'r a %prefix/%length via %gw',
     groupgw: true,
     gw: kDefaultGateway
   },
