@@ -3,8 +3,12 @@ var lib = require('./lib.js');
 var opts = lib.options;
 
 var kDefaultGateway = {
-  net: opts.netgw,
-  vpn: opts.vpngw
+  net: opts.netgw || '$netgw',
+  vpn: opts.vpngw || '$vpngw'
+};
+var kGroupName = {
+  net: opts.netgroupname || 'net',
+  vpn: opts.vpngroupname || 'vpn'
 };
 var kProfiles = {
   openvpn: {
@@ -48,7 +52,7 @@ var kProfiles = {
   },
   ppp_ip_up: {
     header: '#!/bin/sh',
-    groupHeader: '%gw() {\nip -b - <<FILE',
+    groupHeader: '%name() {\nip -b - <<FILE',
     groupFooter: 'FILE\n}',
     format: 'r a %prefix/%length via %gw',
     groupgw: true,
@@ -69,10 +73,11 @@ lib.getRulesFromInput(function(rules) {
 
   var header = opts.header || kProfile.header;
   var footer = opts.footer || kProfile.footer;
-  var groupHeader = opts.groupHeader || kProfile.groupHeader;
-  var groupFooter = opts.groupFooter || kProfile.groupFooter;
 
   if (kProfile.groupgw) {
+    var groupHeader = opts.groupheader || kProfile.groupHeader;
+    var groupFooter = opts.groupfooter || kProfile.groupFooter;
+    var groupGateways = kProfile.groupgw
     rules = rules.map(function(rule, index) {
       rule.index = index;
       return rule;
@@ -93,9 +98,13 @@ lib.getRulesFromInput(function(rules) {
   rules.forEach(function(rule) {
     if (kProfile.groupgw && prevGateway != rule.gw) {
       if (prevGateway && groupFooter)
-        console.log(groupFooter.format(rule, opts));
+        console.log(groupFooter.format({
+          name: kGroupName[prevGateway]
+        }, opts));
       if (rule.gw && groupHeader)
-        console.log(groupHeader.format(rule, opts));
+        console.log(groupHeader.format({
+          name: kGroupName[rule.gw]
+        }, opts));
       prevGateway = rule.gw;
     }
     if (rule.gw) {

@@ -1,6 +1,6 @@
 dnsmasq
 test
 wiki
-update.sh
+update*.sh
 report*
 lists*

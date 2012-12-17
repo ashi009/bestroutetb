@@ -217,10 +217,12 @@ Where
   * `--groupgw` group rules by gateway. Useful when you want rules to be outputed
     in two parts, say two functions for each interface. Default to `1` when
     `--profile=ppp_ip_up`, otherwise `0`.
-  * `--groupheader` header of each group. Note that, which could include `%gw` to
-    identify group, except `%gw` won"t be substituted with `--netgw` nor `--vpngw`.
-  * `--groupfooter` footer of each group. Note that, which could include `%gw` to
-    identify group, except `%gw` won"t be substituted with `--netgw` nor `--vpngw`.
+  * `--netgroupname` `%name` for `"gw": "net"` rules, when `--groupgw=1`.
+  * `--vpngroupname` `%name` for `"gw": "vpn"` rules, when `--groupgw=1`.
+  * `--groupheader` header of each group. Note that, which could include `%name` to
+    identify group.
+  * `--groupfooter` footer of each group. Note that, which could include `%name` to
+    identify group.
   * `arguments` a group of arguments to be used in `format` (eg. add `--var="value"` to
     `arugments`, then use `%var` for `value` in `--format`.)
 

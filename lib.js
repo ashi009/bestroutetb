@@ -53,14 +53,21 @@ $define(String.prototype, {
   }
 });
 
-var opts = {};
+var opts = {}, flags = {};
 for (var i = 0, argv = process.argv.slice(2); i < argv.length; i++) {
   if (argv[i].substr(0, 2) === '--') {
-    var parts = argv[i].substr(2).split('=');
-    if (parts.length > 1)
-      opts[parts[0]] = parts[1][0] === '"' ? parts[1].slice(1, -1) : parts[1];
-    else
-      opts[parts[0]] = argv[++i];
+    var index = argv[i].indexOf('=');
+    if (index > -1) {
+      var name = argv[i].substring(2, index);
+      var value = argv[i].substr(index + 1);
+    } else {
+      var name = argv[i].substr(2);
+      var value = argv[++i];
+    }
+    opts[name] = value;
+    var match = /(y|yes|true|1)|(n|no|false|0)/.exec(value);
+    if (match)
+      flags[name] = match[1] ? true : false;
   } else {
     opts._ = argv[i];
   }
@@ -315,7 +322,7 @@ function initiateTree(TreeNodeType) {
       prefix.color = kBlue;
     root.append(prefix);
   });
-  if (opts.nonap === undefined || !/^(false|no|0)$/i.test(opts.nonap))
+  if (flags.nonap === undefined || flags.nonap === false)
     getNonAPNICDelegation().forEach(function(prefix) {
       prefix.color = kBlue;
       root.append(prefix);
@@ -330,6 +337,7 @@ function initiateTree(TreeNodeType) {
 
 $define(exports, {
   options: opts,
+  flags: flags,
   Prefix: Prefix,
   RouteTable: RouteTable,
   TreeNode: TreeNode,
