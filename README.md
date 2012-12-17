@@ -45,7 +45,7 @@ the route table has only **50 directives**.
 
 On Linux system, which usese [TRASH][trash] structure to store
 routing table, a route lookup operation expected to access
-memory O(loglog*n*) times. Using *bestroutetb* over *chnroutes*,
+memory O(loglog_n_) times. Using *bestroutetb* over *chnroutes*,
 will reduce at least 0.01 accesses expectedly. (This is joking!
 But it does reduce the route table size in memory for 70% by
 assuming TRASH structure is using a very small overhead
