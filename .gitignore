@@ -4,3 +4,4 @@ wiki
 update*.sh
 report*
 lists*
+*.sublime*

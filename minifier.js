@@ -21,10 +21,11 @@ function dfs(root) {
   var operation = root.operation;
   var left = root.children[0];
   var right = root.children[1];
+  var i;
   if (left) dfs(left);
   if (right) dfs(right);
   if (left && right) {
-    for (var i = 0; i < 2; i++) {
+    for (i = 0; i < 2; i++) {
       if (count[i] > left.count[i] + right.count[i] - 1) {
         count[i] = left.count[i] + right.count[i] - 1;
         operation[i] = kPullBoth;
@@ -43,12 +44,12 @@ function dfs(root) {
       }
     }
   } else if (left) {
-    for (var i = 0; i < 2; i++) {
+    for (i = 0; i < 2; i++) {
       count[i] = left.count[i];
       operation[i] = kPullLeft;
     }
   } else if (right) {
-    for (var i = 0; i < 2; i++) {
+    for (i = 0; i < 2; i++) {
       count[i] = right.count[i];
       operation[i] = kPullRight;
     }
@@ -97,9 +98,9 @@ function dfsOutput(rules, root, lastColor, revertColor) {
   var left = root.children[0];
   var right = root.children[1];
   if (left)
-    dfsOutput(rules, left, color, (root.operation[color] & kPullLeft) == 0);
+    dfsOutput(rules, left, color, (root.operation[color] & kPullLeft) === 0);
   if (right)
-    dfsOutput(rules, right, color, (root.operation[color] & kPullRight) == 0);
+    dfsOutput(rules, right, color, (root.operation[color] & kPullRight) === 0);
 }
 
 var root = lib.initiateTree(TreeNode);

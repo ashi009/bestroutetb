@@ -1,6 +1,7 @@
 var fs = require('fs');
 var lib = require('./lib.js');
 var opts = lib.options;
+var flags = lib.flags;
 
 var kDefaultGateway = {
   net: opts.netgw || '$netgw',
@@ -60,7 +61,7 @@ var kProfiles = {
   },
   custom: {
     format: opts.format,
-    groupgw: !!opts.groupgw,
+    groupgw: flags.groupgw,
     gw: kDefaultGateway
   }
 };
@@ -109,7 +110,8 @@ lib.getRulesFromInput(function(rules) {
     }
     if (rule.gw) {
       rule.gw = kProfile.gw[rule.gw];
-      console.log(kProfile.format.format(rule, opts));
+      if (!(flags.nodefault && rule.prefix === '0.0.0.0' && rule.length === 0))
+        console.log(kProfile.format.format(rule, opts));
     }
   });
 

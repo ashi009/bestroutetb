@@ -7,7 +7,7 @@ function $define(object, prototype) {
   var setterGetterPattern = /^(set|get)([A-Z])(.*)/;
   var setterGetters = {};
   for (var key in prototype) {
-    var matches = setterGetterPattern.exec(key)
+    var matches = setterGetterPattern.exec(key);
     if (matches) {
       var name = matches[2].toLowerCase() + matches[3];
       if (!setterGetters.hasOwnProperty(name))
@@ -54,15 +54,18 @@ $define(String.prototype, {
 });
 
 var opts = {}, flags = {};
+(function() {
+
 for (var i = 0, argv = process.argv.slice(2); i < argv.length; i++) {
+  var name, value;
   if (argv[i].substr(0, 2) === '--') {
     var index = argv[i].indexOf('=');
     if (index > -1) {
-      var name = argv[i].substring(2, index);
-      var value = argv[i].substr(index + 1);
+      name = argv[i].substring(2, index);
+      value = argv[i].substr(index + 1);
     } else {
-      var name = argv[i].substr(2);
-      var value = argv[++i];
+      name = argv[i].substr(2);
+      value = argv[++i];
     }
     opts[name] = value;
     var match = /(y|yes|true|1)|(n|no|false|0)/.exec(value);
@@ -72,6 +75,8 @@ for (var i = 0, argv = process.argv.slice(2); i < argv.length; i++) {
     opts._ = argv[i];
   }
 }
+
+})();
 
 function toIPv4(v) {
   var parts = [];
@@ -230,7 +235,7 @@ function getAPNICDelegation() {
       .toString()
       .split('\n')
       .filter(function(v) {
-        return /^apnic\|[A-Z]{2}\|ipv4\|\d/.test(v);
+        return (/^apnic\|[A-Z]{2}\|ipv4\|\d/).test(v);
       }).map(function(v) {
         var desc = v.split('|');
         var mask = getMaskLength(~(parseInt(desc[4], 10) - 1));
@@ -245,10 +250,10 @@ function getNonAPNICDelegation() {
       .toString()
       .split('\n')
       .filter(function(line) {
-        return /^\s+\d{3}\/\d.+(?:ALLOCATED|LEGACY)/.test(line) && !/APNIC/.test(line);
+        return (/^\s+\d{3}\/\d.+(?:ALLOCATED|LEGACY)/).test(line) && !(/APNIC/).test(line);
       }).map(function(line) {
-        var match = /\s+(\d{3})\/(\d)\s+(.+)\d{4}-\d{2}.+(ALLOCATED|LEGACY)/.exec(line);
-        var prefix = new Prefix(match[1] + '.0.0.0', parseInt(match[2]));
+        var match = (/\s+(\d{3})\/(\d)\s+(.+)\d{4}-\d{2}.+(ALLOCATED|LEGACY)/).exec(line);
+        var prefix = new Prefix(match[1] + '.0.0.0', parseInt(match[2], 10));
         prefix.admin = match[3].trim();
         prefix.status = match[4].toLowerCase();
         return prefix;

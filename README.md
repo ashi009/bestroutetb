@@ -198,7 +198,9 @@ Outputs:
     node formatter.js [input] [--profile=PROFILE]
         [--header=HEADER] [--footer=FOOTER]
         [--format=FORMAT] [--netgw=NETGW] [--vpngw=VPNGW]
-        [--groupgw=GROUPGW] [--groupheader=GROUPHEADER] [--groupfooter=GROUPFOOTER]
+        [--nodefaultgw=1]
+        [--groupgw=GROUPGW]
+        [--groupheader=GROUPHEADER] [--groupfooter=GROUPFOOTER]
         [arguments]
 
 Where
@@ -214,6 +216,7 @@ Where
     `arguments`.
   * `--netgw` `%gw` for `"gw": "net"` rules, when *not* using `--profile=openvpn`.
   * `--vpngw` `%gw` for `"gw": "vpn"` rules, when *not* using `--profile=openvpn`.
+  * `--nodefaultgw` don't output directive for default route (0.0.0.0/0).
   * `--groupgw` group rules by gateway. Useful when you want rules to be outputed
     in two parts, say two functions for each interface. Default to `1` when
     `--profile=ppp_ip_up`, otherwise `0`.
@@ -246,14 +249,14 @@ Outputs:
 
 ### Analysing a rules file
 
-    node evaluator.js [input] [--verbose=1] [--default=DEFAULT]
+    node evaluator.js [input] [--verbose=1] [--defaultgw=DEFAULT]
 
 Where
 
   * `input` is the path to JSON format rule file, if omitted, `stdin` will be used.
   * `--verbose` when set will output the route result for every block.
     Default not set.
-  * `--default` is the default gateway for 0.0.0.0/0.
+  * `--defaultgw` is the gateway for 0.0.0.0/0.
 
 *Note that*, this script is not complete, as it only analysis the base
 IP of the block of each APNIC/nonAPNIC delegation. But some IPs in a

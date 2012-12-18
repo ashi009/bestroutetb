@@ -8,7 +8,7 @@ var countryNames = lib.getCountryNames();
 lib.getRulesFromInput(function(rules) {
 
   var routeTable = new RouteTable();
-  routeTable.add('0.0.0.0', 0, opts.default || 'default');
+  routeTable.add('0.0.0.0', 0, opts.defaultgw || 'default');
 
   rules.forEach(function(rule) {
     routeTable.add(rule.prefix, rule.length, rule.gw);
