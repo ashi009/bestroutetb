@@ -11,10 +11,6 @@ specified gateway (default or VPN).
 Generally speaking, the generated route table is at least
 70% smaller than chnroutes"s.
 
-*Any amount of donation is welcome!*
-
-<a href="http://www.pledgie.com/campaigns/18920"><img alt="Click here to lend your support to: bestroutetb and make a donation at www.pledgie.com !" src="http://www.pledgie.com/campaigns/18920.png?skin_name=chrome"></a>
-
 查看[使用说明][wiki]
 
 Objective

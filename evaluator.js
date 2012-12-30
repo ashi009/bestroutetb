@@ -2,6 +2,7 @@ var fs = require('fs');
 var lib = require('./lib.js');
 
 var opts = lib.options;
+var flags = lib.flags;
 var RouteTable = lib.RouteTable;
 var countryNames = lib.getCountryNames();
 
@@ -19,7 +20,7 @@ lib.getRulesFromInput(function(rules) {
 
   lib.getAPNICDelegation().forEach(function(prefix) {
     var gateway = routeTable.route(prefix.toIPv4());
-    if (opts.verbose) {
+    if (flags.verbose) {
       console.log("%s\t%s\t%d\t%s\t%s", prefix.toIPv4(),
           prefix.toMask(), prefix.size, prefix.country, gateway);
     }
@@ -42,7 +43,7 @@ lib.getRulesFromInput(function(rules) {
 
   lib.getNonAPNICDelegation().forEach(function(prefix) {
     var gateway = routeTable.route(prefix.toIPv4());
-    if (opts.verbose) {
+    if (flags.verbose) {
       console.log("%s\t%s\t%d\t%s\t%s", prefix.toIPv4(),
           prefix.toMask(), prefix.size, prefix.admin, gateway);
     }
