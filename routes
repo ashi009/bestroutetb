@@ -256,6 +256,9 @@ route 103.244.144.0 255.255.248.0 net_gateway
 route 103.244.160.0 255.255.224.0 net_gateway
 route 103.244.232.0 255.255.248.0 net_gateway
 route 103.244.240.0 255.255.240.0 net_gateway
+route 103.245.20.0 255.255.252.0 net_gateway
+route 103.245.48.0 255.255.248.0 net_gateway
+route 103.245.60.0 255.255.252.0 net_gateway
 route 103.246.0.0 255.255.224.0 net_gateway
 route 103.246.96.0 255.255.224.0 net_gateway
 route 103.246.128.0 255.255.240.0 net_gateway
