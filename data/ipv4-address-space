@@ -1,7 +1,7 @@
                                                            IANA IPv4 Address Space Registry
 
    Last Updated
-           2012-11-16
+           2013-02-06
 
    Description
 
@@ -280,25 +280,40 @@
         on a regional basis.
         ALLOCATED: delegated entirely to specific RIR as indicated.
         UNALLOCATED: not yet allocated or reserved.
-   [2]  0.0.0.0/8 reserved for self-identification [RFC5735]
-   [3]  Reserved for Private-Use Networks [RFC1918]
-   [4]  This was reserved for Public Data Networks [RFC1356]
-        See: http://www.iana.org/assignments/public-data-network-numbers
-        It was recovered in February 2008 and was subsequently allocated to APNIC in April 2010
-   [5]  100.64.0.0/10 is reserved for Shared Address Space [RFC6598]
-   [6]  127.0.0.0/8 is reserved for Loopback [RFC5735]
-   [7]  169.254.0.0/16 reserved for Link Local [RFC5735]
-   [8]  172.16.0.0/12 reserved for Private-Use Networks [RFC1918]
-   [9]  192.0.2.0/24  reserved for TEST-NET-1 [RFC5737]
+   [2]  0.0.0.0/8 reserved for self-identification [RFC5735].
+        Reserved by protocol. For authoritative registration, see [IANA registry iana-ipv4-special-registry].
+   [3]  Reserved for Private-Use Networks [RFC1918].
+        Complete registration details for 10.0.0.0/8 are found in [IANA registry iana-ipv4-special-registry].
+   [4]  This was reserved for Public Data Networks [RFC1356]. See [IANA registry public-data-network-numbers].
+        It was recovered in February 2008 and was subsequently allocated to APNIC in April 2010.
+   [5]  100.64.0.0/10 reserved for Shared Address Space [RFC6598].
+        Complete registration details for 100.64.0.0/10 are found in [IANA registry iana-ipv4-special-registry].
+   [6]  127.0.0.0/8 reserved for Loopback [RFC5735].
+        Reserved by protocol. For authoritative registration, see [IANA registry iana-ipv4-special-registry].
+   [7]  169.254.0.0/16 reserved for Link Local [RFC5735].
+        Reserved by protocol. For authoritative registration, see [IANA registry iana-ipv4-special-registry].
+   [8]  172.16.0.0/12 reserved for Private-Use Networks [RFC1918].
+        Complete registration details are found in [IANA registry iana-ipv4-special-registry].
+   [9]  192.0.2.0/24  reserved for TEST-NET-1 [RFC5737].
+        Complete registration details for 192.0.2.0/24 are found in [IANA registry iana-ipv4-special-registry].
         192.88.99.0/24 reserved for 6to4 Relay Anycast [RFC3068]
-        192.88.99.2/32 reserved for 6a44 Relay Anycast [RFC6751] (possibly collocated with 6to4 Relay at 192.88.99.1/32 - [3068] section 2.4)
-        192.168.0.0/16 reserved for Private-Use Networks [RFC1918]
-   [10] 192.0.0.0/24 reserved for IANA IPv4 Special Purpose Address Registry [RFC5736]
-   [11] 198.18.0.0/15 reserved for Network Interconnect Device Benchmark Testing [RFC5735]
-        198.51.100.0/24 reserved for TEST-NET-2 [RFC5737]
-   [12] 203.0.113.0/24 reserved for TEST-NET-3 [RFC5737]
-   [13] Multicast (formerly "Class D") [RFC5771] registed in http://www.iana.org/assignments/multicast-addresses
+        Complete registration details for 192.88.99.0/24 are found in [IANA registry iana-ipv4-special-registry].
+        192.88.99.2/32 reserved for 6a44 Relay Anycast [RFC6751] (possibly collocated with 6to4 Relay
+        at 192.88.99.1/32 - see [RFC3068] section 2.4)
+        192.168.0.0/16 reserved for Private-Use Networks [RFC1918].
+        Complete registration details for 192.168.0.0/16 are found in [IANA registry iana-ipv4-special-registry].
+   [10] 192.0.0.0/24 reserved for IANA IPv4 Special Purpose Address Registry [RFC5736].
+        Complete registration details for 192.0.0.0/24 are found in [IANA registry iana-ipv4-special-registry].
+   [11] 198.18.0.0/15 reserved for Network Interconnect Device Benchmark Testing [RFC5735].
+        Complete registration details for 198.18.0.0/15 are found in [IANA registry iana-ipv4-special-registry].
+        198.51.100.0/24 reserved for TEST-NET-2 [RFC5737].
+        Complete registration details for 198.51.100.0/24 are found in [IANA registry iana-ipv4-special-registry].
+   [12] 203.0.113.0/24 reserved for TEST-NET-3 [RFC5737].
+        Complete registration details for 203.0.113.0/24 are found in [IANA registry iana-ipv4-special-registry].
+   [13] Multicast (formerly "Class D") [RFC5771] registered in [IANA registry multicast-addresses]
    [14] Unicast-Prefix-Based IPv4 Multicast Addresses [RFC6034]
    [15] Administratively Scoped IP Multicast [RFC2365]
-   [16] Reserved for future use (formerly "Class E") [RFC1112]
-   [17] 255.255.255.255 is reserved for "limited broadcast" destination address [RFC0919] and [RFC0922]
+   [16] Reserved for future use (formerly "Class E") [RFC1112].
+        Reserved by protocol. For authoritative registration, see [IANA registry iana-ipv4-special-registry].
+   [17] 255.255.255.255 is reserved for "limited broadcast" destination address [RFC919] and [RFC922].
+        Complete registration details for 255.255.255.255/32 are found in [IANA registry iana-ipv4-special-registry].
