@@ -1,7 +1,7 @@
                                                            IANA IPv4 Address Space Registry
 
    Last Updated
-           2013-03-07
+           2013-03-22
 
    Description
 
@@ -67,7 +67,7 @@
    051/8  UK Government Department for Work and Pensions 1994-08  whois.ripe.net     LEGACY
    052/8  E.I. duPont de Nemours and Co., Inc.           1991-12                     LEGACY
    053/8  Cap Debis CCS                                  1993-10                     LEGACY
-   054/8  Merck and Co., Inc.                            1992-03                     LEGACY
+   054/8  Administered by ARIN                           1992-03  whois.arin.net     LEGACY
    055/8  DoD Network Information Center                 1995-04                     LEGACY
    056/8  US Postal Service                              1994-06                     LEGACY
    057/8  SITA                                           1995-05                     LEGACY
