@@ -10,9 +10,9 @@ cd $root
 
 [ -e data/delegated-apnic-latest ] || \
   wget -O data/delegated-apnic-latest http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest
-
-[ -e data/ipv4-address-space ] || \
-  wget -O data/ipv4-address-space http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.txt
+  
+[ -e data/delegated-arin-latest ] || \
+  wget -O data/delegated-arin-latest http://ftp.arin.net/pub/stats/arin/delegated-arin-latest
 
 [ $routes ] && {
   node minifier.js "$@" | tee rules.json | node formatter.js "$@" > $workingpath/$routes
