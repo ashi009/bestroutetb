@@ -1,0 +1,319 @@
+                                                           IANA IPv4 Address Space Registry
+
+   Last Updated
+           2013-03-22
+
+   Description
+
+ The allocation of Internet Protocol version 4 (IPv4) address space to various registries is listed
+ here. Originally, all the IPv4 address spaces was managed directly by the IANA. Later parts of the
+ address space were allocated to various other registries to manage for particular purposes or
+ regional areas of the world. RFC 1466 [RFC1466] documents most of these allocations.
+
+   This registry is also available in plain text.
+
+   Prefix                  Designation                    Date         Whois       Status [1]   Note
+   000/8  IANA - Local Identification                    1981-09                    RESERVED    [2]
+   001/8  APNIC                                          2010-01  whois.apnic.net  ALLOCATED
+   002/8  RIPE NCC                                       2009-09  whois.ripe.net   ALLOCATED
+   003/8  General Electric Company                       1994-05                     LEGACY
+   004/8  Level 3 Communications, Inc.                   1992-12                     LEGACY
+   005/8  RIPE NCC                                       2010-11  whois.ripe.net   ALLOCATED
+   006/8  Army Information Systems Center                1994-02                     LEGACY
+   007/8  Administered by ARIN                           1995-04  whois.arin.net     LEGACY
+   008/8  Level 3 Communications, Inc.                   1992-12                     LEGACY
+   009/8  IBM                                            1992-08                     LEGACY
+   010/8  IANA - Private Use                             1995-06                    RESERVED    [3]
+   011/8  DoD Intel Information Systems                  1993-05                     LEGACY
+   012/8  AT&T Bell Laboratories                         1995-06                     LEGACY
+   013/8  Xerox Corporation                              1991-09                     LEGACY
+   014/8  APNIC                                          2010-04  whois.apnic.net  ALLOCATED    [4]
+   015/8  Hewlett-Packard Company                        1994-07                     LEGACY
+   016/8  Digital Equipment Corporation                  1994-11                     LEGACY
+   017/8  Apple Computer Inc.                            1992-07                     LEGACY
+   018/8  MIT                                            1994-01                     LEGACY
+   019/8  Ford Motor Company                             1995-05                     LEGACY
+   020/8  Computer Sciences Corporation                  1994-10                     LEGACY
+   021/8  DDN-RVN                                        1991-07                     LEGACY
+   022/8  Defense Information Systems Agency             1993-05                     LEGACY
+   023/8  ARIN                                           2010-11  whois.arin.net   ALLOCATED
+   024/8  ARIN                                           2001-05  whois.arin.net   ALLOCATED
+   025/8  UK Ministry of Defence                         1995-01  whois.ripe.net     LEGACY
+   026/8  Defense Information Systems Agency             1995-05                     LEGACY
+   027/8  APNIC                                          2010-01  whois.apnic.net  ALLOCATED
+   028/8  DSI-North                                      1992-07                     LEGACY
+   029/8  Defense Information Systems Agency             1991-07                     LEGACY
+   030/8  Defense Information Systems Agency             1991-07                     LEGACY
+   031/8  RIPE NCC                                       2010-05  whois.ripe.net   ALLOCATED
+   032/8  AT&T Global Network Services                   1994-06                     LEGACY
+   033/8  DLA Systems Automation Center                  1991-01                     LEGACY
+   034/8  Halliburton Company                            1993-03                     LEGACY
+   035/8  Administered by ARIN                           1994-04  whois.arin.net     LEGACY
+   036/8  APNIC                                          2010-10  whois.apnic.net  ALLOCATED
+   037/8  RIPE NCC                                       2010-11  whois.ripe.net   ALLOCATED
+   038/8  PSINet, Inc.                                   1994-09                     LEGACY
+   039/8  APNIC                                          2011-01  whois.apnic.net  ALLOCATED
+   040/8  Administered by ARIN                           1994-06  whois.arin.net     LEGACY
+   041/8  AFRINIC                                        2005-04 whois.afrinic.net ALLOCATED
+   042/8  APNIC                                          2010-10  whois.apnic.net  ALLOCATED
+   043/8  Administered by APNIC                          1991-01  whois.apnic.net    LEGACY
+   044/8  Amateur Radio Digital Communications           1992-07                     LEGACY
+   045/8  Administered by ARIN                           1995-01  whois.arin.net     LEGACY
+   046/8  RIPE NCC                                       2009-09  whois.ripe.net   ALLOCATED
+   047/8  Administered by ARIN                           1991-01  whois.arin.net     LEGACY
+   048/8  Prudential Securities Inc.                     1995-05                     LEGACY
+   049/8  APNIC                                          2010-08  whois.apnic.net  ALLOCATED
+   050/8  ARIN                                           2010-02  whois.arin.net   ALLOCATED
+   051/8  UK Government Department for Work and Pensions 1994-08  whois.ripe.net     LEGACY
+   052/8  E.I. duPont de Nemours and Co., Inc.           1991-12                     LEGACY
+   053/8  Cap Debis CCS                                  1993-10                     LEGACY
+   054/8  Administered by ARIN                           1992-03  whois.arin.net     LEGACY
+   055/8  DoD Network Information Center                 1995-04                     LEGACY
+   056/8  US Postal Service                              1994-06                     LEGACY
+   057/8  SITA                                           1995-05                     LEGACY
+   058/8  APNIC                                          2004-04  whois.apnic.net  ALLOCATED
+   059/8  APNIC                                          2004-04  whois.apnic.net  ALLOCATED
+   060/8  APNIC                                          2003-04  whois.apnic.net  ALLOCATED
+   061/8  APNIC                                          1997-04  whois.apnic.net  ALLOCATED
+   062/8  RIPE NCC                                       1997-04  whois.ripe.net   ALLOCATED
+   063/8  ARIN                                           1997-04  whois.arin.net   ALLOCATED
+   064/8  ARIN                                           1999-07  whois.arin.net   ALLOCATED
+   065/8  ARIN                                           2000-07  whois.arin.net   ALLOCATED
+   066/8  ARIN                                           2000-07  whois.arin.net   ALLOCATED
+   067/8  ARIN                                           2001-05  whois.arin.net   ALLOCATED
+   068/8  ARIN                                           2001-06  whois.arin.net   ALLOCATED
+   069/8  ARIN                                           2002-08  whois.arin.net   ALLOCATED
+   070/8  ARIN                                           2004-01  whois.arin.net   ALLOCATED
+   071/8  ARIN                                           2004-08  whois.arin.net   ALLOCATED
+   072/8  ARIN                                           2004-08  whois.arin.net   ALLOCATED
+   073/8  ARIN                                           2005-03  whois.arin.net   ALLOCATED
+   074/8  ARIN                                           2005-06  whois.arin.net   ALLOCATED
+   075/8  ARIN                                           2005-06  whois.arin.net   ALLOCATED
+   076/8  ARIN                                           2005-06  whois.arin.net   ALLOCATED
+   077/8  RIPE NCC                                       2006-08  whois.ripe.net   ALLOCATED
+   078/8  RIPE NCC                                       2006-08  whois.ripe.net   ALLOCATED
+   079/8  RIPE NCC                                       2006-08  whois.ripe.net   ALLOCATED
+   080/8  RIPE NCC                                       2001-04  whois.ripe.net   ALLOCATED
+   081/8  RIPE NCC                                       2001-04  whois.ripe.net   ALLOCATED
+   082/8  RIPE NCC                                       2002-11  whois.ripe.net   ALLOCATED
+   083/8  RIPE NCC                                       2003-11  whois.ripe.net   ALLOCATED
+   084/8  RIPE NCC                                       2003-11  whois.ripe.net   ALLOCATED
+   085/8  RIPE NCC                                       2004-04  whois.ripe.net   ALLOCATED
+   086/8  RIPE NCC                                       2004-04  whois.ripe.net   ALLOCATED
+   087/8  RIPE NCC                                       2004-04  whois.ripe.net   ALLOCATED
+   088/8  RIPE NCC                                       2004-04  whois.ripe.net   ALLOCATED
+   089/8  RIPE NCC                                       2005-06  whois.ripe.net   ALLOCATED
+   090/8  RIPE NCC                                       2005-06  whois.ripe.net   ALLOCATED
+   091/8  RIPE NCC                                       2005-06  whois.ripe.net   ALLOCATED
+   092/8  RIPE NCC                                       2007-03  whois.ripe.net   ALLOCATED
+   093/8  RIPE NCC                                       2007-03  whois.ripe.net   ALLOCATED
+   094/8  RIPE NCC                                       2007-07  whois.ripe.net   ALLOCATED
+   095/8  RIPE NCC                                       2007-07  whois.ripe.net   ALLOCATED
+   096/8  ARIN                                           2006-10  whois.arin.net   ALLOCATED
+   097/8  ARIN                                           2006-10  whois.arin.net   ALLOCATED
+   098/8  ARIN                                           2006-10  whois.arin.net   ALLOCATED
+   099/8  ARIN                                           2006-10  whois.arin.net   ALLOCATED
+   100/8  ARIN                                           2010-11  whois.arin.net   ALLOCATED    [5]
+   101/8  APNIC                                          2010-08  whois.apnic.net  ALLOCATED
+   102/8  AFRINIC                                        2011-02 whois.afrinic.net ALLOCATED
+   103/8  APNIC                                          2011-02  whois.apnic.net  ALLOCATED
+   104/8  ARIN                                           2011-02  whois.arin.net   ALLOCATED
+   105/8  AFRINIC                                        2010-11 whois.afrinic.net ALLOCATED
+   106/8  APNIC                                          2011-01  whois.apnic.net  ALLOCATED
+   107/8  ARIN                                           2010-02  whois.arin.net   ALLOCATED
+   108/8  ARIN                                           2008-12  whois.arin.net   ALLOCATED
+   109/8  RIPE NCC                                       2009-01  whois.ripe.net   ALLOCATED
+   110/8  APNIC                                          2008-11  whois.apnic.net  ALLOCATED
+   111/8  APNIC                                          2008-11  whois.apnic.net  ALLOCATED
+   112/8  APNIC                                          2008-05  whois.apnic.net  ALLOCATED
+   113/8  APNIC                                          2008-05  whois.apnic.net  ALLOCATED
+   114/8  APNIC                                          2007-10  whois.apnic.net  ALLOCATED
+   115/8  APNIC                                          2007-10  whois.apnic.net  ALLOCATED
+   116/8  APNIC                                          2007-01  whois.apnic.net  ALLOCATED
+   117/8  APNIC                                          2007-01  whois.apnic.net  ALLOCATED
+   118/8  APNIC                                          2007-01  whois.apnic.net  ALLOCATED
+   119/8  APNIC                                          2007-01  whois.apnic.net  ALLOCATED
+   120/8  APNIC                                          2007-01  whois.apnic.net  ALLOCATED
+   121/8  APNIC                                          2006-01  whois.apnic.net  ALLOCATED
+   122/8  APNIC                                          2006-01  whois.apnic.net  ALLOCATED
+   123/8  APNIC                                          2006-01  whois.apnic.net  ALLOCATED
+   124/8  APNIC                                          2005-01  whois.apnic.net  ALLOCATED
+   125/8  APNIC                                          2005-01  whois.apnic.net  ALLOCATED
+   126/8  APNIC                                          2005-01  whois.apnic.net  ALLOCATED
+   127/8  IANA - Loopback                                1981-09                    RESERVED    [6]
+   128/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   129/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   130/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   131/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   132/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   133/8  Administered by APNIC                          1997-03  whois.apnic.net    LEGACY
+   134/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   135/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   136/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   137/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   138/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   139/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   140/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   141/8  Administered by RIPE NCC                       1993-05  whois.ripe.net     LEGACY
+   142/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   143/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   144/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   145/8  Administered by RIPE NCC                       1993-05  whois.ripe.net     LEGACY
+   146/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   147/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   148/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   149/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   150/8  Administered by APNIC                          1993-05  whois.apnic.net    LEGACY
+   151/8  Administered by RIPE NCC                       1993-05  whois.ripe.net     LEGACY
+   152/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   153/8  Administered by APNIC                          1993-05  whois.apnic.net    LEGACY
+   154/8  Administered by AFRINIC                        1993-05 whois.afrinic.net   LEGACY
+   155/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   156/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   157/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   158/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   159/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   160/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   161/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   162/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   163/8  Administered by APNIC                          1993-05  whois.apnic.net    LEGACY
+   164/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   165/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   166/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   167/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   168/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   169/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY     [7]
+   170/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY
+   171/8  Administered by APNIC                          1993-05  whois.apnic.net    LEGACY
+   172/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY     [8]
+   173/8  ARIN                                           2008-02  whois.arin.net   ALLOCATED
+   174/8  ARIN                                           2008-02  whois.arin.net   ALLOCATED
+   175/8  APNIC                                          2009-08  whois.apnic.net  ALLOCATED
+   176/8  RIPE NCC                                       2010-05  whois.ripe.net   ALLOCATED
+   177/8  LACNIC                                         2010-06 whois.lacnic.net  ALLOCATED
+   178/8  RIPE NCC                                       2009-01  whois.ripe.net   ALLOCATED
+   179/8  LACNIC                                         2011-02 whois.lacnic.net  ALLOCATED
+   180/8  APNIC                                          2009-04  whois.apnic.net  ALLOCATED
+   181/8  LACNIC                                         2010-06 whois.lacnic.net  ALLOCATED
+   182/8  APNIC                                          2009-08  whois.apnic.net  ALLOCATED
+   183/8  APNIC                                          2009-04  whois.apnic.net  ALLOCATED
+   184/8  ARIN                                           2008-12  whois.arin.net   ALLOCATED
+   185/8  RIPE NCC                                       2011-02  whois.ripe.net   ALLOCATED
+   186/8  LACNIC                                         2007-09 whois.lacnic.net  ALLOCATED
+   187/8  LACNIC                                         2007-09 whois.lacnic.net  ALLOCATED
+   188/8  Administered by RIPE NCC                       1993-05  whois.ripe.net     LEGACY
+   189/8  LACNIC                                         1995-06 whois.lacnic.net  ALLOCATED
+   190/8  LACNIC                                         1995-06 whois.lacnic.net  ALLOCATED
+   191/8  Administered by LACNIC                         1993-05 whois.lacnic.net    LEGACY
+   192/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY   [9][10]
+   193/8  RIPE NCC                                       1993-05  whois.ripe.net   ALLOCATED
+   194/8  RIPE NCC                                       1993-05  whois.ripe.net   ALLOCATED
+   195/8  RIPE NCC                                       1993-05  whois.ripe.net   ALLOCATED
+   196/8  Administered by AFRINIC                        1993-05 whois.afrinic.net   LEGACY
+   197/8  AFRINIC                                        2008-10 whois.afrinic.net ALLOCATED
+   198/8  Administered by ARIN                           1993-05  whois.arin.net     LEGACY     [11]
+   199/8  ARIN                                           1993-05  whois.arin.net   ALLOCATED
+   200/8  LACNIC                                         2002-11 whois.lacnic.net  ALLOCATED
+   201/8  LACNIC                                         2003-04 whois.lacnic.net  ALLOCATED
+   202/8  APNIC                                          1993-05  whois.apnic.net  ALLOCATED
+   203/8  APNIC                                          1993-05  whois.apnic.net  ALLOCATED    [12]
+   204/8  ARIN                                           1994-03  whois.arin.net   ALLOCATED
+   205/8  ARIN                                           1994-03  whois.arin.net   ALLOCATED
+   206/8  ARIN                                           1995-04  whois.arin.net   ALLOCATED
+   207/8  ARIN                                           1995-11  whois.arin.net   ALLOCATED
+   208/8  ARIN                                           1996-04  whois.arin.net   ALLOCATED
+   209/8  ARIN                                           1996-06  whois.arin.net   ALLOCATED
+   210/8  APNIC                                          1996-06  whois.apnic.net  ALLOCATED
+   211/8  APNIC                                          1996-06  whois.apnic.net  ALLOCATED
+   212/8  RIPE NCC                                       1997-10  whois.ripe.net   ALLOCATED
+   213/8  RIPE NCC                                       1993-10  whois.ripe.net   ALLOCATED
+   214/8  US-DOD                                         1998-03                     LEGACY
+   215/8  US-DOD                                         1998-03                     LEGACY
+   216/8  ARIN                                           1998-04  whois.arin.net   ALLOCATED
+   217/8  RIPE NCC                                       2000-06  whois.ripe.net   ALLOCATED
+   218/8  APNIC                                          2000-12  whois.apnic.net  ALLOCATED
+   219/8  APNIC                                          2001-09  whois.apnic.net  ALLOCATED
+   220/8  APNIC                                          2001-12  whois.apnic.net  ALLOCATED
+   221/8  APNIC                                          2002-07  whois.apnic.net  ALLOCATED
+   222/8  APNIC                                          2003-02  whois.apnic.net  ALLOCATED
+   223/8  APNIC                                          2010-04  whois.apnic.net  ALLOCATED
+   224/8  Multicast                                      1981-09                    RESERVED    [13]
+   225/8  Multicast                                      1981-09                    RESERVED    [13]
+   226/8  Multicast                                      1981-09                    RESERVED    [13]
+   227/8  Multicast                                      1981-09                    RESERVED    [13]
+   228/8  Multicast                                      1981-09                    RESERVED    [13]
+   229/8  Multicast                                      1981-09                    RESERVED    [13]
+   230/8  Multicast                                      1981-09                    RESERVED    [13]
+   231/8  Multicast                                      1981-09                    RESERVED    [13]
+   232/8  Multicast                                      1981-09                    RESERVED    [13]
+   233/8  Multicast                                      1981-09                    RESERVED    [13]
+   234/8  Multicast                                      1981-09                    RESERVED  [13][14]
+   235/8  Multicast                                      1981-09                    RESERVED    [13]
+   236/8  Multicast                                      1981-09                    RESERVED    [13]
+   237/8  Multicast                                      1981-09                    RESERVED    [13]
+   238/8  Multicast                                      1981-09                    RESERVED    [13]
+   239/8  Multicast                                      1981-09                    RESERVED  [13][15]
+   240/8  Future use                                     1981-09                    RESERVED    [16]
+   241/8  Future use                                     1981-09                    RESERVED    [16]
+   242/8  Future use                                     1981-09                    RESERVED    [16]
+   243/8  Future use                                     1981-09                    RESERVED    [16]
+   244/8  Future use                                     1981-09                    RESERVED    [16]
+   245/8  Future use                                     1981-09                    RESERVED    [16]
+   246/8  Future use                                     1981-09                    RESERVED    [16]
+   247/8  Future use                                     1981-09                    RESERVED    [16]
+   248/8  Future use                                     1981-09                    RESERVED    [16]
+   249/8  Future use                                     1981-09                    RESERVED    [16]
+   250/8  Future use                                     1981-09                    RESERVED    [16]
+   251/8  Future use                                     1981-09                    RESERVED    [16]
+   252/8  Future use                                     1981-09                    RESERVED    [16]
+   253/8  Future use                                     1981-09                    RESERVED    [16]
+   254/8  Future use                                     1981-09                    RESERVED    [16]
+   255/8  Future use                                     1981-09                    RESERVED  [16][17]
+
+                                                                      Footnotes
+
+   [1]  Indicates the status of address blocks as follows:
+        RESERVED: designated by the IETF for specific non-global-unicast purposes as noted.
+        LEGACY: allocated by the central Internet Registry (IR) prior to the Regional Internet Registries
+        (RIRs). This address space is now administered by individual RIRs as noted, including maintenance
+        of WHOIS Directory and reverse DNS records. Assignments from these blocks are distributed globally
+        on a regional basis.
+        ALLOCATED: delegated entirely to specific RIR as indicated.
+        UNALLOCATED: not yet allocated or reserved.
+   [2]  0.0.0.0/8 reserved for self-identification [RFC1122], section 3.2.1.3.
+        Reserved by protocol. For authoritative registration, see [IANA registry iana-ipv4-special-registry].
+   [3]  Reserved for Private-Use Networks [RFC1918].
+        Complete registration details for 10.0.0.0/8 are found in [IANA registry iana-ipv4-special-registry].
+   [4]  This was reserved for Public Data Networks [RFC1356]. See [IANA registry public-data-network-numbers].
+        It was recovered in February 2008 and was subsequently allocated to APNIC in April 2010.
+   [5]  100.64.0.0/10 reserved for Shared Address Space [RFC6598].
+        Complete registration details for 100.64.0.0/10 are found in [IANA registry iana-ipv4-special-registry].
+   [6]  127.0.0.0/8 reserved for Loopback [RFC1122], section 3.2.1.3.
+        Reserved by protocol. For authoritative registration, see [IANA registry iana-ipv4-special-registry].
+   [7]  169.254.0.0/16 reserved for Link Local [RFC3927].
+        Reserved by protocol. For authoritative registration, see [IANA registry iana-ipv4-special-registry].
+   [8]  172.16.0.0/12 reserved for Private-Use Networks [RFC1918].
+        Complete registration details are found in [IANA registry iana-ipv4-special-registry].
+   [9]  192.0.2.0/24  reserved for TEST-NET-1 [RFC5737].
+        Complete registration details for 192.0.2.0/24 are found in [IANA registry iana-ipv4-special-registry].
+        192.88.99.0/24 reserved for 6to4 Relay Anycast [RFC3068]
+        Complete registration details for 192.88.99.0/24 are found in [IANA registry iana-ipv4-special-registry].
+        192.88.99.2/32 reserved for 6a44 Relay Anycast [RFC6751] (possibly collocated with 6to4 Relay
+        at 192.88.99.1/32 - see [RFC3068] section 2.4)
+        192.168.0.0/16 reserved for Private-Use Networks [RFC1918].
+        Complete registration details for 192.168.0.0/16 are found in [IANA registry iana-ipv4-special-registry].
+   [10] 192.0.0.0/24 reserved for IANA IPv4 Special Purpose Address Registry [RFC5736].
+        Complete registration details for 192.0.0.0/24 are found in [IANA registry iana-ipv4-special-registry].
+   [11] 198.18.0.0/15 reserved for Network Interconnect Device Benchmark Testing [RFC2544].
+        Complete registration details for 198.18.0.0/15 are found in [IANA registry iana-ipv4-special-registry].
+        198.51.100.0/24 reserved for TEST-NET-2 [RFC5737].
+        Complete registration details for 198.51.100.0/24 are found in [IANA registry iana-ipv4-special-registry].
+   [12] 203.0.113.0/24 reserved for TEST-NET-3 [RFC5737].
+        Complete registration details for 203.0.113.0/24 are found in [IANA registry iana-ipv4-special-registry].
+   [13] Multicast (formerly "Class D") [RFC5771] registered in [IANA registry multicast-addresses]
+   [14] Unicast-Prefix-Based IPv4 Multicast Addresses [RFC6034]
+   [15] Administratively Scoped IP Multicast [RFC2365]
+   [16] Reserved for future use (formerly "Class E") [RFC1112].
+        Reserved by protocol. For authoritative registration, see [IANA registry iana-ipv4-special-registry].
+   [17] 255.255.255.255 is reserved for "limited broadcast" destination address [RFC919] and [RFC922].
+        Complete registration details for 255.255.255.255/32 are found in [IANA registry iana-ipv4-special-registry].
