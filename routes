@@ -52,7 +52,7 @@ route 27.146.0.0 255.254.0.0 vpn_gateway
 route 27.160.0.0 255.224.0.0 net_gateway
 route 27.192.0.0 255.224.0.0 net_gateway
 route 27.224.0.0 255.252.0.0 net_gateway
-route 36.0.0.0 254.0.0.0 net_gateway
+route 36.0.0.0 255.0.0.0 net_gateway
 route 36.2.0.0 255.254.0.0 vpn_gateway
 route 36.8.0.0 255.248.0.0 vpn_gateway
 route 36.37.32.0 255.255.252.0 vpn_gateway

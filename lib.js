@@ -230,7 +230,7 @@ function getRulesFromInput(callback) {
   }
 }
 
-function getDelegation(region) {
+function getRegionalDelegation(region) {
   return fs.readFileSync(kRootPath + '/data/delegated-' + region + '-latest')
       .toString()
       .split('\n')
@@ -241,6 +241,21 @@ function getDelegation(region) {
         var mask = getMaskLength(~(parseInt(desc[4], 10) - 1));
         var prefix = new Prefix(desc[3], mask);
         prefix.country = desc[1];
+        return prefix;
+      });
+}
+
+function getNonAPNICDelegation() {
+  return fs.readFileSync(kRootPath + '/data/ipv4-address-space')
+      .toString()
+      .split('\n')
+      .filter(function(line) {
+        return (/^\s+\d{3}\/\d.+(?:ALLOCATED|LEGACY)/).test(line) && !(/APNIC/).test(line);
+      }).map(function(line) {
+        var match = (/\s+(\d{3})\/(\d)\s+(.+)\d{4}-\d{2}.+(ALLOCATED|LEGACY)/).exec(line);
+        var prefix = new Prefix(match[1] + '.0.0.0', parseInt(match[2], 10));
+        prefix.admin = match[3].trim();
+        prefix.status = match[4].toLowerCase();
         return prefix;
       });
 }
@@ -305,14 +320,20 @@ function initiateTree(TreeNodeType) {
   parseSpecs(opts.vpn || 'US,GB,JP,HK', kBlue, true);
 
   var root = new TreeNodeType();
-  [].concat(getDelegation('apnic')).concat(getDelegation('arin'))
+  [].concat(getRegionalDelegation('apnic'))
+      .concat(getRegionalDelegation('arin'))
       .forEach(function(prefix) {
-    if (countryColls[kRed].hasOwnProperty(prefix.country))
-      prefix.color = kRed;
-    else if (countryColls[kBlue].hasOwnProperty(prefix.country))
+        if (countryColls[kRed].hasOwnProperty(prefix.country))
+          prefix.color = kRed;
+        else if (countryColls[kBlue].hasOwnProperty(prefix.country))
+          prefix.color = kBlue;
+        root.append(prefix);
+      });
+  if (flags.nonap === undefined || flags.nonap === false)
+    getNonAPNICDelegation().forEach(function(prefix) {
       prefix.color = kBlue;
-    root.append(prefix);
-  });
+      root.append(prefix);
+    });
   prefixColl.forEach(function(prefix) {
     root.append(prefix);
   });
@@ -331,7 +352,8 @@ $define(exports, {
   parseIPv4: parseIPv4,
   getMaskLength: getMaskLength,
   getRulesFromInput: getRulesFromInput,
-  getDelegation: getDelegation,
+  getRegionalDelegation: getRegionalDelegation,
+  getNonAPNICDelegation: getNonAPNICDelegation,
   getCountryNames: getCountryNames,
   initiateTree: initiateTree
 });

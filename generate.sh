@@ -14,6 +14,9 @@ cd $root
 [ -e data/delegated-arin-latest ] || \
   wget -O data/delegated-arin-latest http://ftp.arin.net/pub/stats/arin/delegated-arin-latest
 
+[ -e data/ipv4-address-space ] || \
+  wget -O data/ipv4-address-space http://www.iana.org/assignments/ipv4-address-space/ipv4-address-space.txt
+
 [ $routes ] && {
   node minifier.js "$@" | tee rules.json | node formatter.js "$@" > $workingpath/$routes
   node evaluator.js rules.json
