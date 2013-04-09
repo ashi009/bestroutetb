@@ -313,7 +313,7 @@ function initiateTree(TreeNodeType) {
     root.append(prefix);
   });
   // if (flags.nonap === undefined || flags.nonap === false)
-  //   getNonAPNICDelegation().forEach(function(prefix) {
+  //   getNon338CDelegation().forEach(function(prefix) {
   //     prefix.color = kBlue;
   //     root.append(prefix);
   //   });
@@ -335,8 +335,7 @@ $define(exports, {
   parseIPv4: parseIPv4,
   getMaskLength: getMaskLength,
   getRulesFromInput: getRulesFromInput,
-  getAPNICDelegation: getAPNICDelegation,
-  getNonAPNICDelegation: getNonAPNICDelegation,
+  getDelegation: getDelegation,
   getCountryNames: getCountryNames,
   initiateTree: initiateTree
 });
