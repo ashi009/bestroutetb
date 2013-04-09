@@ -313,11 +313,6 @@ function initiateTree(TreeNodeType) {
       prefix.color = kBlue;
     root.append(prefix);
   });
-  // if (flags.nonap === undefined || flags.nonap === false)
-  //   getNon338CDelegation().forEach(function(prefix) {
-  //     prefix.color = kBlue;
-  //     root.append(prefix);
-  //   });
   prefixColl.forEach(function(prefix) {
     root.append(prefix);
   });
