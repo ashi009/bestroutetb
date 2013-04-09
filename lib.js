@@ -305,7 +305,8 @@ function initiateTree(TreeNodeType) {
   parseSpecs(opts.vpn || 'US,GB,JP,HK', kBlue, true);
 
   var root = new TreeNodeType();
-  [].concat(getDelegation('apnic')).concat(getDelegation('arin')).forEach(function(prefix) {
+  [].concat(getDelegation('apnic')).concat(getDelegation('arin'))
+      .forEach(function(prefix) {
     if (countryColls[kRed].hasOwnProperty(prefix.country))
       prefix.color = kRed;
     else if (countryColls[kBlue].hasOwnProperty(prefix.country))
