@@ -252,20 +252,20 @@ function getAllRegionalDelegation() {
       }, []);
 }
 
-function getNonAPNICDelegation() {
-  return fs.readFileSync(kRootPath + '/data/ipv4-address-space')
-      .toString()
-      .split('\n')
-      .filter(function(line) {
-        return (/^\s+\d{3}\/\d.+(?:ALLOCATED|LEGACY)/).test(line) && !(/APNIC/).test(line);
-      }).map(function(line) {
-        var match = (/\s+(\d{3})\/(\d)\s+(.+)\d{4}-\d{2}.+(ALLOCATED|LEGACY)/).exec(line);
-        var prefix = new Prefix(match[1] + '.0.0.0', parseInt(match[2], 10));
-        prefix.admin = match[3].trim();
-        prefix.status = match[4].toLowerCase();
-        return prefix;
-      });
-}
+// function getNonAPNICDelegation() {
+//   return fs.readFileSync(kRootPath + '/data/ipv4-address-space')
+//       .toString()
+//       .split('\n')
+//       .filter(function(line) {
+//         return (/^\s+\d{3}\/\d.+(?:ALLOCATED|LEGACY)/).test(line) && !(/APNIC/).test(line);
+//       }).map(function(line) {
+//         var match = (/\s+(\d{3})\/(\d)\s+(.+)\d{4}-\d{2}.+(ALLOCATED|LEGACY)/).exec(line);
+//         var prefix = new Prefix(match[1] + '.0.0.0', parseInt(match[2], 10));
+//         prefix.admin = match[3].trim();
+//         prefix.status = match[4].toLowerCase();
+//         return prefix;
+//       });
+// }
 
 function I18nStrings(data, locales) {
   this.data = data;
@@ -359,7 +359,7 @@ $define(exports, {
   getRulesFromInput: getRulesFromInput,
   getRegionalDelegation: getRegionalDelegation,
   getAllRegionalDelegation: getAllRegionalDelegation,
-  getNonAPNICDelegation: getNonAPNICDelegation,
+  // getNonAPNICDelegation: getNonAPNICDelegation,
   getCountryNames: getCountryNames,
   initiateTree: initiateTree
 });
