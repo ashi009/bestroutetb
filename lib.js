@@ -245,6 +245,13 @@ function getRegionalDelegation(region) {
       });
 }
 
+function getAllRegionalDelegation() {
+  return ['apnic', 'arin', 'ripencc', 'lacnic']
+      .map(getRegionalDelegation).reduce(function(lhv, rhv) {
+        return lhv.concat(rhv);
+      }, []);
+}
+
 function getNonAPNICDelegation() {
   return fs.readFileSync(kRootPath + '/data/ipv4-address-space')
       .toString()
@@ -320,20 +327,18 @@ function initiateTree(TreeNodeType) {
   parseSpecs(opts.vpn || 'US,GB,JP,HK', kBlue, true);
 
   var root = new TreeNodeType();
-  [].concat(getRegionalDelegation('apnic'))
-      .concat(getRegionalDelegation('arin'))
-      .forEach(function(prefix) {
-        if (countryColls[kRed].hasOwnProperty(prefix.country))
-          prefix.color = kRed;
-        else if (countryColls[kBlue].hasOwnProperty(prefix.country))
-          prefix.color = kBlue;
-        root.append(prefix);
-      });
-  if (flags.nonap === undefined || flags.nonap === true)
-    getNonAPNICDelegation().forEach(function(prefix) {
+  getAllRegionalDelegation().forEach(function(prefix) {
+    if (countryColls[kRed].hasOwnProperty(prefix.country))
+      prefix.color = kRed;
+    else if (countryColls[kBlue].hasOwnProperty(prefix.country))
       prefix.color = kBlue;
-      root.append(prefix);
-    });
+    root.append(prefix);
+  });
+  // if (flags.nonap === undefined || flags.nonap === true)
+  //   getNonAPNICDelegation().forEach(function(prefix) {
+  //     prefix.color = kBlue;
+  //     root.append(prefix);
+  //   });
   prefixColl.forEach(function(prefix) {
     root.append(prefix);
   });
@@ -353,6 +358,7 @@ $define(exports, {
   getMaskLength: getMaskLength,
   getRulesFromInput: getRulesFromInput,
   getRegionalDelegation: getRegionalDelegation,
+  getAllRegionalDelegation: getAllRegionalDelegation,
   getNonAPNICDelegation: getNonAPNICDelegation,
   getCountryNames: getCountryNames,
   initiateTree: initiateTree

@@ -18,9 +18,7 @@ lib.getRulesFromInput(function(rules) {
   var countries = {};
   var gateways = {};
 
-  [].concat(lib.getRegionalDelegation('apnic'))
-    .concat(lib.getRegionalDelegation('arin'))
-    .forEach(function(prefix) {
+  lib.getAllRegionalDelegation().forEach(function(prefix) {
     var gateway = routeTable.route(prefix.toIPv4());
     if (flags.verbose) {
       console.log("%s\t%s\t%d\t%s\t%s", prefix.toIPv4(),
@@ -43,28 +41,28 @@ lib.getRulesFromInput(function(rules) {
     profile.gateways[gateway] += prefix.size;
   });
 
-  lib.getNonAPNICDelegation().forEach(function(prefix) {
-    var gateway = routeTable.route(prefix.toIPv4());
-    if (flags.verbose) {
-      console.log("%s\t%s\t%d\t%s\t%s", prefix.toIPv4(),
-          prefix.toMask(), prefix.size, prefix.admin, gateway);
-    }
-    if (!gateways.hasOwnProperty(gateway))
-      gateways[gateway] = {};
-    if (!gateways[gateway].hasOwnProperty(prefix.admin))
-      gateways[gateway][prefix.admin] = 0;
-    gateways[gateway][prefix.admin] += prefix.size;
-    if (!countries.hasOwnProperty(prefix.admin))
-      countries[prefix.admin] = {
-        total: 0,
-        gateways: {}
-      };
-    var profile = countries[prefix.admin];
-    profile.total += prefix.size;
-    if (!profile.gateways.hasOwnProperty(gateway))
-      profile.gateways[gateway] = 0;
-    profile.gateways[gateway] += prefix.size;
-  });
+  // lib.getNonAPNICDelegation().forEach(function(prefix) {
+  //   var gateway = routeTable.route(prefix.toIPv4());
+  //   if (flags.verbose) {
+  //     console.log("%s\t%s\t%d\t%s\t%s", prefix.toIPv4(),
+  //         prefix.toMask(), prefix.size, prefix.admin, gateway);
+  //   }
+  //   if (!gateways.hasOwnProperty(gateway))
+  //     gateways[gateway] = {};
+  //   if (!gateways[gateway].hasOwnProperty(prefix.admin))
+  //     gateways[gateway][prefix.admin] = 0;
+  //   gateways[gateway][prefix.admin] += prefix.size;
+  //   if (!countries.hasOwnProperty(prefix.admin))
+  //     countries[prefix.admin] = {
+  //       total: 0,
+  //       gateways: {}
+  //     };
+  //   var profile = countries[prefix.admin];
+  //   profile.total += prefix.size;
+  //   if (!profile.gateways.hasOwnProperty(gateway))
+  //     profile.gateways[gateway] = 0;
+  //   profile.gateways[gateway] += prefix.size;
+  // });
 
   for (var gateway in gateways) {
     var profile = gateways[gateway];
