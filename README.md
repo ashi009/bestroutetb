@@ -9,9 +9,10 @@ specified countries or subnets will be routed to a
 specified gateway (default or VPN).
 
 Generally speaking, the generated route table is at least
-70% smaller than chnroutes"s.
+70% smaller than chnroutes's.
 
 查看[使用说明][wiki]
+
 
 Objective
 ---------
@@ -31,13 +32,14 @@ How efficient it is?
 -------------------
 
 For a example, a route table that route all IPs in China to
-default gateway, and US, GB, Japan, Hongkong and non-APNIC
-administered IPs to VPN gateway (based on 11/26/2012 data,)
-only need 1093 routing directives, while *chnroutes* needs
-3563 routing directives.
+default gateway, and US, GB, Japan, Hong kong administered 
+IPs to VPN gateway (based on 4/8/2013 data,)
+only need 1164 routing directives, while *chnroutes* needs
+3589 routing directives.
 
 Which is **70% smaller**. And if route US address to VPN only,
-the route table has only **50 directives**.
+the route table has only **99 directives**, which is less than
+2% of original size.
 
 On Linux system, which usese [TRASH][trash] structure to store
 routing table, a route lookup operation expected to access
@@ -45,7 +47,8 @@ memory O(loglog _n_) times. Using *bestroutetb* over *chnroutes*,
 will reduce at least 0.01 accesses expectedly. (This is joking!
 But it does reduce the route table size in memory for 70% by
 assuming TRASH structure is using a very small overhead
-hash implementation, which is significant.)
+hash implementation, which is significant. So this solution works 
+especially well on those routers don't have lots of free memory.)
 
 
 How it works
@@ -106,7 +109,7 @@ Where
 
 ### Generating Rules
 
-    node minifier.js [--net=SPECS] [--vpn=SPECS] [--nonap=NONAP]
+    node minifier.js [--net=SPECS] [--vpn=SPECS]
 
 Where
 
@@ -114,8 +117,6 @@ Where
     IP subnets to be routed to default gateway. Default to `CN`.
   * `--vpn` is used to specify a list of country abbreviations and IP
     subnets to be routed to VPN gateway. Default to `US,GB,JP,HK`.
-  * `--nonap` when set will route non-APNIC administered IPs to VPN
-    gateway. Default to `1`.
   * `SPECS` is a list separated with comma(,) of country abbreviation
     names, IP subnets or the path to a file of `SPECS`.
     Note that, the abbreviation names can be found in `res/countrynames`,
@@ -143,7 +144,7 @@ JSON structure:
 
 Example:
 
-    node minifier.js --net=CN,8.8.8.8 --vpn=specs --nonap=0
+    node minifier.js --net=128.8.0.0/16 --vpn=specs
 
 Where `specs` contains:
 
@@ -155,39 +156,18 @@ Where `specs` contains:
 
 Outputs:
 
-    [
-      {
-        "prefix": "0.0.0.0",
-        "mask": "0.0.0.0",
-        "length": 0,
-        "gw": "net"
-      },
-      {
-        "prefix": "8.0.0.0",
-        "mask": "252.0.0.0",
-        "length": 6,
-        "gw": "vpn"
-      },
-      {
-        "prefix": "8.0.0.0",
-        "mask": "255.128.0.0",
-        "length": 9,
-        "gw": "net"
-      },
-      {
-        "prefix": "123.4.0.0",
-        "mask": "255.254.0.0",
-        "length": 15,
-        "gw": "vpn"
-      },
-      {
-        "prefix": "203.31.232.0",
-        "mask": "255.255.248.",
-        "length": 21,
-        "gw": "vpn"
-      }
-    ]
-    Total: 5 rules
+    [{
+      "prefix": "0.0.0.0",
+      "mask": "0.0.0.0",
+      "length": 0,
+      "gw": "vpn"
+    }, {
+      "prefix": "128.0.0.0",
+      "mask": "255.240.0.0",
+      "length": 12,
+      "gw": "net"
+    }]
+    Total: 2 rules
 
 ### Formatting a rules file
 
@@ -228,20 +208,23 @@ Where
 Example:
 
     node formatter.js rules.json
-    # or node minifier.js vpn=us --nonap=0 | node formatter.js
+    # or node minifier.js --vpn=us | node formatter.js
 
 Outputs:
 
-    Total: 9 rules
-    route 0.0.0.0 0.0.0.0 net_gateway
-    route 60.254.0.0 255.255.0.0 vpn_gateway
-    route 103.246.192.0 255.255.192.0 vpn_gateway
-    route 113.28.0.0 255.254.0.0 vpn_gateway
-    route 163.32.0.0 255.224.0.0 vpn_gateway
-    route 192.96.0.0 255.240.0.0 vpn_gateway
-    route 202.72.96.0 255.255.224.0 vpn_gateway
-    route 203.144.0.0 255.255.192.0 vpn_gateway
-    route 203.187.128.0 255.255.224.0 vpn_gateway
+    Total: 99 rules
+    route 0.0.0.0 0.0.0.0 vpn_gateway
+    route 0.0.0.0 254.0.0.0 net_gateway
+    route 1.0.16.0 255.255.240.0 vpn_gateway
+    route 1.0.64.0 255.255.192.0 vpn_gateway
+    route 1.1.64.0 255.255.192.0 vpn_gateway
+    route 1.5.0.0 255.255.0.0 vpn_gateway
+    route 1.16.0.0 255.248.0.0 vpn_gateway
+    route 1.32.0.0 255.248.0.0 vpn_gateway
+    route 1.64.0.0 255.252.0.0 vpn_gateway
+    route 1.72.0.0 255.248.0.0 vpn_gateway
+    route 1.112.0.0 255.252.0.0 vpn_gateway
+    ...
 
 ### Analysing a rules file
 
@@ -253,11 +236,6 @@ Where
   * `--verbose` when set will output the route result for every block.
     Default not set.
   * `--defaultgw` is the gateway for 0.0.0.0/0.
-
-*Note that*, this script is not complete, as it only analysis the base
-IP of the block of each APNIC/nonAPNIC delegation. But some IPs in a
-block could be routed to other gateway than its base IP"s (this only
-affects some nonAPNIC IP blocks, as it overlaps some APNIC IP blocks.)
 
 ### Updating IP delegation files
 

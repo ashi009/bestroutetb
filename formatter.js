@@ -20,7 +20,9 @@ var kProfiles = {
     }
   },
   route_up: {
-    header: '#!/bin/sh',
+    header: '#!/bin/sh\
+netgw=$(cat /tmp/net_gateway)\
+read target dummy vpngw dummy <<< $(ip route get 8.8.8.8)',
     format: 'route add %prefix netmask %mask gw %gw',
     gw: kDefaultGateway
   },
