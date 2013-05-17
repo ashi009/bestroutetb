@@ -112,7 +112,7 @@ lib.getRulesFromInput(function(rules) {
     }
     if (rule.gw) {
       rule.gw = kProfile.gw[rule.gw];
-      if (!(flags.nodefault && rule.prefix === '0.0.0.0' && rule.length === 0))
+      if (!(flags.nodefaultgw && rule.prefix === '0.0.0.0' && rule.length === 0))
         console.log(kProfile.format.format(rule, opts));
     }
   });
