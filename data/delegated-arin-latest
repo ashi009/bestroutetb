@@ -1,7 +1,7 @@
-2|arin|20130616|71953|00000000|20130615|-0400
-arin|*|asn|*|22178|summary
-arin|*|ipv4|*|46293|summary
-arin|*|ipv6|*|3482|summary
+2|arin|20130627|72042|00000000|20130626|-0400
+arin|*|asn|*|22201|summary
+arin|*|ipv4|*|46347|summary
+arin|*|ipv6|*|3494|summary
 arin|US|asn|1|1|20010920|allocated
 arin|US|asn|2|1|19910110|allocated
 arin|US|asn|3|1|00000000|allocated
@@ -3026,7 +3026,6 @@ arin|VI|asn|6572|1|19960528|allocated
 arin|US|asn|6573|1|19960528|allocated
 arin|US|asn|6574|1|19960528|allocated
 arin|US|asn|6575|1|19960528|allocated
-arin|US|asn|6576|1|20110603|allocated
 arin|US|asn|6577|1|19960529|allocated
 arin|US|asn|6578|1|19960529|allocated
 arin|CA|asn|6579|1|19960529|allocated
@@ -4709,7 +4708,6 @@ arin|US|asn|11065|1|19980330|allocated
 arin|US|asn|11067|1|19980330|allocated
 arin|US|asn|11068|1|20070712|allocated
 arin|US|asn|11069|1|19980330|allocated
-arin|US|asn|11070|1|19980330|allocated
 arin|US|asn|11071|1|19980330|allocated
 arin|US|asn|11072|1|20090205|allocated
 arin|US|asn|11073|1|20101206|allocated
@@ -5471,7 +5469,6 @@ arin|US|asn|11927|1|19990208|allocated
 arin|US|asn|11928|1|19990208|allocated
 arin|US|asn|11929|1|20070402|allocated
 arin|US|asn|11930|1|19990209|allocated
-arin|US|asn|11931|1|19990209|allocated
 arin|US|asn|11932|1|20070516|allocated
 arin|US|asn|11933|1|20070803|allocated
 arin|US|asn|11934|1|20101208|allocated
@@ -5684,7 +5681,6 @@ arin|US|asn|12159|1|19990407|allocated
 arin|US|asn|12160|1|20060810|allocated
 arin|US|asn|12161|1|20050808|allocated
 arin|US|asn|12162|1|20050829|allocated
-arin|US|asn|12163|1|19990409|allocated
 arin|US|asn|12164|1|19990409|allocated
 arin|US|asn|12165|1|19990409|allocated
 arin|US|asn|12166|1|19990409|allocated
@@ -6784,7 +6780,6 @@ arin|US|asn|14396|1|19991206|allocated
 arin|US|asn|14397|1|20070314|allocated
 arin|US|asn|14398|1|19991207|allocated
 arin|US|asn|14399|1|20100726|allocated
-arin|US|asn|14400|1|20070406|allocated
 arin|US|asn|14401|1|20101214|allocated
 arin|US|asn|14402|1|19991207|allocated
 arin|US|asn|14403|1|19991207|allocated
@@ -7048,7 +7043,6 @@ arin|US|asn|14679|1|20000126|allocated
 arin|US|asn|14680|1|20101214|allocated
 arin|US|asn|14682|1|20000126|allocated
 arin|US|asn|14683|1|20101214|allocated
-arin|US|asn|14684|1|20000126|allocated
 arin|US|asn|14685|1|20000126|allocated
 arin|US|asn|14686|1|20000126|allocated
 arin|US|asn|14687|1|20000126|allocated
@@ -7936,7 +7930,6 @@ arin|US|asn|16693|1|20000518|allocated
 arin|US|asn|16694|1|20000518|allocated
 arin|US|asn|16695|1|20050628|allocated
 arin|CA|asn|16696|1|20120502|allocated
-arin|US|asn|16697|1|20050629|allocated
 arin|US|asn|16698|1|20000518|allocated
 arin|US|asn|16699|1|20000518|allocated
 arin|US|asn|16700|1|20000519|allocated
@@ -12504,7 +12497,6 @@ arin|US|asn|25810|1|20020513|allocated
 arin|US|asn|25811|1|20110628|allocated
 arin|US|asn|25813|1|20020513|allocated
 arin|US|asn|25814|1|20120119|allocated
-arin|US|asn|25815|1|20020513|allocated
 arin|US|asn|25816|1|20020513|allocated
 arin|US|asn|25817|1|20020514|allocated
 arin|US|asn|25819|1|20071116|allocated
@@ -15701,7 +15693,6 @@ arin|US|asn|32382|1|20040422|allocated
 arin|US|asn|32383|1|20040423|allocated
 arin|US|asn|32384|1|20040423|allocated
 arin|US|asn|32385|1|20040423|allocated
-arin|US|asn|32386|1|20100421|allocated
 arin|CA|asn|32387|1|20120420|allocated
 arin|US|asn|32388|1|20040423|allocated
 arin|US|asn|32389|1|20040423|allocated
@@ -16041,6 +16032,7 @@ arin|US|asn|32734|1|20040713|allocated
 arin|CA|asn|32735|1|20040714|allocated
 arin|US|asn|32736|1|20040714|allocated
 arin|US|asn|32737|1|20040714|allocated
+arin|CA|asn|32738|1|20040714|allocated
 arin|US|asn|32739|1|20040714|allocated
 arin|US|asn|32740|1|20100331|allocated
 arin|US|asn|32741|1|20040714|allocated
@@ -16604,6 +16596,7 @@ arin|US|asn|33309|1|20110728|allocated
 arin|US|asn|33310|1|20041119|allocated
 arin|US|asn|33311|1|20041119|allocated
 arin|US|asn|33312|1|20090227|allocated
+arin|US|asn|33313|1|20130624|allocated
 arin|CA|asn|33314|1|20110318|allocated
 arin|PR|asn|33315|1|20110318|allocated
 arin|US|asn|33316|1|20101028|allocated
@@ -18803,7 +18796,6 @@ arin|US|asn|40704|1|20080229|allocated
 arin|US|asn|40705|1|20080229|allocated
 arin|US|asn|40706|1|20080229|allocated
 arin|US|asn|40707|1|20080303|allocated
-arin|US|asn|40708|1|20080303|allocated
 arin|US|asn|40709|1|20080303|allocated
 arin|US|asn|40710|1|20080303|allocated
 arin|US|asn|40711|1|20080303|allocated
@@ -19105,7 +19097,6 @@ arin|US|asn|46132|1|20080619|allocated
 arin|US|asn|46133|1|20080619|allocated
 arin|US|asn|46134|1|20080620|allocated
 arin|CA|asn|46135|1|20130206|allocated
-arin|US|asn|46136|1|20080620|allocated
 arin|US|asn|46137|1|20080620|allocated
 arin|US|asn|46138|1|20100514|allocated
 arin|US|asn|46139|1|20080620|allocated
@@ -20304,7 +20295,6 @@ arin|US|asn|53485|1|20100217|allocated
 arin|CA|asn|53486|1|20100514|allocated
 arin|US|asn|53487|1|20100517|allocated
 arin|US|asn|53488|1|20100517|allocated
-arin|US|asn|53489|1|20100517|allocated
 arin|US|asn|53490|1|20100517|allocated
 arin|US|asn|53491|1|20100518|allocated
 arin|US|asn|53492|1|20100518|allocated
@@ -20594,7 +20584,6 @@ arin|US|asn|53777|1|20110517|allocated
 arin|US|asn|53778|1|20110517|allocated
 arin|US|asn|53779|1|20110524|allocated
 arin|US|asn|53780|1|20110524|allocated
-arin|US|asn|53781|1|20110525|allocated
 arin|US|asn|53782|1|20110525|allocated
 arin|US|asn|53783|1|20110525|allocated
 arin|US|asn|53784|1|20110525|allocated
@@ -21376,7 +21365,6 @@ arin|US|asn|54560|1|20120319|allocated
 arin|US|asn|54561|1|20120319|allocated
 arin|US|asn|54562|1|20120319|allocated
 arin|US|asn|54563|1|20120319|allocated
-arin|US|asn|54564|1|20120319|allocated
 arin|US|asn|54565|1|20120319|allocated
 arin|US|asn|54566|1|20120319|allocated
 arin|US|asn|54567|1|20120320|allocated
@@ -22146,6 +22134,40 @@ arin|US|asn|62498|1|20130614|allocated
 arin|US|asn|62499|1|20130614|allocated
 arin|US|asn|62500|1|20130614|allocated
 arin|US|asn|62501|1|20130614|allocated
+arin|US|asn|62502|1|20130617|allocated
+arin|US|asn|62503|1|20130617|allocated
+arin|US|asn|62504|1|20130617|allocated
+arin|US|asn|62505|1|20130617|allocated
+arin|US|asn|62506|1|20130617|allocated
+arin|US|asn|62507|1|20130617|allocated
+arin|US|asn|62508|1|20130617|allocated
+arin|US|asn|62509|1|20130618|allocated
+arin|US|asn|62510|1|20130618|allocated
+arin|US|asn|62511|1|20130618|allocated
+arin|US|asn|62512|1|20130619|allocated
+arin|US|asn|62513|1|20130619|allocated
+arin|US|asn|62514|1|20130620|allocated
+arin|US|asn|62515|1|20130620|allocated
+arin|US|asn|62516|1|20130620|allocated
+arin|US|asn|62517|1|20130621|allocated
+arin|US|asn|62518|1|20130621|allocated
+arin|US|asn|62519|1|20130621|allocated
+arin|US|asn|62520|1|20130621|allocated
+arin|US|asn|62521|1|20130621|allocated
+arin|US|asn|62522|1|20130621|allocated
+arin|US|asn|62523|1|20130621|allocated
+arin|US|asn|62524|1|20130621|allocated
+arin|CA|asn|62525|1|20130624|allocated
+arin|US|asn|62526|1|20130625|allocated
+arin|US|asn|62527|1|20130625|allocated
+arin|US|asn|62528|1|20130625|allocated
+arin|US|asn|62529|1|20130625|allocated
+arin|US|asn|62530|1|20130625|allocated
+arin|US|asn|62531|1|20130626|allocated
+arin|US|asn|62532|1|20130626|allocated
+arin|US|asn|62533|1|20130626|allocated
+arin|US|asn|62534|1|20130626|allocated
+arin|US|asn|62535|1|20130626|allocated
 arin|US|asn|393216|1|20130521|allocated
 arin|CA|asn|393217|1|20070709|allocated
 arin|US|asn|393218|1|20071206|allocated
@@ -22171,6 +22193,7 @@ arin|US|asn|393237|1|20120831|allocated
 arin|US|asn|393238|1|20100629|allocated
 arin|US|asn|393239|1|20100607|allocated
 arin|US|asn|393240|1|20100831|allocated
+arin|US|asn|393241|1|20130626|allocated
 arin|CA|asn|393242|1|20100820|allocated
 arin|US|asn|393243|1|20100920|allocated
 arin|US|asn|393244|1|20100930|allocated
@@ -22225,6 +22248,7 @@ arin|US|ipv4|23.72.0.0|524288|20130125|allocated
 arin|US|ipv4|23.80.0.0|262144|20130506|allocated
 arin|US|ipv4|23.84.0.0|262144|20130507|allocated
 arin|US|ipv4|23.88.0.0|131072|20130607|allocated
+arin|US|ipv4|23.96.0.0|524288|20130618|assigned
 arin|US|ipv4|24.0.0.0|1048576|20031006|allocated
 arin|US|ipv4|24.16.0.0|524288|20031208|allocated
 arin|US|ipv4|24.24.0.0|393216|20000609|allocated
@@ -22745,7 +22769,8 @@ arin|US|ipv4|50.120.0.0|524288|20110906|allocated
 arin|US|ipv4|50.128.0.0|8388608|20101021|allocated
 arin|US|ipv4|52.0.0.0|16777216|19911219|assigned
 arin|DE|ipv4|53.0.0.0|16777216|19920317|assigned
-arin|US|ipv4|54.0.0.0|13631488|19920317|assigned
+arin|US|ipv4|54.0.0.0|12582912|19920317|assigned
+arin|US|ipv4|54.192.0.0|1048576|20130619|allocated
 arin|US|ipv4|54.208.0.0|917504|20130219|allocated
 arin|US|ipv4|54.224.0.0|1048576|20120301|allocated
 arin|US|ipv4|54.240.0.0|1048576|20111209|allocated
@@ -25314,6 +25339,7 @@ arin|US|ipv4|67.209.176.0|4096|20081020|allocated
 arin|US|ipv4|67.209.192.0|8192|20070802|allocated
 arin|US|ipv4|67.209.224.0|4096|20070806|allocated
 arin|US|ipv4|67.209.240.0|4096|20081020|allocated
+arin|US|ipv4|67.210.0.0|4096|20130617|allocated
 arin|US|ipv4|67.210.16.0|4096|20081020|allocated
 arin|US|ipv4|67.210.32.0|4096|20070814|allocated
 arin|US|ipv4|67.210.48.0|4096|20081021|allocated
@@ -26483,7 +26509,9 @@ arin|US|ipv4|70.34.80.0|4096|20090922|assigned
 arin|US|ipv4|70.34.96.0|4096|20090923|allocated
 arin|US|ipv4|70.34.112.0|4096|20130408|allocated
 arin|US|ipv4|70.34.128.0|16384|20090108|allocated
-arin|US|ipv4|70.34.192.0|16384|20090326|allocated
+arin|US|ipv4|70.34.192.0|8192|20090326|allocated
+arin|US|ipv4|70.34.224.0|4096|20130620|allocated
+arin|US|ipv4|70.34.240.0|4096|20130620|allocated
 arin|US|ipv4|70.35.0.0|4096|20090413|allocated
 arin|CA|ipv4|70.35.16.0|4096|20090209|allocated
 arin|US|ipv4|70.35.32.0|8192|20090413|allocated
@@ -30594,7 +30622,7 @@ arin|US|ipv4|143.49.0.0|65536|19900326|assigned
 arin|US|ipv4|143.55.0.0|65536|19900828|assigned
 arin|US|ipv4|143.56.0.0|65536|19900326|assigned
 arin|US|ipv4|143.57.0.0|65536|19900326|assigned
-arin|US|ipv4|143.58.0.0|65536|19900326|allocated
+arin|US|ipv4|143.58.0.0|65536|19900326|assigned
 arin|US|ipv4|143.59.0.0|65536|19900326|assigned
 arin|US|ipv4|143.60.0.0|65536|19900326|assigned
 arin|US|ipv4|143.61.0.0|65536|19900326|assigned
@@ -33116,7 +33144,30 @@ arin|US|ipv4|162.213.208.0|1024|20130614|allocated
 arin|US|ipv4|162.213.212.0|1024|20130614|allocated
 arin|US|ipv4|162.213.216.0|2048|20130614|allocated
 arin|US|ipv4|162.213.224.0|2048|20130614|allocated
+arin|US|ipv4|162.213.232.0|1024|20130617|allocated
+arin|US|ipv4|162.213.236.0|1024|20130617|allocated
+arin|US|ipv4|162.213.240.0|2048|20130617|allocated
+arin|US|ipv4|162.213.248.0|2048|20130617|allocated
 arin|US|ipv4|162.214.0.0|131072|20130522|allocated
+arin|US|ipv4|162.216.0.0|1024|20130618|allocated
+arin|US|ipv4|162.216.4.0|1024|20130618|allocated
+arin|US|ipv4|162.216.8.0|1024|20130618|allocated
+arin|US|ipv4|162.216.12.0|1024|20130619|allocated
+arin|US|ipv4|162.216.16.0|1024|20130619|allocated
+arin|US|ipv4|162.216.20.0|1024|20130619|assigned
+arin|US|ipv4|162.216.24.0|2048|20130619|allocated
+arin|US|ipv4|162.216.32.0|2048|20130619|allocated
+arin|US|ipv4|162.216.40.0|1024|20130620|allocated
+arin|US|ipv4|162.216.44.0|1024|20130620|allocated
+arin|US|ipv4|162.216.48.0|1024|20130620|assigned
+arin|US|ipv4|162.216.52.0|1024|20130625|allocated
+arin|US|ipv4|162.216.56.0|2048|20130624|allocated
+arin|US|ipv4|162.216.64.0|2048|20130624|allocated
+arin|US|ipv4|162.216.72.0|1024|20130625|allocated
+arin|US|ipv4|162.216.76.0|1024|20130626|allocated
+arin|US|ipv4|162.216.80.0|1024|20130626|allocated
+arin|CA|ipv4|162.216.84.0|1024|20130626|allocated
+arin|US|ipv4|162.216.88.0|2048|20130626|assigned
 arin|US|ipv4|162.224.0.0|1048576|20130521|allocated
 arin|US|ipv4|163.2.0.0|65536|19920625|assigned
 arin|US|ipv4|163.4.0.0|65536|19920625|assigned
@@ -34562,6 +34613,7 @@ arin|US|ipv4|174.137.112.0|4096|20081110|allocated
 arin|US|ipv4|174.137.128.0|16384|20081105|allocated
 arin|CA|ipv4|174.137.192.0|16384|20081106|allocated
 arin|US|ipv4|174.138.0.0|32768|20081103|allocated
+arin|CA|ipv4|174.138.128.0|4096|20081112|allocated
 arin|US|ipv4|174.138.144.0|4096|20091231|allocated
 arin|US|ipv4|174.138.160.0|4096|20081113|allocated
 arin|US|ipv4|174.138.176.0|4096|20091231|allocated
@@ -38100,6 +38152,7 @@ arin|US|ipv4|192.96.168.0|2048|20130125|allocated
 arin|US|ipv4|192.96.200.0|2048|20130128|allocated
 arin|US|ipv4|192.96.208.0|4096|20121107|allocated
 arin|US|ipv4|192.97.0.0|65536|19910305|allocated
+arin|CA|ipv4|192.99.0.0|65536|20130617|allocated
 arin|US|ipv4|192.100.3.0|256|19910311|assigned
 arin|US|ipv4|192.100.4.0|256|19910311|assigned
 arin|US|ipv4|192.100.6.0|256|19910311|assigned
@@ -40896,6 +40949,8 @@ arin|US|ipv4|192.155.67.0|256|19920409|assigned
 arin|US|ipv4|192.155.68.0|256|19920409|assigned
 arin|US|ipv4|192.155.72.0|2048|20130212|allocated
 arin|US|ipv4|192.155.80.0|4096|20121022|allocated
+arin|US|ipv4|192.155.96.0|4096|20130624|allocated
+arin|US|ipv4|192.155.112.0|4096|20130625|assigned
 arin|US|ipv4|192.155.128.0|7680|19920420|assigned
 arin|US|ipv4|192.155.192.0|16384|20130116|allocated
 arin|US|ipv4|192.156.0.0|20736|19920408|allocated
@@ -43707,6 +43762,7 @@ arin|US|ipv4|192.250.64.0|32768|19930810|allocated
 arin|US|ipv4|192.250.192.0|4096|20130603|allocated
 arin|US|ipv4|192.250.208.0|4096|20130604|assigned
 arin|US|ipv4|192.250.224.0|4096|20130606|allocated
+arin|US|ipv4|192.250.240.0|4096|20130617|allocated
 arin|US|ipv4|192.251.1.0|256|19921106|assigned
 arin|US|ipv4|192.251.2.0|256|19921109|assigned
 arin|US|ipv4|192.251.3.0|256|19921109|assigned
@@ -43925,6 +43981,10 @@ arin|US|ipv4|192.253.240.0|4096|20130311|allocated
 arin|US|ipv4|192.254.0.0|4096|19921116|assigned
 arin|US|ipv4|192.254.16.0|4096|19921124|allocated
 arin|US|ipv4|192.254.32.0|8192|19921120|allocated
+arin|US|ipv4|192.254.64.0|4096|20130619|allocated
+arin|US|ipv4|192.254.80.0|4096|20130620|allocated
+arin|PR|ipv4|192.254.96.0|4096|20130620|allocated
+arin|US|ipv4|192.254.112.0|4096|20130621|allocated
 arin|US|ipv4|192.254.128.0|32768|20130611|allocated
 arin|PR|ipv4|196.1.2.0|256|19951215|assigned
 arin|US|ipv4|196.1.72.0|512|19930618|assigned
@@ -44047,6 +44107,7 @@ arin|US|ipv4|198.16.28.0|1024|20121031|allocated
 arin|US|ipv4|198.16.32.0|8192|20121130|allocated
 arin|US|ipv4|198.16.64.0|16384|20120802|allocated
 arin|CA|ipv4|198.16.128.0|32768|20130503|allocated
+arin|US|ipv4|198.17.0.0|256|20130626|assigned
 arin|US|ipv4|198.17.2.0|256|19921201|assigned
 arin|US|ipv4|198.17.5.0|256|19921203|assigned
 arin|US|ipv4|198.17.6.0|256|19921203|assigned
@@ -44181,6 +44242,7 @@ arin|US|ipv4|198.17.166.0|256|19930111|assigned
 arin|US|ipv4|198.17.167.0|256|19930111|assigned
 arin|US|ipv4|198.17.168.0|256|19930111|assigned
 arin|US|ipv4|198.17.169.0|256|19930111|assigned
+arin|US|ipv4|198.17.170.0|512|20130618|assigned
 arin|US|ipv4|198.17.172.0|256|19930112|assigned
 arin|US|ipv4|198.17.173.0|256|19930112|assigned
 arin|US|ipv4|198.17.174.0|256|19930112|assigned
@@ -44269,11 +44331,13 @@ arin|US|ipv4|198.21.0.0|2048|20130401|allocated
 arin|US|ipv4|198.21.8.0|2048|19921125|assigned
 arin|US|ipv4|198.21.16.0|4096|19921125|assigned
 arin|US|ipv4|198.21.32.0|12800|19921203|assigned
+arin|US|ipv4|198.21.82.0|512|20130619|assigned
 arin|US|ipv4|198.21.84.0|1024|20121031|assigned
 arin|US|ipv4|198.21.88.0|2048|20130401|allocated
 arin|US|ipv4|198.21.96.0|8192|20121203|allocated
 arin|US|ipv4|198.21.128.0|32768|20120810|assigned
 arin|US|ipv4|198.22.1.0|256|19921201|assigned
+arin|US|ipv4|198.22.2.0|512|20130620|assigned
 arin|US|ipv4|198.22.5.0|1280|19921201|allocated
 arin|US|ipv4|198.22.11.0|1280|19921201|allocated
 arin|US|ipv4|198.22.16.0|256|19921201|assigned
@@ -44330,6 +44394,7 @@ arin|CA|ipv4|198.22.102.0|256|19931201|assigned
 arin|US|ipv4|198.22.103.0|256|19921215|assigned
 arin|US|ipv4|198.22.104.0|256|19921215|assigned
 arin|US|ipv4|198.22.105.0|256|19921215|assigned
+arin|US|ipv4|198.22.106.0|512|20130621|assigned
 arin|US|ipv4|198.22.108.0|256|19921215|assigned
 arin|US|ipv4|198.22.109.0|256|19921215|assigned
 arin|US|ipv4|198.22.110.0|256|19921218|assigned
@@ -44412,6 +44477,7 @@ arin|US|ipv4|198.22.198.0|256|19930111|assigned
 arin|US|ipv4|198.22.199.0|256|19930111|assigned
 arin|US|ipv4|198.22.200.0|256|19930113|assigned
 arin|US|ipv4|198.22.201.0|256|19930113|assigned
+arin|US|ipv4|198.22.202.0|512|20130625|assigned
 arin|US|ipv4|198.22.207.0|256|19930113|assigned
 arin|US|ipv4|198.22.208.0|2048|20130401|allocated
 arin|US|ipv4|198.22.217.0|1536|19930115|allocated
@@ -46651,11 +46717,13 @@ arin|US|ipv4|198.137.243.0|256|19930524|assigned
 arin|US|ipv4|198.137.244.0|256|19930524|assigned
 arin|US|ipv4|198.137.245.0|256|19930524|assigned
 arin|US|ipv4|198.137.246.0|512|20130425|assigned
+arin|US|ipv4|198.137.248.0|256|20130617|assigned
 arin|US|ipv4|198.137.249.0|256|19930525|assigned
 arin|US|ipv4|198.137.250.0|256|19930525|assigned
 arin|US|ipv4|198.137.251.0|256|19930525|assigned
 arin|US|ipv4|198.137.252.0|512|19930525|allocated
 arin|US|ipv4|198.137.254.0|256|19930525|assigned
+arin|US|ipv4|198.137.255.0|256|20130618|assigned
 arin|US|ipv4|198.138.0.0|131072|19930414|allocated
 arin|US|ipv4|198.140.0.0|1536|19930416|allocated
 arin|US|ipv4|198.140.6.0|512|20130430|assigned
@@ -46677,6 +46745,7 @@ arin|US|ipv4|198.140.130.0|256|19930623|assigned
 arin|US|ipv4|198.140.131.0|256|19930623|assigned
 arin|US|ipv4|198.140.132.0|256|19930625|assigned
 arin|US|ipv4|198.140.133.0|256|19930625|assigned
+arin|CA|ipv4|198.140.134.0|256|20130618|assigned
 arin|US|ipv4|198.140.135.0|256|19930625|assigned
 arin|US|ipv4|198.140.136.0|256|19930625|assigned
 arin|US|ipv4|198.140.137.0|256|19930625|assigned
@@ -46697,6 +46766,7 @@ arin|CA|ipv4|198.140.151.0|256|19930630|assigned
 arin|US|ipv4|198.140.152.0|256|19930630|assigned
 arin|US|ipv4|198.140.153.0|256|19930630|assigned
 arin|US|ipv4|198.140.154.0|512|20130502|assigned
+arin|US|ipv4|198.140.156.0|256|20130618|assigned
 arin|US|ipv4|198.140.157.0|256|19930630|assigned
 arin|US|ipv4|198.140.158.0|256|19930630|assigned
 arin|US|ipv4|198.140.159.0|256|19930630|assigned
@@ -46721,6 +46791,8 @@ arin|US|ipv4|198.140.177.0|256|19930707|assigned
 arin|US|ipv4|198.140.178.0|256|19930707|assigned
 arin|US|ipv4|198.140.179.0|256|19930707|assigned
 arin|US|ipv4|198.140.180.0|256|19930707|assigned
+arin|US|ipv4|198.140.181.0|256|20130618|assigned
+arin|US|ipv4|198.140.182.0|256|20130620|assigned
 arin|US|ipv4|198.140.183.0|256|19930708|assigned
 arin|US|ipv4|198.140.184.0|256|19930708|assigned
 arin|US|ipv4|198.140.185.0|256|19930708|assigned
@@ -46743,6 +46815,7 @@ arin|US|ipv4|198.140.206.0|256|19930712|assigned
 arin|US|ipv4|198.140.207.0|256|19930712|assigned
 arin|US|ipv4|198.140.208.0|256|19930712|assigned
 arin|US|ipv4|198.140.209.0|256|19930712|assigned
+arin|US|ipv4|198.140.210.0|256|20130625|assigned
 arin|US|ipv4|198.140.211.0|256|19930712|assigned
 arin|US|ipv4|198.140.212.0|256|19930712|assigned
 arin|US|ipv4|198.140.213.0|256|19930712|assigned
@@ -46764,6 +46837,7 @@ arin|US|ipv4|198.140.232.0|256|19930719|assigned
 arin|US|ipv4|198.140.233.0|256|19930719|assigned
 arin|US|ipv4|198.140.234.0|1280|19930719|assigned
 arin|US|ipv4|198.140.239.0|768|19930719|assigned
+arin|US|ipv4|198.140.242.0|256|20130625|assigned
 arin|US|ipv4|198.140.243.0|256|19930719|assigned
 arin|US|ipv4|198.140.244.0|256|19930716|assigned
 arin|US|ipv4|198.140.245.0|256|19930716|assigned
@@ -62988,7 +63062,6 @@ arin|CA|ipv4|206.130.254.0|256|19951023|assigned
 arin|CA|ipv4|206.130.255.0|256|20120426|assigned
 arin|US|ipv4|206.131.0.0|40960|19950927|allocated
 arin|US|ipv4|206.131.160.0|8192|19990302|assigned
-arin|US|ipv4|206.131.192.0|4096|19990304|allocated
 arin|US|ipv4|206.131.208.0|4096|20010330|assigned
 arin|US|ipv4|206.131.224.0|8192|19990304|allocated
 arin|US|ipv4|206.132.0.0|8192|19950921|allocated
@@ -64855,6 +64928,7 @@ arin|US|ipv4|208.70.32.0|1024|20060906|allocated
 arin|US|ipv4|208.70.36.0|1024|20090202|allocated
 arin|US|ipv4|208.70.40.0|2048|20060907|allocated
 arin|US|ipv4|208.70.48.0|2048|20060907|allocated
+arin|CA|ipv4|208.70.56.0|2048|20060911|allocated
 arin|US|ipv4|208.70.64.0|2048|20060911|allocated
 arin|US|ipv4|208.70.72.0|2048|20060912|allocated
 arin|US|ipv4|208.70.80.0|2048|20060912|allocated
@@ -66699,6 +66773,8 @@ arin|US|ipv4|209.147.128.0|16384|19971013|allocated
 arin|US|ipv4|209.147.192.0|16384|19990611|assigned
 arin|US|ipv4|209.148.0.0|8192|19971030|allocated
 arin|US|ipv4|209.148.32.0|8192|20080403|allocated
+arin|US|ipv4|209.148.64.0|4096|20130621|assigned
+arin|US|ipv4|209.148.80.0|4096|20130624|allocated
 arin|US|ipv4|209.148.96.0|8192|20020410|allocated
 arin|CA|ipv4|209.148.128.0|32768|19971219|allocated
 arin|US|ipv4|209.149.0.0|65536|19971001|allocated
@@ -66930,6 +67006,7 @@ arin|CA|ipv4|209.205.0.0|16384|19980225|allocated
 arin|CA|ipv4|209.205.64.0|12288|20070529|allocated
 arin|US|ipv4|209.205.112.0|4096|20081126|allocated
 arin|US|ipv4|209.205.128.0|16384|20000606|allocated
+arin|US|ipv4|209.205.192.0|8192|20130620|allocated
 arin|CA|ipv4|209.205.240.0|4096|20050113|assigned
 arin|US|ipv4|209.206.0.0|32768|19980304|allocated
 arin|US|ipv4|209.206.128.0|32768|19980312|allocated
@@ -68900,6 +68977,7 @@ arin|US|ipv6|2602:ffc0::|36|20130222|allocated
 arin|US|ipv6|2602:ffd0::|36|20130122|allocated
 arin|US|ipv6|2602:ffe0::|36|20130102|allocated
 arin|US|ipv6|2602:fff0::|36|20121204|allocated
+arin|US|ipv6|2602:fff8::|36|20130619|allocated
 arin|US|ipv6|2602:fff9::|36|20130513|allocated
 arin|US|ipv6|2602:fffa::|36|20130425|allocated
 arin|US|ipv6|2602:fffb::|36|20130424|allocated
@@ -69315,9 +69393,14 @@ arin|US|ipv6|2604:ca80::|32|20130612|allocated
 arin|US|ipv6|2604:cb00::|32|20110511|allocated
 arin|US|ipv6|2604:cb80::|32|20130613|allocated
 arin|US|ipv6|2604:cc00::|32|20100713|allocated
+arin|US|ipv6|2604:cc80::|32|20130620|allocated
 arin|US|ipv6|2604:cd00::|32|20110511|allocated
+arin|US|ipv6|2604:cd80::|32|20130624|allocated
 arin|US|ipv6|2604:ce00::|32|20101129|allocated
+arin|US|ipv6|2604:ce80::|32|20130624|allocated
 arin|CA|ipv6|2604:cf00::|32|20110511|allocated
+arin|US|ipv6|2604:cf80::|32|20130624|allocated
+arin|US|ipv6|2604:d080::|32|20130626|allocated
 arin|US|ipv6|2604:d100::|32|20110511|allocated
 arin|US|ipv6|2604:d200::|32|20101129|allocated
 arin|US|ipv6|2604:d300::|32|20110512|allocated
@@ -71127,7 +71210,9 @@ arin|US|ipv6|2620:30:c000::|44|20130614|assigned
 arin|US|ipv6|2620:31::|48|20110110|assigned
 arin|US|ipv6|2620:31:4000::|48|20130614|assigned
 arin|US|ipv6|2620:31:8000::|48|20110504|assigned
+arin|US|ipv6|2620:31:c000::|48|20130621|assigned
 arin|US|ipv6|2620:32::|48|20111201|assigned
+arin|CA|ipv6|2620:32:4000::|48|20130626|assigned
 arin|US|ipv6|2620:32:8000::|48|20110504|assigned
 arin|US|ipv6|2620:33::|48|20110111|assigned
 arin|US|ipv6|2620:33:8000::|48|20110504|assigned
@@ -71892,6 +71977,9 @@ arin|US|ipv6|2620:115:e000::|44|20130502|assigned
 arin|US|ipv6|2620:115:f000::|44|20130522|assigned
 arin|US|ipv6|2620:116::|44|20130523|assigned
 arin|US|ipv6|2620:116:1000::|40|20130606|assigned
+arin|US|ipv6|2620:116:2000::|44|20130621|assigned
+arin|US|ipv6|2620:116:3000::|44|20130621|assigned
+arin|US|ipv6|2620:116:4000::|40|20130625|assigned
 arin|US|ipv6|2620:140::|38|20100907|assigned
 arin|US|ipv6|2620:141::|36|20110121|assigned
 arin|US|ipv6|2620:143::|37|20110215|assigned
@@ -71947,6 +72035,7 @@ arin|CA|ipv6|2620:175::|36|20130522|assigned
 arin|US|ipv6|2620:176::|32|20130531|assigned
 arin|US|ipv6|2620:177::|36|20130605|assigned
 arin|US|ipv6|2620:178::|36|20130611|assigned
+arin|US|ipv6|2620:179::|36|20130618|assigned
 arin|US|ipv6|2620:180::|32|20110428|assigned
 arin|US|ipv6|2620:190::|32|20110601|assigned
 arin|US|ipv6|2620:1a0::|32|20110801|assigned
