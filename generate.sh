@@ -9,10 +9,10 @@ shift
 cd $root
 
 [ -e data/delegated-apnic-latest ] || \
-  wget -O data/delegated-apnic-latest http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest
-  
+  wget -O data/delegated-apnic-latest ftp://ftp.apnic.net/pub/stats/apnic/delegated-apnic-latest
+
 [ -e data/delegated-arin-latest ] || \
-  wget -O data/delegated-arin-latest http://ftp.arin.net/pub/stats/arin/delegated-arin-latest
+  wget -O data/delegated-arin-latest ftp://ftp.arin.net/pub/stats/arin/delegated-arin-latest
 
 [ -e data/delegated-ripencc-latest ] || \
   wget -O data/delegated-ripencc-latest ftp://ftp.ripe.net/pub/stats/ripencc/delegated-ripencc-latest

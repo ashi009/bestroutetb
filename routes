@@ -269,6 +269,9 @@ route 103.27.0.0 255.255.224.0 net_gateway
 route 103.27.0.0 255.255.252.0 vpn_gateway
 route 103.27.48.0 255.255.240.0 net_gateway
 route 103.27.96.0 255.255.248.0 net_gateway
+route 103.27.176.0 255.255.252.0 net_gateway
+route 103.27.208.0 255.255.252.0 net_gateway
+route 103.27.240.0 255.255.252.0 net_gateway
 route 103.28.0.0 255.255.240.0 net_gateway
 route 103.28.192.0 255.255.224.0 net_gateway
 route 103.29.16.0 255.255.240.0 net_gateway
@@ -324,6 +327,10 @@ route 103.249.152.0 255.255.248.0 vpn_gateway
 route 103.249.184.0 255.255.252.0 vpn_gateway
 route 103.249.192.0 255.255.252.0 net_gateway
 route 103.249.224.0 255.255.224.0 net_gateway
+route 103.250.32.0 255.255.252.0 net_gateway
+route 103.250.104.0 255.255.252.0 net_gateway
+route 103.250.124.0 255.255.252.0 net_gateway
+route 103.250.176.0 255.255.240.0 net_gateway
 route 106.0.0.0 255.128.0.0 net_gateway
 route 106.72.0.0 255.254.0.0 vpn_gateway
 route 106.192.0.0 255.192.0.0 net_gateway
