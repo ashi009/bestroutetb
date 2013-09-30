@@ -12,7 +12,7 @@ cd $root
   wget -O data/delegated-apnic-latest ftp://ftp.apnic.net/pub/stats/apnic/delegated-apnic-latest
 
 [ -e data/delegated-arin-latest ] || \
-  wget -O data/delegated-arin-latest ftp://ftp.arin.net/pub/stats/arin/delegated-arin-latest
+  wget -O data/delegated-arin-latest ftp://ftp.arin.net/pub/stats/arin/delegated-arin-extended-$(date --date="yesterday" +%Y%m%d)
 
 [ -e data/delegated-ripencc-latest ] || \
   wget -O data/delegated-ripencc-latest ftp://ftp.ripe.net/pub/stats/ripencc/delegated-ripencc-latest
