@@ -42,7 +42,9 @@ $define(global, {
 $define(String.prototype, {
   format: function() {
     var args = arguments;
-    return this.replace(/%(([a-zA-Z]\w*)|(\d+))\b/g, function(all, key, name, index) {
+    return this.replace(/%(([a-zA-Z]\w*)|(\d+)|\{([a-zA-Z]\w*)\}|\{(\d+)\})\b/g, function(all, key, name, index, name2, index2) {
+      name = name || name2;
+      index = index || index2;
       if (index !== undefined)
         return args[parseInt(index, 10)];
       for (var i = 0; i < args.length; i++)
@@ -274,7 +276,7 @@ function I18nStrings(data, locales) {
   if (this.locale < 0)
     this.locale = 0;
 }
-$define(I18nStrings.prototype, {
+$declare(I18nStrings, {
   getLocalString: function(abbr) {
     if (this.data.hasOwnProperty(abbr))
       return this.data[abbr][this.locale];
