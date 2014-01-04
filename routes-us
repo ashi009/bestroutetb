@@ -10,6 +10,7 @@ route 54.222.0.0 255.254.0.0 net_gateway
 route 58.0.0.0 254.0.0.0 net_gateway
 route 60.0.0.0 254.0.0.0 net_gateway
 route 60.254.0.0 255.255.0.0 vpn_gateway
+route 91.232.0.0 255.248.0.0 net_gateway
 route 101.0.0.0 255.0.0.0 net_gateway
 route 102.0.0.0 254.0.0.0 net_gateway
 route 103.246.192.0 255.255.192.0 vpn_gateway
