@@ -20,15 +20,13 @@ var kProfiles = {
     }
   },
   route_up: {
-    header: '#!/bin/sh\
-netgw=$(cat /tmp/net_gateway)\
-read target dummy vpngw dummy <<< $(ip route get 8.8.8.8)',
-    format: 'route add %prefix netmask %mask gw %gw',
+    header: '#!/bin/sh\nexport PATH=$PATH:/bin:/sbin:/usr/sbin:/usr/bin\nnetgw=$(cat /tmp/net_gateway)\nsleep 1s\nread target dummy vpngw dummy <<< $(ip route get 8.8.8.8)',
+    format: 'route add -net %prefix netmask %mask gw %gw',
     gw: kDefaultGateway
   },
   route_down: {
-    header: '#!/bin/sh',
-    format: 'route delete %prefix',
+    header: '#!/bin/sh\nexport PATH=$PATH:/bin:/sbin:/usr/sbin:/usr/bin',
+    format: 'route del -net %prefix netmask %mask',
     gw: kDefaultGateway
   },
   iproute_up: {
@@ -80,7 +78,7 @@ lib.getRulesFromInput(function(rules) {
   if (kProfile.groupgw) {
     var groupHeader = opts.groupheader || kProfile.groupHeader;
     var groupFooter = opts.groupfooter || kProfile.groupFooter;
-    var groupGateways = kProfile.groupgw
+    var groupGateways = kProfile.groupgw;
     rules = rules.map(function(rule, index) {
       rule.index = index;
       return rule;
