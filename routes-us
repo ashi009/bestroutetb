@@ -82,6 +82,7 @@ route 163.178.0.0 255.254.0.0 net_gateway
 route 163.204.0.0 255.255.0.0 net_gateway
 route 166.110.0.0 255.254.0.0 net_gateway
 route 167.139.0.0 255.255.0.0 net_gateway
+route 167.189.0.0 255.255.0.0 net_gateway
 route 168.160.0.0 255.255.0.0 net_gateway
 route 171.0.0.0 255.128.0.0 net_gateway
 route 171.64.0.0 255.240.0.0 vpn_gateway
