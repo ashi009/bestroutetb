@@ -8,17 +8,17 @@ AL	ALBANIA|阿尔巴尼亚
 AM	ARMENIA|亚美尼亚
 AN	Netherlands Antilles|荷属安的列斯群岛
 AO	ANGOLA|安哥拉
-AP	African Regional Industrial Property Organization|非洲地区工业产权组织
+AP	African Regional Industrial Property Organization|非洲地区知识产权组织
 AQ	ANTARCTICA|南极
 AR	ARGENTINA|阿根廷
 AS	AMERICAN SAMOA|美属萨摩亚
 AT	AUSTRIA|奥地利
 AU	AUSTRALIA|澳大利亚
-AW	ARUBA|阿鲁巴岛
+AW	ARUBA|阿鲁巴
 AX	ÅLAND ISLANDS|奥兰群岛
 AZ	AZERBAIJAN|阿塞拜疆
 BA	BOSNIA AND HERZEGOVINA|波斯尼亚和黑塞哥维那
-BB	BARBADOS|巴巴多斯岛
+BB	BARBADOS|巴巴多斯
 BD	BANGLADESH|孟加拉国
 BE	BELGIUM|比利时
 BF	BURKINA FASO|布基纳法索
@@ -27,10 +27,10 @@ BH	BAHRAIN|巴林
 BI	BURUNDI|布隆迪
 BJ	BENIN|贝宁
 BL	SAINT BARTHÉLEMY|圣巴泰勒米
-BM	BERMUDA|百慕达
+BM	BERMUDA|百慕大
 BN	BRUNEI DARUSSALAM|文莱达鲁萨兰国
-BO	BOLIVIA, PLURINATIONAL STATE OF|玻利维亚多民族国
-BQ	BONAIRE, SINT EUSTATIUS AND SABA|博内尔，圣尤斯特歇斯萨巴
+BO	BOLIVIA, PLURINATIONAL STATE OF|玻利维亚
+BQ	BONAIRE, SINT EUSTATIUS AND SABA|波内赫、圣尤斯特歇斯和萨巴
 BR	BRAZIL|巴西
 BS	BAHAMAS|巴哈马
 BT	BHUTAN|不丹
@@ -41,12 +41,12 @@ BX	Benelux Trademarks and Designs Office|比荷卢经济联盟商标和设计局
 BY	BELARUS|白俄罗斯
 BZ	BELIZE|伯利兹
 CA	CANADA|加拿大
-CC	COCOS (KEELING) ISLANDS|科科斯群岛
+CC	COCOS (KEELING) ISLANDS|科科斯（基林）群岛
 CD	CONGO, THE DEMOCRATIC REPUBLIC OF THE|刚果民主共和国
 CF	CENTRAL AFRICAN REPUBLIC|中非共和国
-CG	CONGO|刚果
+CG	CONGO|刚果共和国
 CH	SWITZERLAND|瑞士
-CI	CÔTE D'IVOIRE|象牙海岸
+CI	CÔTE D'IVOIRE|科特迪瓦
 CK	COOK ISLANDS|库克群岛
 CL	CHILE|智利
 CM	CAMEROON|喀麦隆
@@ -69,10 +69,10 @@ DM	DOMINICA|多米尼克
 DO	DOMINICAN REPUBLIC|多明尼加共和国
 DY	Benin|贝宁
 DZ	ALGERIA|阿尔及利亚
-EA	Ceuta, Melilla|休达，梅利利亚
+EA	Ceuta, Melilla|休达和梅利利亚
 EC	ECUADOR|厄瓜多尔
 EE	ESTONIA|爱沙尼亚
-EF	Union of Countries under the European Community Patent Convention|欧盟
+EF	Union of Countries under the European Community Patent Convention|欧共体专利协约成员国
 EG	EGYPT|埃及
 EH	WESTERN SAHARA|西撒哈拉
 EM	European Trademark Office|欧洲商标局
@@ -80,7 +80,7 @@ EP	European Patent Organization|欧洲专利组织
 ER	ERITREA|厄立特里亚
 ES	SPAIN|西班牙
 ET	ETHIOPIA|埃塞俄比亚
-EU	European Union|欧洲联盟
+EU	European Union|欧盟
 EV	Eurasian Patent Organization|欧亚专利组织
 EW	Estonia|爱沙尼亚
 FI	FINLAND|芬兰
@@ -90,12 +90,12 @@ FL	Liechtenstein|列支敦士登
 FM	MICRONESIA, FEDERATED STATES OF|密克罗尼西亚联邦
 FO	FAROE ISLANDS|法罗群岛
 FR	FRANCE|法国
-FX	France, Metropolitan|法国，大都会
+FX	France, Metropolitan|法国本土
 GA	GABON|加蓬
 GB	UNITED KINGDOM|英国
-GC	Patent Office of the Cooperation Council for the Arab States of the Gulf (GCC)|专利局的海湾阿拉伯国家合作委员会（海合会）
+GC	Patent Office of the Cooperation Council for the Arab States of the Gulf (GCC)|海合会专利局
 GD	GRENADA|格林纳达
-GE	GEORGIA|乔治亚州
+GE	GEORGIA|格鲁吉亚
 GF	FRENCH GUIANA|法属圭亚那
 GG	GUERNSEY|根西岛
 GH	GHANA|加纳
@@ -103,12 +103,12 @@ GI	GIBRALTAR|直布罗陀
 GL	GREENLAND|格陵兰
 GM	GAMBIA|冈比亚
 GN	GUINEA|几内亚
-GP	GUADELOUPE|瓜德罗普岛
+GP	GUADELOUPE|瓜德罗普
 GQ	EQUATORIAL GUINEA|赤道几内亚
 GR	GREECE|希腊
 GS	SOUTH GEORGIA AND THE SOUTH SANDWICH ISLANDS|南乔治亚和南桑威奇群岛
 GT	GUATEMALA|危地马拉
-GU	GUAM|古阿姆
+GU	GUAM|关岛
 GW	GUINEA-BISSAU|几内亚比绍
 GY	GUYANA|圭亚那
 HK	HONG KONG|香港
@@ -126,11 +126,11 @@ IM	ISLE OF MAN|马恩岛
 IN	INDIA|印度
 IO	BRITISH INDIAN OCEAN TERRITORY|英属印度洋领地
 IQ	IRAQ|伊拉克
-IR	IRAN, ISLAMIC REPUBLIC OF|伊朗伊斯兰共和国
+IR	IRAN, ISLAMIC REPUBLIC OF|伊朗
 IS	ICELAND|冰岛
 IT	ITALY|意大利
 JA	Jamaica|牙买加
-JE	JERSEY|新泽西州
+JE	JERSEY|泽西岛
 JM	JAMAICA|牙买加
 JO	JORDAN|约旦
 JP	JAPAN|日本
@@ -140,12 +140,12 @@ KH	CAMBODIA|柬埔寨
 KI	KIRIBATI|基里巴斯
 KM	COMOROS|科摩罗
 KN	SAINT KITTS AND NEVIS|圣基茨和尼维斯
-KP	KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF|朝鲜人民民主共和国
-KR	KOREA, REPUBLIC OF|大韩民国
+KP	KOREA, DEMOCRATIC PEOPLE'S REPUBLIC OF|朝鲜
+KR	KOREA, REPUBLIC OF|韩国
 KW	KUWAIT|科威特
 KY	CAYMAN ISLANDS|开曼群岛
 KZ	KAZAKHSTAN|哈萨克斯坦
-LA	LAO PEOPLE'S DEMOCRATIC REPUBLIC|老挝人民民主共和国
+LA	LAO PEOPLE'S DEMOCRATIC REPUBLIC|老挝
 LB	LEBANON|黎巴嫩
 LC	SAINT LUCIA|圣卢西亚
 LF	Libya Fezzan|利比亚费赞
@@ -159,20 +159,20 @@ LV	LATVIA|拉脱维亚
 LY	LIBYA|利比亚
 MA	MOROCCO|摩洛哥
 MC	MONACO|摩纳哥
-MD	MOLDOVA, REPUBLIC OF|摩尔多瓦共和国
+MD	MOLDOVA, REPUBLIC OF|摩尔多瓦
 ME	MONTENEGRO|黑山
-MF	SAINT MARTIN (FRENCH PART)|圣马丁岛（法语区）
+MF	SAINT MARTIN (FRENCH PART)|圣马丁岛（法属区）
 MG	MADAGASCAR|马达加斯加
 MH	MARSHALL ISLANDS|马绍尔群岛
-MK	MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF|马其顿，前南斯拉夫马其顿共和国
+MK	MACEDONIA, THE FORMER YUGOSLAV REPUBLIC OF|马其顿共和国
 ML	MALI|马里
 MM	MYANMAR|缅甸
-MN	MONGOLIA|内蒙古
+MN	MONGOLIA|蒙古
 MO	MACAO|澳门
-MP	NORTHERN MARIANA ISLANDS|阿里奥拉
+MP	NORTHERN MARIANA ISLANDS|北马里亚纳群岛
 MQ	MARTINIQUE|马提尼克
 MR	MAURITANIA|毛里塔尼亚
-MS	MONTSERRAT|蒙特塞拉特
+MS	MONTSERRAT|蒙塞拉特岛
 MT	MALTA|马耳他
 MU	MAURITIUS|毛里求斯
 MV	MALDIVES|马尔代夫
@@ -206,24 +206,24 @@ PL	POLAND|波兰
 PM	SAINT PIERRE AND MIQUELON|圣皮埃尔和密克隆
 PN	PITCAIRN|皮特凯恩
 PR	PUERTO RICO|波多黎各
-PS	PALESTINIAN, STATE OF|巴勒斯坦州
+PS	PALESTINIAN, STATE OF|巴勒斯坦
 PT	PORTUGAL|葡萄牙
-PW	PALAU|帛琉
+PW	PALAU|帕劳
 PY	PARAGUAY|巴拉圭
 QA	QATAR|卡塔尔
 RA	Argentina|阿根廷
 RB	Bolivia [cf. Botswana: identical code element]|玻利维亚
 RC	China|中国
-RE	RÉUNION|通告
+RE	RÉUNION|留尼汪岛
 RH	Haiti|海地
-RI	Indonesia|印尼
+RI	Indonesia|印度尼西亚
 RL	Lebanon|黎巴嫩
 RM	Madagascar|马达加斯加
 RN	Niger|尼日尔
 RO	ROMANIA|罗马尼亚
 RP	Philippines|菲律宾
 RS	SERBIA|塞尔维亚
-RU	RUSSIAN FEDERATION|俄罗斯联邦
+RU	RUSSIAN FEDERATION|俄罗斯
 RW	RWANDA|卢旺达
 SA	SAUDI ARABIA|沙特阿拉伯
 SB	SOLOMON ISLANDS|索罗门群岛
@@ -232,7 +232,7 @@ SD	SUDAN|苏丹
 SE	SWEDEN|瑞典
 SF	Finland|芬兰
 SG	SINGAPORE|新加坡
-SH	SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA|圣赫勒拿岛，阿森松岛和特里斯坦达库尼亚
+SH	SAINT HELENA, ASCENSION AND TRISTAN DA CUNHA|圣赫勒拿岛、阿森松岛和特里斯坦达库尼亚
 SI	SLOVENIA|斯洛文尼亚
 SJ	SVALBARD AND JAN MAYEN|斯瓦尔巴群岛和扬马延岛
 SK	SLOVAKIA|斯洛伐克
@@ -241,17 +241,17 @@ SM	SAN MARINO|圣马力诺
 SN	SENEGAL|塞内加尔
 SO	SOMALIA|索马里
 SR	SURINAME|苏里南
-SS	SOUTH SUDAN|苏丹南部
-ST	SAO TOME AND PRINCIPE|圣多美普林西比
+SS	SOUTH SUDAN|南苏丹
+ST	SAO TOME AND PRINCIPE|圣多美和普林西比
 SU	USSR|苏联
 SV	EL SALVADOR|萨尔瓦多
-SX	SINT MAARTEN (DUTCH PART)|圣马丁（荷兰语部分）
-SY	SYRIAN ARAB REPUBLIC|阿拉伯叙利亚共和国
+SX	SINT MAARTEN (DUTCH PART)|圣马丁（荷属部分）
+SY	SYRIAN ARAB REPUBLIC|叙利亚
 SZ	SWAZILAND|斯威士兰
 TA	Tristan da Cunha|特里斯坦达库尼亚
 TC	TURKS AND CAICOS ISLANDS|特克斯和凯科斯群岛
 TD	CHAD|乍得
-TF	FRENCH SOUTHERN TERRITORIES|法国南部领土
+TF	FRENCH SOUTHERN TERRITORIES|法国南部领地
 TG	TOGO|多哥
 TH	THAILAND|泰国
 TJ	TAJIKISTAN|塔吉克斯坦
@@ -265,19 +265,19 @@ TR	TURKEY|土耳其
 TT	TRINIDAD AND TOBAGO|特里尼达和多巴哥
 TV	TUVALU|图瓦卢
 TW	TAIWAN, PROVINCE OF CHINA|中国台湾省
-TZ	TANZANIA, UNITED REPUBLIC OF|坦桑尼亚联合共和国
+TZ	TANZANIA, UNITED REPUBLIC OF|坦桑尼亚
 UA	UKRAINE|乌克兰
 UG	UGANDA|乌干达
-UK	United Kingdom|联合王国
+UK	United Kingdom|英国
 UM	UNITED STATES MINOR OUTLYING ISLANDS|美属离岛
 US	UNITED STATES|美国
 UY	URUGUAY|乌拉圭
 UZ	UZBEKISTAN|乌兹别克斯坦
 VA	HOLY SEE (VATICAN CITY STATE)|罗马教廷（梵蒂冈城国）
-VC	SAINT VINCENT AND THE GRENADINES|圣圣文森特和格林纳丁斯
-VE	VENEZUELA, BOLIVARIAN REPUBLIC|委内瑞拉玻利瓦尔共和国
+VC	SAINT VINCENT AND THE GRENADINES|圣文森特和格林纳丁斯
+VE	VENEZUELA, BOLIVARIAN REPUBLIC|委内瑞拉
 VG	VIRGIN ISLANDS, BRITISH|英属维尔京群岛
-VI	VIRGIN ISLANDS, U.S.|美国维尔京群岛
+VI	VIRGIN ISLANDS, U.S.|美属维尔京群岛
 VN	VIET NAM|越南
 VU	VANUATU|瓦努阿图
 WF	WALLIS AND FUTUNA|瓦利斯群岛和富图纳群岛
