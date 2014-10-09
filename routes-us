@@ -79,7 +79,7 @@ route 161.207.0.0 255.255.0.0 net_gateway
 route 162.105.0.0 255.255.0.0 net_gateway
 route 163.0.0.0 255.254.0.0 net_gateway
 route 163.44.0.0 255.252.0.0 net_gateway
-route 163.48.0.0 255.248.0.0 net_gateway
+route 163.48.0.0 255.240.0.0 net_gateway
 route 163.125.0.0 255.255.0.0 net_gateway
 route 163.136.0.0 255.248.0.0 net_gateway
 route 163.177.0.0 255.255.0.0 net_gateway
