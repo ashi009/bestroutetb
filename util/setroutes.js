@@ -8,7 +8,7 @@ var console = {
     if (typeof s === 'string' && args !== undefined) {
       args = [].slice.call(arguments, 1);
       var i = 0;
-      var s = s.replace(/%[sd]/g, function() {
+      s = s.replace(/%[sd]/g, function() {
         return args[i++];
       });
       while (i < args.length)
@@ -35,8 +35,7 @@ var process = {
 };
 
 if (process.argv.length < 2) {
-  console.log('Usage:\n\
-    setroute.js up|down RouteFile [/netgw:IP] [/vpngw:IP]');
+  console.log('Usage:\nsetroute.js up|down RouteFile [/netgw:IP] [/vpngw:IP]');
   process.exit();
 }
 

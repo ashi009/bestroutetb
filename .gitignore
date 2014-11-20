@@ -1,7 +1,6 @@
 dnsmasq
 test
 wiki
-update*.sh
-report*
-lists*
+*.sh
 *.sublime*
+node_modules
