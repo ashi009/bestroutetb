@@ -31,7 +31,6 @@ var argv = yargs
     .options('p', {
       alias: 'profile',
       string: true,
-      required: true,
       describe: 'Output format profile: `' +
           Profile.getAvailableNames().join('`, `') + '`'
     })
@@ -43,7 +42,6 @@ var argv = yargs
     .options('o', {
       alias: 'output',
       string: true,
-      required: true,
       describe: 'Output file path'
     })
     .options('r', {
@@ -118,19 +116,22 @@ var argv = yargs
       boolean: true,
       describe: 'Silent mode'
     })
-    .addHelpOpt('h').alias('h', 'help')
-    .version(util.format('%s %s (%s)\n',
-        packageInfo.name, packageInfo.version.replace(/\+.*$/, ''),
-        Db.getInstance().version),
-        'version')
+    .addHelpOpt('h')
+    .alias('h', 'help')
+    .version(util.format('%s %s (%s)\n', packageInfo.name, packageInfo.version,
+        Db.getInstance().version), 'V')
+    .alias('V', 'version')
     .check(function(argv) {
       if (argv.stale && argv.update)
         throw '`--update` conflicts with `--use-stale`.';
       if (argv.verbose && argv.silent)
         throw '`--verbose` conflicts with `--silent`.';
+      if (argv.output && !argv.profile)
+        throw '`--profile` must be specified when generating output';
     })
     .check(function(argv) {
-      if (Profile.getAvailableNames().indexOf(argv.profile) === -1) {
+      if (argv.profile &&
+          Profile.getAvailableNames().indexOf(argv.profile) === -1) {
         var path = pathUtil.resolve(argv.profile);
         if (!fs.existsSync(path))
           throw 'Cannot find given profile.';
@@ -191,6 +192,8 @@ async.waterfall([
   },
   // profile
   function(rules, callback) {
+    if (!argv.profile)
+      return callback(null, rules, null);
     var scope = 'profile';
     logger.info(scope, 'loading');
     logger.verbose(scope, 'using %s', argv.profile);
@@ -205,6 +208,8 @@ async.waterfall([
   },
   // generate
   function(rules, profile, callback) {
+    if (!argv.output)
+      return callback(null, rules);
     var scope = 'profile:' + argv.profile;
     var options = {
       header: argv.header,
