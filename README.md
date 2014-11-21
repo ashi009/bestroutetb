@@ -124,7 +124,7 @@ __Options__
 
 __Examples__
 
-  $ bestroutetb --route.vpn=us -p json -o routes.json
+    $ bestroutetb --route.vpn=us -p json -o routes.json
 
 
 [wiki]: https://github.com/ashi009/bestroutetb/wiki/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E
