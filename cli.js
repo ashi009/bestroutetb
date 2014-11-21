@@ -241,6 +241,9 @@ async.waterfall([
   },
   // report
   function(rules, callback) {
+    var scope = 'report';
+    if (argv.report)
+      logger.error(scope, 'not availabe yet');
     callback();
   }
 ], function(err) {
