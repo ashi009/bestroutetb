@@ -150,14 +150,9 @@ var logger = new Logger({
   silent: argv.silent
 });
 
-logger.debug('cli', 'argv parsed %j', argv);
-
-var startTime = Date.now();
-logger.verbose('cli', 'start at %d', startTime);
-
-async.waterfall([
+var jobs = {
   // db
-  function(callback) {
+  db: function(callback) {
     var scope = 'db';
     logger.info(scope, 'loading');
     if (argv.update === false)
@@ -179,34 +174,34 @@ async.waterfall([
     });
   },
   // minify
-  function(callback) {
+  rules: ['db', function(callback) {
     var scope = 'minify';
     logger.info(scope, 'generating route table');
     logger.verbose(scope, 'options %j', argv.route);
     var rules = minify(argv.route);
     logger.info(scope, '%d rules generated', rules.length);
     callback(null, rules);
-  },
+  }],
   // profile
-  function(rules, callback) {
+  profile: ['db', function(callback) {
     if (!argv.profile)
-      return callback(null, rules, null);
+      return callback();
     var scope = 'profile';
     logger.info(scope, 'loading');
     logger.verbose(scope, 'using %s', argv.profile);
     try {
       var profile = Profile.loadProfile(argv.profile);
       logger.info(scope, 'loaded');
-      callback(null, rules, profile);
+      callback(null, profile);
     } catch(err) {
       err.scope = scope;
       callback(err);
     }
-  },
+  }],
   // generate
-  function(rules, profile, callback) {
+  output: ['rules', 'profile', function(callback, results) {
     if (!argv.output)
-      return callback(null, rules);
+      return callback();
     var scope = 'profile:' + argv.profile;
     var options = {
       header: argv.header,
@@ -220,6 +215,7 @@ async.waterfall([
       groupName: argv.groupName
     };
     logger.debug(scope, 'options %j', options);
+    var profile = results.profile;
     var resolved = profile.resolveTargets(argv.output);
     logger.verbose(scope, 'resolved targets %j', resolved);
     for (var name in resolved) {
@@ -232,30 +228,37 @@ async.waterfall([
                 chalk.cyan(resolved[name]));
         }
         logger.info(scope, 'generating %s', chalk.cyan(resolved[name]));
-        profile.generate(name, rules, options);
+        profile.generate(name, results.rules, options);
         logger.info(scope, 'created %s', chalk.cyan(resolved[name]));
       } catch(err) {
         err.scope = scope;
         return callback(err);
       }
     }
-    callback(null, rules);
-  },
+    callback();
+  }],
   // report
-  function(rules, callback) {
+  report: ['rules', function(callback, results) {
     var scope = 'report';
     if (argv.report)
       logger.error(scope, 'not availabe yet');
     callback();
-  }
-], function(err) {
+  }]
+};
+
+logger.debug('cli', 'argv parsed %j', argv);
+
+var startTime = new Date();
+logger.verbose('cli', 'start at %s', startTime);
+
+async.auto(jobs, function(err) {
   if (err) {
     logger.error(err.scope, err.message);
     logger.debug(err.scope, err.stack);
     process.exit(1);
   } else {
-    var endTime = Date.now();
-    logger.info('cli', 'finished at %d, %ds', endTime,
+    var endTime = new Date();
+    logger.info('cli', 'finished at %s, %ds', endTime,
         (endTime - startTime) / 1000);
   }
 });
