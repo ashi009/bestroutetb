@@ -17,7 +17,7 @@ var minify = require('./lib/minifier');
 var Profile = require('./lib/profile');
 
 var argv = yargs
-    .usage('Usage: $0 [options] -p <profile> -o <path>')
+    .usage('Usage: $0 [options]')
     .options('route.net', {
       string: true,
       default: 'CN',
@@ -59,7 +59,7 @@ var argv = yargs
     })
     .options('rule-format', {
       string: true,
-      describe: 'String used to format a rule when `--profile=custrom`'
+      describe: 'String used to format a rule when `--profile=custom`'
     })
     .options('gateway.net', {
       string: true,

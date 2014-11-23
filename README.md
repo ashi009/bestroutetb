@@ -105,7 +105,7 @@ __Options__
 * `-r, --report`       Report file path
 * `--header`           Header of the output file
 * `--footer`           Footer of the output file
-* `--rule-format`      String used to format a rule when `--profile=custrom`
+* `--rule-format`      String used to format a rule when `--profile=custom`
 * `--gateway.net`      Substitute for `%gw` when rule is using ISP gateway
 * `--gateway.vpn`      Substitute for `%gw` when rule is using VPN gateway
 * `--default-gateway`  Output directive for default route (0.0.0.0/0)
@@ -115,8 +115,7 @@ __Options__
 * `--group-name.net`   Substitute for `%name` when group is route to ISP gateway
 * `--group-name.vpn`   Substitute for `%name` when group is route to VPN gateway
 * `-f, --force`        Force to overwrite existing files
-* `--update`           Force update delegation files
-* `--stale`            Use stale delegation files, implies `--no-update`
+* `--update`           Force update delegation data, `--no-update` to use stale data
 * `-v, --verbose`      Verbose output
 * `-s, --silent`       Silent mode
 * `-h, --help`         Show help
