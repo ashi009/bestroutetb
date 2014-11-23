@@ -13,7 +13,7 @@ var chalk = require('chalk');
 
 var Db = require('./lib/db');
 var Logger = require('./lib/logger');
-var minify = require('./lib/minifier');
+var Minifier = require('./lib/minifier');
 var Profile = require('./lib/profile');
 
 var argv = yargs
@@ -178,7 +178,7 @@ var jobs = {
     var scope = 'minify';
     logger.info(scope, 'generating route table');
     logger.verbose(scope, 'options %j', argv.route);
-    var rules = minify(argv.route);
+    var rules = Minifier.minify(argv.route);
     logger.info(scope, '%d rules generated', rules.length);
     callback(null, rules);
   }],
@@ -190,7 +190,7 @@ var jobs = {
     logger.info(scope, 'loading');
     logger.verbose(scope, 'using %s', argv.profile);
     try {
-      var profile = Profile.loadProfile(argv.profile);
+      var profile = Profile.load(argv.profile);
       logger.info(scope, 'loaded');
       callback(null, profile);
     } catch(err) {
