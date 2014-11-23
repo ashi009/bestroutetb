@@ -95,7 +95,7 @@ From Git
 
     $ bestroutetb [options]
 
-__Options__
+**Options**
 
 * `--route.net`        Subnets that should be routed to ISP gateway
 * `--route.vpn`        Subnets that should be routed to VPN gateway
@@ -121,7 +121,7 @@ __Options__
 * `-h, --help`         Show help
 * `-V, --version`      Show version number
 
-__Examples__
+**Examples**
 
     $ bestroutetb --route.vpn=us -p json -o routes.json
 
