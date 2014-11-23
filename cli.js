@@ -76,6 +76,7 @@ var argv = yargs
     })
     .options('group-gateway', {
       boolean: true,
+      default: undefined,
       describe: 'Group rules by gateway'
     })
     .options('group-header', {
@@ -96,15 +97,13 @@ var argv = yargs
     })
     .options('f', {
       alias: 'force',
+      boolean: true,
       describe: 'Force to overwrite existing files'
     })
     .options('update', {
       boolean: true,
-      describe: 'Force update delegation files'
-    })
-    .options('stale', {
-      boolean: true,
-      describe: 'Use stale delegation files, implies `--no-update`'
+      default: undefined,
+      describe: 'Force update delegation data, `--no-update` to use stale data'
     })
     .options('v', {
       alias: 'verbose',
@@ -122,10 +121,8 @@ var argv = yargs
         Db.getInstance().version), 'V')
     .alias('V', 'version')
     .check(function(argv) {
-      if (argv.stale && argv.update)
-        throw '`--update` conflicts with `--use-stale`.';
       if (argv.verbose && argv.silent)
-        throw '`--verbose` conflicts with `--silent`.';
+        throw '`--verbose` conflicts with `--silent`';
       if (argv.output && !argv.profile)
         throw '`--profile` must be specified when generating output';
     })
@@ -163,13 +160,13 @@ async.waterfall([
   function(callback) {
     var scope = 'db';
     logger.info(scope, 'loading');
-    if (argv.stale)
+    if (argv.update === false)
       logger.warn(scope, 'using stale data');
-    else if (argv.update)
-      logger.info(scope, 'force updating');
+    else if (argv.update === true)
+      logger.info(scope, 'force update');
     Db.update({
-      force: argv.update,
-      useStale: argv.stale,
+      force: argv.update === true,
+      useStale: argv.stale === false,
       progressBar: logger.getProgressBar(scope,
           'updating... :percent :currentB/:totalB :etas')
     }, function(err) {
