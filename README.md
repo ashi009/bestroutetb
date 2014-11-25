@@ -127,14 +127,12 @@ Force to overwrite existing files
 
 Generate a report and save to given path
 
-#### Header and Footer
+#### Output format
 
     --header=<string>
     --footer=<string>
 
 Header and Footer of the output file
-
-#### Output format
 
     --rule-format=<format>
 
