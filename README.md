@@ -95,33 +95,110 @@ From Git
 
     $ bestroutetb [options]
 
-**Options**
+### Options
 
-* `--route.net`        Subnets that should be routed to ISP gateway
-* `--route.vpn`        Subnets that should be routed to VPN gateway
-* `-p, --profile`      Output format profile: `custom`, `iproute`, `json`, `openvpn`
-* `-c, --config`       Configuration file path
-* `-o, --output`       Output file path
-* `-r, --report`       Report file path
-* `--header`           Header of the output file
-* `--footer`           Footer of the output file
-* `--rule-format`      String used to format a rule when `--profile=custom`
-* `--gateway.net`      Substitute for `%gw` when rule is using ISP gateway
-* `--gateway.vpn`      Substitute for `%gw` when rule is using VPN gateway
-* `--default-gateway`  Output directive for default route (0.0.0.0/0)
-* `--group-gateway`    Group rules by gateway
-* `--group-header`     Header of each group
-* `--group-footer`     Footer of each group
-* `--group-name.net`   Substitute for `%name` when group is route to ISP gateway
-* `--group-name.vpn`   Substitute for `%name` when group is route to VPN gateway
-* `-f, --force`        Force to overwrite existing files
-* `--update`           Force update delegation data, `--no-update` to use stale data
-* `-v, --verbose`      Verbose output
-* `-s, --silent`       Silent mode
-* `-h, --help`         Show help
-* `-V, --version`      Show version number
+#### Route
 
-**Examples**
+    --route.net=<spec>
+    --route.vpn=<spec>
+
+Subnets that should be routed to ISP gateway
+Subnets that should be routed to VPN gateway
+
+#### Profile
+
+    -p <profile>, --profile=<profile>
+
+Output format profile: `custom`, `iproute`, `json`, `openvpn`
+
+#### Output
+
+    -o <path>, --output=<path>
+
+Output file path
+
+    -f, --force
+
+Force to overwrite existing files
+
+#### Report
+
+    -r <path>, --report=<path>
+
+Generate a report and save to given path
+
+#### Header and Footer
+
+    --header=<string>
+    --footer=<string>
+
+Header and Footer of the output file
+
+#### Output format
+
+    --rule-format=<format>
+
+String used to format a rule when `--profile=custom`
+
+    --gateway.net=<string>
+    --gateway.vpn=<string>
+
+Substitute for `%gw` when rule is using ISP gateway
+Substitute for `%gw` when rule is using VPN gateway
+
+    --[no-]default-gateway
+
+Output directive for default route (0.0.0.0/0)
+
+    --[no-]group-gateway
+
+Group rules by gateway
+
+    --group-header=<string>
+    --group-footer=<string>
+
+Header and of each group
+
+    --group-name.net=<string>
+    --group-name.vpn=<string>
+
+Substitute for `%name` when group is route to ISP gateway
+
+#### Update
+
+    --[no-]update
+
+Force update delegation data, or force to use stale data
+
+#### Config
+
+    -c <path>, --config=<path>
+
+Configuration file path
+
+#### Logging
+
+    -v, --verbose
+
+Verbose output
+
+    -s, --silent
+
+Silent mode
+
+#### Help
+
+    -h, --help
+
+Show help
+
+#### Version
+
+    -V, --version
+
+Show version number
+
+### Examples
 
     $ bestroutetb --route.vpn=us -p json -o routes.json
 
