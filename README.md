@@ -1,13 +1,13 @@
 Best Route Table
 ================
 
-**NEW [check out](npmver) npm compliant version**
+**NEW [check out][npmver] npm compliant version**
 
-**新 [查看](npmver) npm 兼容版本**
+**新 [查看][npmver] npm 兼容版本**
 
 ----
 
-Inspired by [chnroutes](chnroutes).
+Inspired by [chnroutes][chnroutes].
 
 This project aimed to generate the smallest route table,
 while preserves the minimalist requirements that IPs of
