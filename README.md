@@ -73,7 +73,7 @@ one based on the given restrictions.
 
 This project requires [node.js][nodejs] to run.
 
-If you are using OS X install it with homebrew
+If you are using OS X install it with homebrew:
 
     $ brew install nodejs
 
@@ -85,7 +85,7 @@ From NPM for programmatic use:
 
     $ npm install bestroutetb
 
-From Git
+From Git:
 
     $ git clone https://github.com/ashi009/bestroutetb.git
     $ cd bestroutetb
@@ -102,99 +102,133 @@ From Git
     --route.net=<spec>
     --route.vpn=<spec>
 
-Subnets that should be routed to ISP gateway
-Subnets that should be routed to VPN gateway
+Subnets that should be routed to ISP or VPN gateway.
+
+**spec** should be a list of two-letter country initials, subnet (eg.
+`8.0.0.0/8`), and host (eg. `123.123.123.123`), concatenated with comma (`,`).
+
+_NOTE_ You could also use multiple `--route.*` arguments to construct the list.
 
 #### Profile
 
     -p <profile>, --profile=<profile>
 
-Output format profile: `custom`, `iproute`, `json`, `openvpn`
+Built-in profiles are `custom`, `iproute`, `json` and `openvpn`.
+
+You may also specify a javascript file as the profile (`-p openwrt.js`).
 
 #### Output
 
     -o <path>, --output=<path>
 
-Output file path
+Output file path.
+
+_NOTE_ Some profile may generate multiple files. In which case you need to
+specify path to a directory (`-o ./`), and you may also specify a prefix for the
+output file and desired extension (`-o ./ip-.sh`).
 
     -f, --force
 
-Force to overwrite existing files
+Force to overwrite existing files.
 
 #### Report
 
+_NOT implemented_
+
     -r <path>, --report=<path>
 
-Generate a report and save to given path
+Generate a report and save to given path.
 
 #### Output format
+
+_NOTE_ All strings will be outputted without adding any new line (`\n`).
+Thus, it would be favorable for you to add them in the string.  For zsh, bash
+and some other shells, you could use `$'line\n'` to include a escaped character.
 
     --header=<string>
     --footer=<string>
 
-Header and Footer of the output file
+Header and Footer of the output file.
 
-    --rule-format=<format>
+    --rule-format=<string>
 
-String used to format a rule when `--profile=custom`
+String used to format a rule when `--profile=custom`.
+
+You may use `%prefix`, `%mask`, `%length` and `%gateway` or `%gw` in the string.
+
+- `%prefix` is the prefix of the subnet (eg. `14.0.0.0`).
+- `%mask` is the mask of the subnet (eg. `255.0.0.0`).
+- `%length` is the length of the mask (eg. `8`).
+- `%gateway` is the routing destination of the subnet (eg. `net` and `vpn`).
+- `%gw` is the customized destination (eg. `pppoe` and `tun0`), which is set with
+  `--gateway.net` and `--gateway.vpn`.
+
+<!-- -->
 
     --gateway.net=<string>
     --gateway.vpn=<string>
 
-Substitute for `%gw` when rule is using ISP gateway
-Substitute for `%gw` when rule is using VPN gateway
+Define substitutes for `%gw` in rule format.
 
     --[no-]default-gateway
 
-Output directive for default route (0.0.0.0/0)
+Whether to output directive for default route (`0.0.0.0/0`), which would be
+outputted by default.
 
     --[no-]group-gateway
 
-Group rules by gateway
+Whether to group rules by gateway.
 
     --group-header=<string>
     --group-footer=<string>
 
-Header and of each group
+Header and of each group.
+
+You may include `%name` in the string.
+
+- `%name` is the customized group name (eg. `wan` and `vpn`), which is set with
+  `--group-name.net` and `--group-name.vpn`.
+
+<!-- -->
 
     --group-name.net=<string>
     --group-name.vpn=<string>
 
-Substitute for `%name` when group is route to ISP gateway
+Define substitutes for `%name` in group header and group footer.
 
 #### Update
 
     --[no-]update
 
-Force update delegation data, or force to use stale data
+Force update delegation data, or force to use stale data.
 
 #### Config
 
     -c <path>, --config=<path>
 
-Configuration file path
+Configuration file path.
 
 #### Logging
 
     -v, --verbose
 
-Verbose output
+Verbose output level. Use `-vvvv` for debug.
 
     -s, --silent
 
-Silent mode
+Silent mode, which will suppress any output.
 
 #### Help
 
     -h, --help
 
-Show help
+Show help.
 
 #### Version
 
     -V, --version
 
-Show version number
+Show version number.
 
 ### Examples
 
