@@ -1,9 +1,13 @@
 Best Route Table
 ================
 
-**NEW [check out](https://github.com/ashi009/bestroutetb/tree/npm) npm compliant version**
+**NEW [check out](npmver) npm compliant version**
 
-Inspired by https://github.com/fivesheep/chnroutes.
+**新 [查看](npmver) npm 兼容版本**
+
+----
+
+Inspired by [chnroutes](chnroutes).
 
 This project aimed to generate the smallest route table,
 while preserves the minimalist requirements that IPs of
@@ -243,6 +247,8 @@ Where
     rm -f data/*
     ./generate.sh
 
+[npmver]: https://github.com/ashi009/bestroutetb/tree/npm
+[chnroutes]: https://github.com/fivesheep/chnroutes
 [wiki]: https://github.com/ashi009/bestroutetb/wiki/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E
 [trash]: http://www.nada.kth.se/~snilsson/publications/TRASH/trash.pdf
 [blog]: http://ashi009.tumblr.com/post/36581070478/vpn
