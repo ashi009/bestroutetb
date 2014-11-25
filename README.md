@@ -1,6 +1,6 @@
 # Best Route Table
 
-Inspired by https://github.com/fivesheep/chnroutes.
+Inspired by [chnroutes][chnroutes].
 
 This project aimed to generate the smallest route table,
 while preserves the minimalist requirements that IPs of
@@ -202,7 +202,7 @@ Show version number
 
     $ bestroutetb --route.vpn=us -p json -o routes.json
 
-
+[chnroutes]: https://github.com/fivesheep/chnroutes
 [wiki]: https://github.com/ashi009/bestroutetb/wiki/%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E
 [trash]: http://www.nada.kth.se/~snilsson/publications/TRASH/trash.pdf
 [blog]: http://ashi009.tumblr.com/post/36581070478/vpn
