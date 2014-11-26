@@ -3,10 +3,14 @@ var lib = require('./lib.js');
 var opts = lib.options;
 var flags = lib.flags;
 
-var kDefaultGateway = {
-  net: opts.netgw || '$netgw',
-  vpn: opts.vpngw || '$vpngw'
-};
+var kDefaultGateway = {};
+for(var gw in opts){
+  var pattern = /^(\w+)gw$/;
+  var matches = pattern.exec(gw);
+  if (matches)
+    kDefaultGateway[matches[1]] = opts[gw];
+} 
+
 var kGroupName = {
   net: opts.netgroupname || 'net',
   vpn: opts.vpngroupname || 'vpn'
@@ -67,6 +71,7 @@ read target dummy vpngw dummy <<< $(ip route get 8.8.8.8)',
     gw: kDefaultGateway
   }
 };
+
 var kProfile = kProfiles.hasOwnProperty(opts.profile) ?
     kProfiles[opts.profile] : kProfiles.openvpn;
 
@@ -98,6 +103,9 @@ lib.getRulesFromInput(function(rules) {
   if (header)
     console.log(header);
 
+  if (opts.reverse)
+    rules.reverse();
+
   rules.forEach(function(rule) {
     if (kProfile.groupgw && prevGateway != rule.gw) {
       if (prevGateway && groupFooter)
@@ -111,7 +119,7 @@ lib.getRulesFromInput(function(rules) {
       prevGateway = rule.gw;
     }
     if (rule.gw) {
-      rule.gw = kProfile.gw[rule.gw];
+      rule.gw = kProfile.gw[rule.gw] || ('$' + rule.gw + 'gw');
       if (!(flags.nodefaultgw && rule.prefix === '0.0.0.0' && rule.length === 0))
         console.log(kProfile.format.format(rule, opts));
     }

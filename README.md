@@ -1,3 +1,18 @@
+Add multiple gateways support by liebo. 
+
+For example, I would like to visit US sites through a US gateway, 
+and all GB sites through a GB gateway, and of course all CN sites directly.
+I can generate the rules:
+
+    node minifier.js --net=CN --us=US --gb=GB > usgb.json
+
+and then apply the rules to a custom format:
+
+    node formatter.js usgb.json --profile=custom --format="iptables -t nat -A SHADOW -d %prefix/%length -j %gw" --netgw=RETURN --usgw=US --gbgw=GB --reverse=true
+    
+here specify `--reverse=true` will reverse the order of rules in the final output.
+
+
 Best Route Table
 ================
 

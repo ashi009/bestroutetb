@@ -1,17 +1,18 @@
 var fs = require('fs');
 var lib = require('./lib.js');
 
-var kNothing = 0;
-var kPullLeft = 1;
-var kPullRight = 2;
-var kPullBoth = kPullLeft | kPullRight;
-var kPullData = 8;
-var kPullNothing = 16;
+var kNum = kGateways.length;
 
 function TreeNode(prefix) {
   this.prefix = prefix || new lib.Prefix();
-  this.count = [Number.MAX_VALUE, Number.MAX_VALUE];
-  this.operation = [kNothing, kNothing];
+  this.count = [];
+  for (var i=0; i < kNum; ++i){
+    this.count[i] = Number.MAX_VALUE;
+  }
+  this.operation = [];
+  for (var i=0; i < kNum; ++i){
+    this.operation[i] = [0, 0];
+  }
   this.children = [null, null];
 }
 $inherit(TreeNode, lib.TreeNode);
@@ -24,83 +25,81 @@ function dfs(root) {
   var i;
   if (left) dfs(left);
   if (right) dfs(right);
+
   if (left && right) {
-    for (i = 0; i < 2; i++) {
-      if (count[i] > left.count[i] + right.count[i] - 1) {
-        count[i] = left.count[i] + right.count[i] - 1;
-        operation[i] = kPullBoth;
-      }
-      if (count[i] > left.count[i] + right.count[i^1]) {
-        count[i] = left.count[i] + right.count[i^1];
-        operation[i] = kPullLeft;
-      }
-      if (count[i] > left.count[i^1] + right.count[i]) {
-        count[i] = left.count[i^1] + right.count[i];
-        operation[i] = kPullRight;
-      }
-      if (count[i] > left.count[i^1] + right.count[i^1] + 1) {
-        count[i] = left.count[i^1] + right.count[i^1] + 1;
-        operation[i] = kPullNothing;
+    for (i = 0; i < kNum; ++i){
+      for (var j=0; j < kNum; ++j){
+        for (var k=0; k < kNum; ++k){
+          var newcount = left.count[j] + right.count[k] + 1;
+          if (j == i) newcount--;
+          if (k == i) newcount--; 
+          if (count[i] >= newcount){
+            count[i] = newcount;
+            operation[i][0] = j;
+            operation[i][1] = k;
+          }
+        }
       }
     }
   } else if (left) {
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < kNum; i++) {
       count[i] = left.count[i];
-      operation[i] = kPullLeft;
+      operation[i][0] = i;
     }
   } else if (right) {
-    for (i = 0; i < 2; i++) {
+    for (i = 0; i < kNum; i++) {
       count[i] = right.count[i];
-      operation[i] = kPullRight;
+      operation[i][1] = i;
     }
   }
-  if (root.color !== undefined) {
-    count[root.color ^ 1] = Number.MAX_VALUE;
+  if (root.color != undefined) {
+    for (i = 0; i < kNum; ++i){
+      if (i != root.color)
+        count[i] = Number.MAX_VALUE;
+    }
     if (left && right) {
 
     } else if (left) {
-      if (left.count[root.color] > left.count[root.color ^ 1] + 1) {
-        count[root.color] = left.count[root.color ^ 1] + 1;
-        operation[root.color] = kPullNothing;
+      for (i = 0; i < kNum; ++i){
+        if (count[root.color] >= (left.count[i] + 1)){
+          count[root.color] = left.count[i] + 1;
+          operation[root.color][0] = i;
+        }
       }
     } else if (right) {
-      if (right.count[root.color] > right.count[root.color ^ 1] + 1) {
-        count[root.color] = right.count[root.color ^ 1] + 1;
-        operation[root.color] = kPullNothing;
+      for (i = 0; i < kNum; ++i){
+        if (count[root.color] >= (right.count[i] + 1)){
+          count[root.color] = right.count[i] + 1;
+          operation[root.color][1] = i;
+        }
       }
     } else {
       count[root.color] = 1;
-      operation[root.color] = kPullData;
     }
   }
 }
 
-function dfsOutput(rules, root, lastColor, revertColor) {
-  var color = kBlank;
+function dfsOutput(rules, root, lastColor, color) {
   if (lastColor === undefined) {
-    if (root.count[kRed] < root.count[kBlue])
-      color = kRed;
-    else
-      color = kBlue;
-  } else if (revertColor) {
-    color = lastColor ^ 1;
+    color = 0;
+    for (var i = 0; i < kNum; ++i)
+      if (root.count[color] <= root.count[i])
+        color = i;
   }
-  if (color === kBlank) {
-    color = lastColor;
-  } else {
+  if (color != lastColor) {
     rules.push({
       prefix: root.prefix.toIPv4(),
       mask: root.prefix.toMask(),
       length: root.prefix.length,
-      gw: color == kRed ? 'net' : 'vpn'
+      gw: kGateways[color]
     });
   }
   var left = root.children[0];
   var right = root.children[1];
   if (left)
-    dfsOutput(rules, left, color, (root.operation[color] & kPullLeft) === 0);
+    dfsOutput(rules, left, color, root.operation[color][0]);
   if (right)
-    dfsOutput(rules, right, color, (root.operation[color] & kPullRight) === 0);
+    dfsOutput(rules, right, color, root.operation[color][1]);
 }
 
 var root = lib.initiateTree(TreeNode);

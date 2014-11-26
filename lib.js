@@ -55,9 +55,12 @@ $define(String.prototype, {
   }
 });
 
+$define(global,{
+  kGateways:[]
+});
+
 var opts = {}, flags = {};
 (function() {
-
 for (var i = 0, argv = process.argv.slice(2); i < argv.length; i++) {
   var name, value;
   if (argv[i].substr(0, 2) === '--') {
@@ -70,11 +73,22 @@ for (var i = 0, argv = process.argv.slice(2); i < argv.length; i++) {
       value = argv[++i];
     }
     opts[name] = value;
+    kGateways.push(name);
     var match = /(y|yes|true|1)|(n|no|false|0)/.exec(value);
     if (match)
       flags[name] = match[1] ? true : false;
   } else {
     opts._ = argv[i];
+  }
+}
+if (kGateways.length < 2){
+  if (!opts.hasOwnProperty('net')){
+    kGateways.push('net');
+    opts['net'] = 'CN';
+  }
+  if (!opts.hasOwnProperty('vpn')){
+    kGateways.push('vpn');
+    opts['vpn'] = 'US,GB,JP,HK';
   }
 }
 
@@ -210,11 +224,6 @@ $declare(TreeNode, {
     node.color = prefix.color;
   }
 });
-$define(global, {
-  kBlank: -1,
-  kRed: 0,
-  kBlue: 1
-});
 
 function getRulesFromInput(callback) {
   if (opts._) {
@@ -299,7 +308,7 @@ function getCountryNames() {
 
 function initiateTree(TreeNodeType) {
 
-  var countryColls = [{}, {}];
+  var countryColls = [];
   var prefixColl = [];
 
   function parseSpecs(specs, color, followFile) {
@@ -325,15 +334,20 @@ function initiateTree(TreeNodeType) {
     });
   }
 
-  parseSpecs(opts.net || 'CN', kRed, true);
-  parseSpecs(opts.vpn || 'US,GB,JP,HK', kBlue, true);
+  var color = 0;
+  for (var opt in opts){
+    countryColls.push({});
+    parseSpecs(opts[opt], color++, true);
+  }
+  //parseSpecs(opts.net || 'CN', kRed, true);
+  //parseSpecs(opts.vpn || 'US,GB,JP,HK', kBlue, true);
 
   var root = new TreeNodeType();
   getAllRegionalDelegation().forEach(function(prefix) {
-    if (countryColls[kRed].hasOwnProperty(prefix.country))
-      prefix.color = kRed;
-    else if (countryColls[kBlue].hasOwnProperty(prefix.country))
-      prefix.color = kBlue;
+    for (var color = 0; color < kGateways.length; ++color){
+      if (countryColls[color].hasOwnProperty(prefix.country))
+        prefix.color = color;
+    }
     root.append(prefix);
   });
   // if (flags.nonap === undefined || flags.nonap === true)
