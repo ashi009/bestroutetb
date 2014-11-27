@@ -1,4 +1,4 @@
-# Best Route Table
+# Best Route Table [![NPM version](https://badge.fury.io/js/bestroutetb.png)](http://badge.fury.io/js/bestroutetb)
 
 Inspired by [chnroutes][chnroutes].
 
@@ -9,8 +9,6 @@ specified gateway (default or VPN).
 
 Generally speaking, the generated route table is at least
 70% smaller than chnroutes's.
-
-查看[使用说明][wiki]
 
 
 ## Objective
@@ -30,9 +28,8 @@ Therefore I decided to minimize the route table.
 
 For an example, a route table that route all IPs in China to
 default gateway, and US, GB, Japan, Hong kong administered
-IPs to VPN gateway (based on 11/21/2014 data,)
-only need 1546 routing directives, while *chnroutes* needs
-4953 routing directives.
+IPs to VPN gateway, only need 1546 routing directives (based on 11/21/2014 data,)
+while *chnroutes* needs 4953 routing directives.
 
 Which is almost **70% smaller**. And if route US address to VPN only,
 the route table has only **105 directives**, which is about only
@@ -51,7 +48,7 @@ routers with low free memory.
 ## How it works
 
 Unlike *chnroutes* which will generate a route table that
-route all subnets of China to ISP gateway, while other VPN gateway.
+route all subnets of China to ISP gateway, while other route to VPN gateway.
 This project divides IPs in three groups. First group is guaranteed
 to be routed to default gateway, Second group is guaranteed to be
 routed to VPN gateway. And the last group will be dynamically assigned
@@ -73,7 +70,7 @@ one based on the given restrictions.
 
 This project requires [node.js][nodejs] to run.
 
-If you are using OS X install it with homebrew:
+If you are using OS X, install node.js with homebrew:
 
     $ brew install nodejs
 
@@ -104,12 +101,12 @@ From Git:
 
 Subnets that should be routed to ISP or VPN gateway.
 
-**spec** should be a list of two-letter country initials, subnet (eg.
+**spec** should be a list of two-letter country initials (eg. US), subnet (eg.
 `8.0.0.0/8`), and host (eg. `123.123.123.123`), concatenated with comma (`,`).
 
-_NOTE_ You could also use multiple `--route.*` arguments to construct the list.
+_NOTE:_ You could also use multiple `--route.*` arguments to construct the list.
 
-#### Profile
+#### Output Profile
 
     -p <profile>, --profile=<profile>
 
@@ -123,9 +120,9 @@ You may also specify a javascript file as the profile (`-p openwrt.js`).
 
 Output file path.
 
-_NOTE_ Some profile may generate multiple files. In which case you need to
-specify path to a directory (`-o ./`), and you may also specify a prefix for the
-output file and desired extension (`-o ./ip-.sh`).
+_NOTE:_ Some profiles may generate multiple files. In which case you need to
+specify path to a directory (eg. `-o output/`), and you may also specify the
+prefix and the desired extension for the output file (eg. `-o output/ip-.sh`).
 
     -f, --force
 
@@ -139,9 +136,9 @@ _NOT implemented_
 
 Generate a report and save to given path.
 
-#### Output format
+#### Output format when `--profile=custom`
 
-_NOTE_ All strings will be outputted without adding any new line (`\n`).
+_NOTE:_ All strings will be outputted without adding any new line (`\n`).
 Thus, it would be favorable for you to add them in the string.  For zsh, bash
 and some other shells, you could use `$'line\n'` to include a escaped character.
 
@@ -152,7 +149,7 @@ Header and Footer of the output file.
 
     --rule-format=<string>
 
-String used to format a rule when `--profile=custom`.
+String used to format a rule.
 
 You may use `%prefix`, `%mask`, `%length` and `%gateway` or `%gw` in the string.
 
@@ -182,7 +179,7 @@ Whether to group rules by gateway.
     --group-header=<string>
     --group-footer=<string>
 
-Header and of each group.
+Header and Footer of each group.
 
 You may include `%name` in the string.
 
