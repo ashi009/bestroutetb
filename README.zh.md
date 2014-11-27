@@ -10,6 +10,7 @@
 整体而言，生成的路由表会比
 chnroutes 的小 70%.
 
+
 ## 目标
 
 我开始了这一项目源于
@@ -34,14 +35,14 @@ OpenVPN 连接在路由表加载完成前重置。
 路由表只包含 **105 条指令**，这仅仅是原始大小的
 2%。
 
-On Linux system, which usese [TRASH][trash] structure to store
-route table, a route lookup operation expected to access
-memory O(loglog _n_) times. Using *bestroutetb* instead of *chnroutes*,
-will reduce route table look up at least 0.01 times expectedly.
-However, this solution does reduce the route table size for 70% by
-assuming TRASH structure is implemented with a small overhead
-hash implementation.  It is therefore that a perfect approach for those
-routers with low free memory.
+Linux 系统使用 [TRASH][trash] 结构存储
+路由表，每个查询需要访问
+内存 O(loglog _n_) 次。使用 *bestroutetb* 取代 *chnroutes*，
+每次可以减少内存访问访问 0.01 次。
+这一解决方案将路由表至少大小减少了 70%，
+基于 TRASH 结构使用了一个紧凑的
+哈希实现。因此这一解决方案非常适合
+只有少量空闲内存的路由器。
 
 
 ## 如何工作
