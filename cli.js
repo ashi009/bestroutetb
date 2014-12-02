@@ -15,6 +15,7 @@ var Db = require('./lib/db');
 var Logger = require('./lib/logger');
 var Minifier = require('./lib/minifier');
 var Profile = require('./lib/profile');
+var Evaluator = require('./lib/evaluator');
 
 var argv = yargs
     .usage('Usage: $0 [options]')
@@ -244,9 +245,15 @@ var jobs = {
   }],
   // report
   report: ['rules', function(callback, results) {
-    var scope = 'report';
-    if (argv.report)
-      logger.error(scope, 'not availabe yet');
+    if (!argv.report)
+      callback();
+    var scope = 'eval';
+    logger.info(scope, 'generating report');
+    console.time('report');
+    var res = Evaluator.evaluate(results.rules);
+    console.timeEnd('report');
+    logger.info(scope, 'report generated');
+    // console.log(res);
     callback();
   }]
 };
