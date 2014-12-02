@@ -162,7 +162,7 @@ var jobs = {
       logger.info(scope, 'force update');
     Db.update({
       force: argv.update === true,
-      useStale: argv.stale === false,
+      useStale: argv.update === false,
       progressBar: logger.getProgressBar(scope,
           'updating... :percent :currentB/:totalB :etas')
     }, function(err) {
