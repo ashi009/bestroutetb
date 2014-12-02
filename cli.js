@@ -243,16 +243,8 @@ var jobs = {
     logger.verbose(scope, 'resolved targets %j', resolved);
     for (var name in resolved) {
       try {
-        if (fs.existsSync(resolved[name])) {
-          if (argv.force)
-            logger.warn(scope, 'will overwrite %s', chalk.cyan(resolved[name]));
-          else
-            throw $error('%s already exists, use `-f` to continue',
-                chalk.cyan(resolved[name]));
-        }
-        logger.info(scope, 'generating %s', chalk.cyan(resolved[name]));
-        profile.generate(name, results.rules, options);
-        logger.info(scope, 'created %s', chalk.cyan(resolved[name]));
+        writeFileSync(scope, resolved[name],
+          profile.generate.bind(profile, name, results.rules, options));
       } catch(err) {
         err.scope = scope;
         return callback(err);
