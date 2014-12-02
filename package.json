@@ -1,7 +1,7 @@
 {
   "name": "bestroutetb",
   "author": "Xiaoyi Shi <ashi009@gmail.com>",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "description": "Generating the most optimized route table for VPN users.",
   "main": "index.js",
   "dependencies": {
