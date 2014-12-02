@@ -151,6 +151,23 @@ var logger = new Logger({
   silent: argv.silent
 });
 
+function writeFileSync(scope, path, content) {
+  logger.info(scope, 'generating %s', chalk.cyan(path));
+  if (fs.existsSync(path)) {
+    if (!argv.force)
+      return logger.error(scope,
+          '%s already exists, use `-f` to continue', chalk.cyan(path));
+    logger.warn(scope, 'will overwrite %s', chalk.cyan(path));
+  }
+  if (Function.isFunction(content))
+    content = content();
+  var mode;
+  fs.writeFileSync(path, content);
+  if (content.mode)
+    fs.chmodSync(path, content.mode);
+  logger.info(scope, 'created %s', chalk.cyan(path));
+}
+
 var jobs = {
   // db
   db: function(callback) {
@@ -246,14 +263,17 @@ var jobs = {
   // report
   report: ['rules', function(callback, results) {
     if (!argv.report)
-      callback();
+      return callback();
     var scope = 'eval';
-    logger.info(scope, 'generating report');
-    console.time('report');
-    var res = Evaluator.evaluate(results.rules);
-    console.timeEnd('report');
-    logger.info(scope, 'report generated');
-    // console.log(res);
+    logger.info(scope, 'analysing rules');
+    var report = Evaluator.evaluate(results.rules);
+    try {
+      writeFileSync(scope, argv.report,
+          Evaluator.generateCSV.bind(Evaluator, report));
+    } catch(err) {
+      err.scope = scope;
+      return callback(err);
+    }
     callback();
   }]
 };
