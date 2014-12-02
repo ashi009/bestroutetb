@@ -178,9 +178,14 @@ var jobs = {
     var scope = 'minify';
     logger.info(scope, 'generating route table');
     logger.verbose(scope, 'options %j', argv.route);
-    var rules = Minifier.minify(argv.route);
-    logger.info(scope, '%d rules generated', rules.length);
-    callback(null, rules);
+    try {
+      var rules = Minifier.minify(argv.route);
+      logger.info(scope, '%d rules generated', rules.length);
+      callback(null, rules);
+    } catch(err) {
+      err.scope = scope;
+      callback(err);
+    }
   }],
   // profile
   profile: ['db', function(callback) {
