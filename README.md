@@ -28,8 +28,8 @@ Therefore I decided to minimize the route table.
 
 For an example, a route table that route all IPs in China to
 default gateway, and US, GB, Japan, Hong kong administered
-IPs to VPN gateway, only need 1546 routing directives (based on 11/21/2014 data,)
-while *chnroutes* needs 4953 routing directives.
+IPs to VPN gateway, only need 1546 routing directives,
+while *chnroutes* needs 4953 routing directives (based on 11/21/2014 data).
 
 Which is almost **70% smaller**. And if route US address to VPN only,
 the route table has only **105 directives**, which is about only
@@ -130,15 +130,21 @@ Force to overwrite existing files.
 
 #### Report
 
-_NOT implemented_
-
     -r <path>, --report=<path>
 
-Generate a report and save to given path.
+Generate a report in CSV format and save to given path. Here's an example:
 
-#### Output format when `--profile=custom`
+Country | net | vpn
+-- | --:| --:
+AD | 0 | 33792
+AE | 512 | 3738752
+AF | 125952 | 3072
 
-_NOTE:_ All strings will be outputted without adding any new line (`\n`).
+#### Output format
+
+_NOTE:_ These formats applies when `--profile=custom`, or in case you want
+to override default settings in profile.
+All strings will be outputted without adding new line (`\n`).
 Thus, it would be favorable for you to add them in the string.  For zsh, bash
 and some other shells, you could use `$'line\n'` to include a escaped character.
 
