@@ -135,7 +135,7 @@ Force to overwrite existing files.
 Generate a report in CSV format and save to given path. Here's an example:
 
 Country | net | vpn
--- | --:| --:
+--- | ---:| ---:
 AD | 0 | 33792
 AE | 512 | 3738752
 AF | 125952 | 3072
