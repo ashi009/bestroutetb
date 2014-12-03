@@ -151,7 +151,7 @@ var logger = new Logger({
   silent: argv.silent
 });
 
-function writeFileSync(scope, path, content) {
+function writeFileSync(scope, path, data) {
   logger.info(scope, 'generating %s', chalk.cyan(path));
   if (fs.existsSync(path)) {
     if (!argv.force)
@@ -159,12 +159,14 @@ function writeFileSync(scope, path, content) {
           '%s already exists, use `-f` to continue', chalk.cyan(path));
     logger.warn(scope, 'will overwrite %s', chalk.cyan(path));
   }
-  if (Function.isFunction(content))
-    content = content();
-  var mode;
-  fs.writeFileSync(path, content);
-  if (content.mode)
-    fs.chmodSync(path, content.mode);
+  if (Function.isFunction(data))
+    data = data();
+  fs.writeFileSync(path, data.content || data);
+  if (data.mode) {
+    logger.info(scope, 'setting mode of %s to %s',
+        chalk.cyan(path), chalk.cyan(data.mode.toString(8)));
+    fs.chmodSync(path, data.mode);
+  }
   logger.info(scope, 'created %s', chalk.cyan(path));
 }
 
