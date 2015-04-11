@@ -30,6 +30,7 @@ $inherit(MacDownFormatter, Formatter, {
   format: function(rules) {
     var up = [];
     up.push('#!/bin/sh');
+    up.push('export PATH="/bin:/sbin:/usr/sbin:/usr/bin"');
     up.push('[ -s /tmp/pptp_oldgw ] || exit 1');
     up.push('OLDGW=`cat /tmp/pptp_oldgw`');
     up.push('route delete 10.0.0.0/8 $OLDGW');
@@ -42,6 +43,7 @@ $inherit(MacDownFormatter, Formatter, {
         up.push('route delete ' + rule.prefix + '/' + rule.length + ' $OLDGW');
       }
     });
+    up.push('route add default $OLDGW');
     up.push('rm -f /tmp/pptp_oldgw');
     return up.join('\n');
   }
