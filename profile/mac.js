@@ -7,7 +7,7 @@ $inherit(MacUpFormatter, Formatter, {
     var up = [];
     up.push('#!/bin/sh');
     up.push('export PATH="/bin:/sbin:/usr/sbin:/usr/bin"');
-    up.push('OLDGW=`netstat -nr | grep "^default" | grep -v "ppp" | awk -v N=$N "{print $2}"');
+    up.push('OLDGW=`netstat -nr | grep "^default" | grep -v "ppp" | awk -F\' \' \'{print $2}\'`');
     up.push('dscacheutil -flushcache');
     up.push('echo $OLDGW > /tmp/pptp_oldgw');
     up.push('route add 10.0.0.0/8 $OLDGW');
