@@ -32,8 +32,8 @@ var argv = yargs
     .options('p', {
       alias: 'profile',
       string: true,
-      describe: 'Output format profile: `' +
-          Profile.getAvailableNames().join('`, `') + '`'
+      describe: 'Output format profile',
+      choices: Profile.getAvailableNames()
     })
     .config('c')
     .options('c', {
@@ -126,15 +126,9 @@ var argv = yargs
         throw '`--verbose` conflicts with `--silent`';
       if (argv.output && !argv.profile)
         throw '`--profile` must be specified when generating output';
-    })
-    .check(function(argv) {
-      if (argv.profile &&
-          Profile.getAvailableNames().indexOf(argv.profile) === -1) {
-        var path = pathUtil.resolve(argv.profile);
-        if (!fs.existsSync(path))
-          throw 'Cannot find given profile.';
-        argv.profile = path;
-      }
+      if (!(argv.update || argv.output))
+        throw 'No action specified';
+      return true;
     })
     .check(function(argv) {
       for (var gateway in argv.route)
@@ -142,7 +136,9 @@ var argv = yargs
             .concat(argv.route[gateway])
             .join(',')
             .split(',');
+      return true;
     })
+    .epilogue('For more information, please visit https://github.com/ashi009/bestroutetb.')
     .wrap(process.stdout.columns)
     .argv;
 
