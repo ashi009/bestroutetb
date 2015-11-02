@@ -1,4 +1,4 @@
-# Best Route Table [![NPM version](https://badge.fury.io/js/bestroutetb.png)](http://badge.fury.io/js/bestroutetb)
+# Best Route Table [![NPM version](https://badge.fury.io/js/bestroutetb.svg)](http://badge.fury.io/js/bestroutetb) [![Dependency](https://david-dm.org/ashi009/bestroutetb.svg)](https://david-dm.org/ashi009/bestroutetb)
 
 Inspired by [chnroutes][chnroutes].
 
