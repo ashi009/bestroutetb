@@ -112,8 +112,6 @@ _NOTE:_ You could also use multiple `--route.*` arguments to construct the list.
 
 Built-in profiles are `custom`, `iproute`, `json` and `openvpn`.
 
-You may also specify a javascript file as the profile (`-p openwrt.js`).
-
 #### Output
 
     -o <path>, --output=<path>
