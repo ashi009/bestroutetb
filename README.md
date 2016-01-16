@@ -160,7 +160,7 @@ You may use `%prefix`, `%mask`, `%length` and `%gw` in the string.
 - `%prefix` is the prefix of the subnet (eg. `14.0.0.0`).
 - `%mask` is the mask of the subnet (eg. `255.0.0.0`).
 - `%length` is the length of the mask (eg. `8`).
-- `%gw` is the routing destination of the subnet (eg. `net` and `vpn`). It can be customized (eg. `pppoe` and `tun0`), which is set with
+- `%gw` is the routing destination of the subnet (eg. `net` and `vpn`). It can be customized (eg. `pppoe` and `tun0`), which is setted with
   `--gateway.net` and `--gateway.vpn`.
 
 <!-- -->
