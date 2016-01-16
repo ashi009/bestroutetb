@@ -155,13 +155,12 @@ Header and Footer of the output file.
 
 String used to format a rule.
 
-You may use `%prefix`, `%mask`, `%length` and `%gateway` or `%gw` in the string.
+You may use `%prefix`, `%mask`, `%length` and `%gw` in the string.
 
 - `%prefix` is the prefix of the subnet (eg. `14.0.0.0`).
 - `%mask` is the mask of the subnet (eg. `255.0.0.0`).
 - `%length` is the length of the mask (eg. `8`).
-- `%gateway` is the routing destination of the subnet (eg. `net` and `vpn`).
-- `%gw` is the customized destination (eg. `pppoe` and `tun0`), which is set with
+- `%gw` is the routing destination of the subnet (eg. `net` and `vpn`). It can be customized (eg. `pppoe` and `tun0`), which is set with
   `--gateway.net` and `--gateway.vpn`.
 
 <!-- -->
