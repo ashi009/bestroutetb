@@ -14,6 +14,7 @@ var chalk = require('chalk');
 var Db = require('./lib/db');
 var Logger = require('./lib/logger');
 var Minifier = require('./lib/minifier');
+var MultiGwMinifier = require('./lib/multigw_minifier');
 var Profile = require('./lib/profile');
 var Evaluator = require('./lib/evaluator');
 
@@ -195,7 +196,12 @@ var jobs = {
     logger.info(scope, 'generating route table');
     logger.verbose(scope, 'options %j', argv.route);
     try {
-      var rules = Minifier.minify(argv.route);
+      var rules;
+      if (argv.route.length == 2) {
+        rules = Minifier.minify(argv.route);
+      } else {
+        rules = MultiGwMinifier.minify(argv.route);
+      }
       logger.info(scope, '%d rules generated', rules.length);
       callback(null, rules);
     } catch(err) {
